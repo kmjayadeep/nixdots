@@ -77,23 +77,31 @@
     hardware.pulseaudio.enable = true;
 
 
-	programs.hyprland = {
+    # Login screen
+    programs.regreet.enable = true;
+    services.greetd = {
 	    enable = true;
-	    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+	    settings = {
+	      ## TODO Check later
+	      initial_session = {
+		user = "jayadeep";
+		command = "$SHELL -l";
+	      };
+	    };
 	  };
 
+wayland.windowManager.hyprland = {
+    enable = true;
+    systemdIntegration = true;
+  };
 
- # Wayland stuff: enable XDG integration, allow sway to use brillo
-    xdg = {
-        portal = {
-            enable = true;
-            extraPortals = with pkgs; [
-                xdg-desktop-portal-wlr
-                xdg-desktop-portal-gtk
-            ];
-            gtkUsePortal = true;
-        };
-    };
+# Don't know why
+xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+  };
+
+
     # Do not touch
     system.stateVersion = "23.05";
 }

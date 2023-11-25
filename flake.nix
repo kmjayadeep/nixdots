@@ -34,6 +34,7 @@
                         # DO NOT USE MY HARDWARE CONFIG!! USE YOUR OWN!!
                         (./. + "/hosts/${hostname}/hardware-configuration.nix")
                         home-manager.nixosModules.home-manager
+			hyprland.nixosModules.default
                         {
                             home-manager = {
                                 useUserPackages = true;

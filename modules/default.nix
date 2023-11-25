@@ -4,7 +4,7 @@
     home.stateVersion = "23.05";
     imports = [
         # gui
-        ./hyprland
+        #./hyprland
 
 	# system
 	./xdg
