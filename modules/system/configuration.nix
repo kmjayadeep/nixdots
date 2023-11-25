@@ -3,7 +3,7 @@
 {
   # bootloader.
     boot = {
-        cleanTmpDir = true;
+	tmp.cleanOnBoot = true;
         loader = {
 		grub.enable = true;
 		grub.device = "/dev/sda";
@@ -52,31 +52,10 @@
 
     # TODO: some sane default nvim config for root
 
-    # Install fonts
-    fonts = {
-        fonts = with pkgs; [
-            jetbrains-mono
-            roboto
-            openmoji-color
-            (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-        ];
-
-        fontconfig = {
-            hinting.autohint = true;
-            defaultFonts = {
-              emoji = [ "OpenMoji Color" ];
-            };
-        };
-    };
-
 
     # Set up locales (timezone and keyboard layout)
     time.timeZone = "Europe/Berlin";
     i18n.defaultLocale = "en_US.UTF-8";
-    console = {
-        font = "Lat2-Terminus16";
-        keyMap = "us";
-    };
 
     # Set up user and enable sudo
     users.users.jayadeep = {
