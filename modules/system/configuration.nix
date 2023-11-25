@@ -48,7 +48,7 @@
     ];
 
     programs.zsh.enable = true;
-    programs.neovim.defaultEditor = true
+    programs.neovim.defaultEditor = true;
 
     # TODO: some sane default nvim config for root
 
