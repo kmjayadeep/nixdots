@@ -5,5 +5,8 @@
     imports = [
         # gui
         ./hyprland
+
+	# system
+	./xdg
     ];
 }

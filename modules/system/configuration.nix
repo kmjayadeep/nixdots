@@ -1,6 +1,7 @@
 { config, pkgs, inputs, ... }:
 
 {
+
   # bootloader.
     boot = {
 	tmp.cleanOnBoot = true;
@@ -74,6 +75,12 @@
     };
 
     hardware.pulseaudio.enable = true;
+
+
+	programs.hyprland = {
+	    enable = true;
+	    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+	  };
 
     # Do not touch
     system.stateVersion = "23.05";

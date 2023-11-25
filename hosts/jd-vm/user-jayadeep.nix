@@ -3,7 +3,8 @@
 {
     imports = [ ../../modules/default.nix ];
     config.modules = {
-        # gui
-        hyprland.enable = true;
+
+      # system
+      xdg.enable = true;
     };
 }
