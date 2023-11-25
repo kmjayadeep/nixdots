@@ -47,6 +47,11 @@
     wget
     kitty
     waybar
+    wofi
+    dunst
+    alacritty
+    psmisc
+    htop
   ];
 
   programs.zsh.enable = true;
