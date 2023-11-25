@@ -46,6 +46,7 @@
     neovim
     wget
     kitty
+    waybar
   ];
 
   programs.zsh.enable = true;
@@ -76,6 +77,11 @@
 
   hardware.pulseaudio.enable = true;
 
+  environment.sessionVariables = {
+    WLR_RENDERER_ALLOW_SOFTWARE = "1";
+    HYPRLAND_LOG_WLR = "1";
+    WLR_NO_HARDWARE_CURSORS = "1";
+  }
 
   # Login screen
   programs.regreet.enable = true;
