@@ -6,7 +6,7 @@
         cleanTmpDir = true;
         loader = {
 		grub.enable = true;
-		grub.device = "dev/sda";
+		grub.device = "/dev/sda";
 		grub.useOSProber = true;
 		grub.enableCryptodisk = true;
 		timeout = 5;
