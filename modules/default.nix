@@ -1,12 +1,12 @@
 { inputs, pkgs, config, ... }:
 
 {
-    home.stateVersion = "23.05";
-    imports = [
-        # gui
-        #./hyprland
+  home.stateVersion = "23.05";
+  imports = [
+    # gui
+    #./hyprland
 
-	# system
-	./xdg
-    ];
+    # system
+    ./xdg
+  ];
 }
