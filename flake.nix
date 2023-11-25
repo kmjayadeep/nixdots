@@ -14,7 +14,7 @@
     };
 
     # All outputs for the system (configs)
-    outputs = { home-manager, nixpkgs, hyprland, ... }@inputs: 
+    outputs = { home-manager, nixpkgs, ... }@inputs:
         let
             system = "x86_64-linux"; #current system
             pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
@@ -34,7 +34,6 @@
                         # DO NOT USE MY HARDWARE CONFIG!! USE YOUR OWN!!
                         (./. + "/hosts/${hostname}/hardware-configuration.nix")
                         home-manager.nixosModules.home-manager
-			hyprland.nixosModules.default
                         {
                             home-manager = {
                                 useUserPackages = true;

@@ -90,13 +90,12 @@
 	    };
 	  };
 
-wayland.windowManager.hyprland = {
-    enable = true;
-    systemdIntegration = true;
-  };
+	programs.hyprland = {
+	    enable = true;
+	    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+	  };
 
-# Don't know why
-xdg.portal = {
+	    xdg.portal = {
     enable = true;
     wlr.enable = true;
   };
