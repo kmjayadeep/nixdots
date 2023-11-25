@@ -82,6 +82,18 @@
 	    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
 	  };
 
+
+ # Wayland stuff: enable XDG integration, allow sway to use brillo
+    xdg = {
+        portal = {
+            enable = true;
+            extraPortals = with pkgs; [
+                xdg-desktop-portal-wlr
+                xdg-desktop-portal-gtk
+            ];
+            gtkUsePortal = true;
+        };
+    };
     # Do not touch
     system.stateVersion = "23.05";
 }
