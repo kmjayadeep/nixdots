@@ -54,11 +54,12 @@
     wget
     kitty
 
-    # Hyprland stuff
+    # Desktop
     rofi-wayland
     waybar
     dunst
     foot
+    arandr
   ];
 
   programs.zsh.enable = true;
