@@ -45,7 +45,6 @@
     # system
     psmisc
     htop
-    gktk3
 
     # Essentials
     git
