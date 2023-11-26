@@ -42,16 +42,21 @@
 
   # necessary system packages
   environment.systemPackages = with pkgs; [
+    # system
+    psmisc
+    htop
+    gktk3
+
+    # Essentials
     git
     neovim
     wget
     kitty
+
+    # Hyprland stuff
     waybar
     wofi
     dunst
-    alacritty
-    psmisc
-    htop
   ];
 
   programs.zsh.enable = true;
@@ -110,7 +115,6 @@
     enable = true;
     wlr.enable = true;
   };
-
 
   # Do not touch
   system.stateVersion = "23.05";
