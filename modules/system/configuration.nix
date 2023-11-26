@@ -45,6 +45,8 @@
     # system
     psmisc
     htop
+    xdg-desktop-portal-gtk
+    greetd.tuigreet
 
     # Essentials
     git
@@ -53,9 +55,10 @@
     kitty
 
     # Hyprland stuff
+    rofi-wayland
     waybar
-    wofi
     dunst
+    foot
   ];
 
   programs.zsh.enable = true;
@@ -93,27 +96,43 @@
   };
 
   # Login screen
-  programs.regreet.enable = true;
   services.greetd = {
     enable = true;
     settings = {
-      ## TODO Check later
-      initial_session = {
-        user = "jayadeep";
-        command = "$SHELL -l";
-      };
+     default_session.command = ''
+      ${pkgs.greetd.tuigreet}/bin/tuigreet \
+        --time \
+        --asterisks \
+        --user-menu \
+        --cmd Hyprland
+    '';
     };
   };
+
+  environment.etc."greetd/environments".text = ''
+    Hyprland
+  '';
 
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    xwayland.enable = true;
   };
 
+  # For screensharing, file opener etc.
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
+
+   # Disable bluetooth, enable pulseaudio, enable opengl (for Wayland)
+    hardware = {
+        bluetooth.enable = false;
+        opengl = {
+            enable = true;
+            driSupport = true;
+        };
+    };
 
   # Do not touch
   system.stateVersion = "23.05";
