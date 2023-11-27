@@ -7,8 +7,6 @@
     tmp.cleanOnBoot = true;
     loader = {
       grub = {
-        enable = true;
-
         useOSProber = true;
         enableCryptodisk = true;
 
