@@ -7,6 +7,7 @@
     dotDir = ".config/zsh";
     enableCompletion = true;
     enableAutosuggestions = true;
+    syntaxHighlighting.enable = true
     
     oh-my-zsh = {
       enable = true;
@@ -16,12 +17,11 @@
         "sudo"
         "docker"
         "kubectl"
-        "zsh-syntax-highlighting"
       ];
-    }
+    };
 
     shellAliases = {
-      cat = "${bat}/bin/bat";
+      cat = "bat";
       sl = "exa";
       ls = "exa";
       l = "exa -l";
@@ -31,4 +31,6 @@
     };
   };
 
+  # Set neovim as editor
+  programs.neovim.defaultEditor = true;
 }
