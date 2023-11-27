@@ -32,6 +32,7 @@
     };
   };
 
+  # zsh prompt
   programs.starship = {
     enable = true;
   };
