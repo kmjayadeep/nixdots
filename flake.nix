@@ -28,9 +28,7 @@
           system = system;
           modules = [
             { networking.hostName = hostname; }
-            # General configuration (users, networking, sound, etc)
-            ./modules/system/configuration.nix
-            # Hardware config (bootloader, kernel modules, filesystems, etc)
+            # Host specific config (bootloader, kernel modules, filesystems, etc)
             # DO NOT USE MY HARDWARE CONFIG!! USE YOUR OWN!!
             (./. + "/hosts/${hostname}")
             home-manager.nixosModules.home-manager
@@ -39,8 +37,8 @@
                 useUserPackages = true;
                 useGlobalPkgs = true;
                 extraSpecialArgs = { inherit inputs; };
-                # Home manager config (configures programs like firefox, zsh, eww, etc)
-                users.jayadeep = ./home
+                # Home manager config (configures user specific stuff like shell, aliases etc)
+                users.jayadeep = ./home;
               };
             }
           ];

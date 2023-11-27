@@ -1,5 +1,5 @@
-{ inputs, pkgs, config, ... }:
+{ config, lib, inputs, ... }:
 
 {
-    home.stateVersion = "23.05";
+  home.stateVersion = "23.05";
 }
