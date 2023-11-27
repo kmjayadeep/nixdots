@@ -2,6 +2,6 @@
 
 {
   home.sessionVariables = {
-    NIXOS_CONFIG_DIR = "~/workspace/nixdots";
+    NIXOS_CONFIG_DIR = "$HOME/workspace/nixdots";
   };
 }

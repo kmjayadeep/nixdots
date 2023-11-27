@@ -32,6 +32,10 @@
     };
   };
 
+  programs.starship = {
+    enable = true;
+  };
+
   # Set neovim as editor
   programs.neovim.defaultEditor = true;
 }
