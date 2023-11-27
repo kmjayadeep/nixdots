@@ -16,8 +16,6 @@
     shell = pkgs.zsh;
   };
 
-  services.openssh = { enable = true; };
-
   # Sound
   sound = { enable = true; };
   hardware.pulseaudio.enable = true;

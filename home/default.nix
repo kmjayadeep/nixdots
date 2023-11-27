@@ -6,6 +6,7 @@
   imports = [
     ./git.nix
     ./gpg.nix
+    ./kubernetes.nix
   ];
 
 }

@@ -6,6 +6,7 @@
     ./gui.nix
     ./nixos.nix
     ./packages.nix
+    ./ssh.nix
     ./system.nix
   ];
 
