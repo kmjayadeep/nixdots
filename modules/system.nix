@@ -9,11 +9,11 @@
   networking.networkmanager.enable = true;
 
   # Set up user and enable sudo
-  # TODO: add initial password
   users.users.jayadeep = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
+    initialPassword = "password" # Don't forget to change this
   };
 
   # Sound

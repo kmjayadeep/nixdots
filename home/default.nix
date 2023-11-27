@@ -7,6 +7,7 @@
     ./git.nix
     ./gpg.nix
     ./kubernetes.nix
+    ./zsh.nix
   ];
 
 }
