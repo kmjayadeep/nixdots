@@ -7,7 +7,7 @@
     dotDir = ".config/zsh";
     enableCompletion = true;
     enableAutosuggestions = true;
-    syntaxHighlighting.enable = true
+    syntaxHighlighting.enable = true;
     
     oh-my-zsh = {
       enable = true;
@@ -22,10 +22,10 @@
 
     shellAliases = {
       cat = "bat";
-      sl = "exa";
-      ls = "exa";
-      l = "exa -l";
-      la = "exa -la";
+      sl = "eza";
+      ls = "eza";
+      l = "eza -l";
+      la = "eza -la";
       ip = "ip --color=auto";
       v = "\${EDITOR:-nvim}";
     };

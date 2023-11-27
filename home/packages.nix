@@ -3,7 +3,7 @@
 {
 
   home.packages =  with pkgs; [
-    exa # better ls
+    eza # better ls
     bat # better cat
   ];
 
