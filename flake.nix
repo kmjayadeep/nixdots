@@ -32,7 +32,7 @@
             ./modules/system/configuration.nix
             # Hardware config (bootloader, kernel modules, filesystems, etc)
             # DO NOT USE MY HARDWARE CONFIG!! USE YOUR OWN!!
-            (./. + "/hosts/${hostname}/hardware-configuration.nix")
+            (./. + "/hosts/${hostname}")
             home-manager.nixosModules.home-manager
             {
               home-manager = {
@@ -40,7 +40,7 @@
                 useGlobalPkgs = true;
                 extraSpecialArgs = { inherit inputs; };
                 # Home manager config (configures programs like firefox, zsh, eww, etc)
-                users.jayadeep = (./. + "/hosts/${hostname}/user-jayadeep.nix");
+                users.jayadeep = ./home
               };
             }
           ];
