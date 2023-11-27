@@ -6,7 +6,7 @@
   boot = {
     tmp.cleanOnBoot = true;
     loader = {
-      grub {
+      grub = {
       enable = true;
 
       useOSProber = true;
