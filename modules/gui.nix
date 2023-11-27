@@ -31,4 +31,6 @@
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
+  # Required for a lot of apps
+  security.polkit.enable = true;
 }
