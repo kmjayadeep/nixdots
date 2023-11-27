@@ -24,10 +24,11 @@
       cat = "bat";
       sl = "eza";
       ls = "eza";
-      l = "eza -l";
-      la = "eza -la";
+      l = "eza -l --icons";
+      la = "eza -la --icons";
       ip = "ip --color=auto";
       v = "\${EDITOR:-nvim}";
+      rebuild = "sudo nixos-rebuild switch --flake $NIXOS_CONFIG_DIR --fast; notify-send 'Rebuild complete\!'";
     };
   };
 
