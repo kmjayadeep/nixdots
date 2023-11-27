@@ -5,17 +5,10 @@
   # bootloader.
   boot = {
     tmp.cleanOnBoot = true;
+
     loader = {
-      grub = {
-        enable = true;
 
-        useOSProber = true;
-        enableCryptodisk = true;
-
-        # EUFI installation
-        device = "nodev";
-        efiSupport = true;
-      };
+      systemd-boot.enable = true;
 
       efi = {
         canTouchEfiVariables = true;
