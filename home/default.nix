@@ -10,6 +10,7 @@
     ./kubernetes.nix
     ./packages.nix
     ./shell.nix
+    ./syncthing.nix
   ];
 
 }
