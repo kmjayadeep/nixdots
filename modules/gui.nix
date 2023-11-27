@@ -30,7 +30,7 @@
 
   environment.sessionVariables = {
     # make discord, brave etc. work in wayland
-    NIXOS_OZONE_WL = "1"
+    NIXOS_OZONE_WL = "1";
   };
 
   # For screensharing, file opener etc.

@@ -14,5 +14,8 @@
     pcmanfm # file manager
     discord
     spotify
+
+    # apps
+    spotify-tui # spotify on terminal
   ];
 }
