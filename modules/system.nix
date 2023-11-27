@@ -13,7 +13,7 @@
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
-    initialPassword = "password" # Don't forget to change this
+    initialPassword = "password"; # Don't forget to change this
   };
 
   # Sound
