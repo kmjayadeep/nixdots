@@ -1,10 +1,13 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   # Nix settings, auto cleanup and enable flakes
   nix = {
     settings.auto-optimise-store = true;
-    settings.allowed-users = [ "jayadeep" ];
+    settings.allowed-users = ["jayadeep"];
     gc = {
       automatic = true;
       dates = "weekly";
@@ -19,5 +22,4 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
 }

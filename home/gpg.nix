@@ -1,6 +1,9 @@
-{ config, lib, inputs, ... }:
-
 {
+  config,
+  lib,
+  inputs,
+  ...
+}: {
   programs.gpg = {
     enable = true;
   };

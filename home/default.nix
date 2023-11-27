@@ -1,6 +1,9 @@
-{ config, lib, inputs, ... }:
-
 {
+  config,
+  lib,
+  inputs,
+  ...
+}: {
   home.stateVersion = "23.05";
 
   imports = [
@@ -12,5 +15,4 @@
     ./shell.nix
     ./syncthing.nix
   ];
-
 }

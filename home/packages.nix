@@ -1,8 +1,9 @@
-{ pkgs, inputs, ... }:
-
 {
-
-  home.packages =  with pkgs; [
+  pkgs,
+  inputs,
+  ...
+}: {
+  home.packages = with pkgs; [
     eza # better ls
     bat # better cat
     tldr # better man

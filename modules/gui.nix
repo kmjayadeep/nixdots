@@ -1,6 +1,9 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   # Login screen
   services.greetd = {
     enable = true;
@@ -28,7 +31,7 @@
   # For screensharing, file opener etc.
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
   # Required for a lot of apps

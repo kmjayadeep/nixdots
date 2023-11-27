@@ -1,6 +1,9 @@
-{ config, lib, inputs, ... }:
-
 {
+  config,
+  lib,
+  inputs,
+  ...
+}: {
   programs.git = {
     enable = true;
     userName = "Jayadeep KM";

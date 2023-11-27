@@ -1,7 +1,10 @@
-{ config, pkgs, inputs, ... }:
-
 {
-  services.openssh = { 
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  services.openssh = {
     enable = true;
     ports = [
       2022

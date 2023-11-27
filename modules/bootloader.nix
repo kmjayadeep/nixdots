@@ -1,13 +1,14 @@
-{ config, pkgs, inputs, ... }:
-
 {
-
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   # bootloader.
   boot = {
     tmp.cleanOnBoot = true;
 
     loader = {
-
       systemd-boot.enable = true;
 
       efi = {
@@ -18,5 +19,4 @@
       timeout = 5;
     };
   };
-
 }

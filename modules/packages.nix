@@ -1,6 +1,9 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   # necessary system packages
   environment.systemPackages = with pkgs; [
     # system
@@ -27,7 +30,7 @@
   ];
 
   # Remove unecessary preinstalled packages
-  environment.defaultPackages = [ ];
+  environment.defaultPackages = [];
   services.xserver.desktopManager.xterm.enable = false;
 
   # shell
