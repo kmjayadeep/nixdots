@@ -12,5 +12,7 @@
 
     # GUI apps
     pcmanfm # file manager
+    discord
+    spotify
   ];
 }
