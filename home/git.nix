@@ -10,5 +10,11 @@
       key = "E144EC9E6313D549";
       signByDefault = true;
     };
+
+    extraConfig = {
+      pull = {
+        ff = "only";
+      };
+    };
   };
 }
