@@ -17,5 +17,9 @@
 
     # apps
     spotify-tui # spotify on terminal
+    docker-compose
+
+    # programming
+    go
   ];
 }

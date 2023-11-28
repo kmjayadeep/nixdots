@@ -17,6 +17,7 @@
     neovim
     wget
     kitty
+    pavucontrol # Sound control
 
     # Desktop
     rofi-wayland
@@ -27,6 +28,9 @@
 
     # browser
     brave
+
+    # networking
+    tailscale
   ];
 
   # Remove unecessary preinstalled packages
