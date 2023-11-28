@@ -10,6 +10,7 @@
     ./nixos.nix
     ./packages.nix
     ./ssh.nix
+    ./steam.nix
     ./system.nix
   ];
 
