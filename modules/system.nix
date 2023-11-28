@@ -11,6 +11,10 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Set default shell for all users
+  # also important to set global env vars correctly
+  users.defaultUserShell = pkgs.zsh
+
   # Set up user and enable sudo
   users.users.jayadeep = {
     isNormalUser = true;
