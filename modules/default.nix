@@ -5,7 +5,6 @@
   ...
 }: {
   imports = [
-    ./bootloader.nix
     ./container.nix
     ./gui.nix
     ./nixos.nix

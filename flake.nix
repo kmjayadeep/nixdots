@@ -53,6 +53,9 @@
       #                                Architecture   Hostname
       jd-nuc = mkSystem inputs.nixpkgs "x86_64-linux" "jd-nuc";
       jd-vm = mkSystem inputs.nixpkgs "x86_64-linux" "jd-vm";
+
+      # On proxmox
+      jd-pve = mkSystem inputs.nixpkgs "x86_64-linux" "jd-pve";
     };
   };
 }

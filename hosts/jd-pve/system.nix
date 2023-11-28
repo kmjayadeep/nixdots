@@ -16,15 +16,13 @@
     tmp.cleanOnBoot = true;
 
     loader = {
-      systemd-boot.enable = true;
-
-      efi = {
-        canTouchEfiVariables = true;
-        efiSysMountPoint = "/efi";
+      
+      grub = {
+        enable = true;
+        device = "/dev/sda";
       };
 
       timeout = 5;
     };
   };
-
 }
