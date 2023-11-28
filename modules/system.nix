@@ -14,7 +14,7 @@
   # Set up user and enable sudo
   users.users.jayadeep = {
     isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel", "docker"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     shell = pkgs.zsh;
     initialPassword = "password"; # Don't forget to change this
   };
