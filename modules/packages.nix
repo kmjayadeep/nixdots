@@ -39,7 +39,4 @@
 
   # shell
   programs.zsh.enable = true;
-
-  # editor
-  programs.neovim.defaultEditor = true;
 }

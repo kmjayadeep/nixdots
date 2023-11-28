@@ -31,4 +31,7 @@
       driSupport = true;
     };
   };
+
+  # Set neovim as default editor
+  programs.neovim.defaultEditor = true;
 }

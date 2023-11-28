@@ -11,6 +11,7 @@
     ./git.nix
     ./gpg.nix
     ./kubernetes.nix
+    ./neovim.nix
     ./packages.nix
     ./shell.nix
     ./syncthing.nix
