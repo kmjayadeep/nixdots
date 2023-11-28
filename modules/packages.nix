@@ -19,13 +19,6 @@
     kitty
     pavucontrol # Sound control
 
-    # Desktop
-    rofi-wayland
-    waybar
-    dunst
-    foot
-    arandr
-
     # browser
     brave
 

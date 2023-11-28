@@ -14,12 +14,13 @@
     pcmanfm # file manager
     discord
     spotify
+    arandr
 
-    # apps
+    # Other apps
     spotify-tui # spotify on terminal
-    docker-compose
 
     # programming
     go
+    docker-compose
   ];
 }
