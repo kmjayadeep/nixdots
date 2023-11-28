@@ -11,6 +11,7 @@
     ./env.nix
     ./git.nix
     ./gpg.nix
+    ./hyprland.nix
     ./kubernetes.nix
     ./neovim.nix
     ./packages.nix
