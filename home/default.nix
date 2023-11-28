@@ -7,6 +7,7 @@
   home.stateVersion = "23.05";
 
   imports = [
+    ./dunst.nix
     ./env.nix
     ./git.nix
     ./gpg.nix
