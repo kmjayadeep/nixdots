@@ -14,10 +14,11 @@
     pcmanfm # file manager
     discord
     spotify
-    arandr
 
     # Other apps
     spotify-tui # spotify on terminal
+    wlr-randr # xrandr alternative
+    way-displays # arandr alternative
 
     # programming
     go
