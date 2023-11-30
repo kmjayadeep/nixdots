@@ -6,6 +6,7 @@
 }: {
   imports = [
     ./container.nix
+    ./fonts.nix
     ./gui.nix
     ./nixos.nix
     ./packages.nix

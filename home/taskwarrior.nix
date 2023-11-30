@@ -10,9 +10,9 @@
 
   # Enable taskwarrior
   programs.taskwarrior = {
+    dataLocation = "~/private/psuite/todo";
     enable = true;
     config = {
-      data.location = "~/private/psuite/todo";
       uda.reviewed.type = "date";
       uda.reviewed.label = "Reviewed";
       report._reviewed.description = "Tasksh review report.  Adjust the filter to your needs.";

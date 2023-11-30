@@ -9,6 +9,7 @@
   imports = [
     ./dunst.nix
     ./env.nix
+    ./foot.nix
     ./git.nix
     ./gpg.nix
     ./hyprland.nix
