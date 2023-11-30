@@ -9,13 +9,13 @@
       jetbrains-mono
       roboto
       openmoji-color
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      (nerdfonts.override {fonts = ["JetBrainsMono"];})
     ];
 
     fontconfig = {
       hinting.autohint = true;
       defaultFonts = {
-        emoji = [ "OpenMoji Color" ];
+        emoji = ["OpenMoji Color"];
       };
     };
   };
