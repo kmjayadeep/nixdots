@@ -38,7 +38,7 @@
     # It contains a loop for aliasing k8s commands, thats why it is separate
     initExtra = ''
       source $HOME/.bash_aliases
-    ''
+    '';
 
   };
 

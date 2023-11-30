@@ -30,7 +30,7 @@
       # GTD - get things done: https://nfraprado.net/post/managing-my-tasks-using-vit.html
       # GTD uda config
       uda.folder.type = "string";
-      uda.folder.label = "folder":
+      uda.folder.label = "folder";
       uda.folder.default = "in";
       uda.folder.values = "in,todo,cal,backlog,standby,someday";
       # urgency.uda.folder.todo.coefficient = 15
@@ -50,10 +50,10 @@
       report.next.labels = "ID,Active,P,Project,Tag,Recur,S,Due,Until,Description,folder,Urg";
       report.next.sort = "folder-/,urgency-";
 
-      report.in.columns = "id,description";
-      report.in.description = "Inbox";
-      report.in.filter = "status:pending limit:page folder:in";
-      report.in.labels = "ID,Description";
+      "report.in.columns" = "id,description";
+      "report.in.description" = "Inbox";
+      "report.in.filter" = "status:pending limit:page folder:in";
+      "report.in.labels" = "ID,Description";
 
       report.todo.description = "Next TODO tasks";
       report.todo.columns = "id,start.age,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description.count,folder,urgency";
@@ -72,6 +72,6 @@
       report.someday.filter = "limit: folder:someday status:pending";
       report.someday.labels = "ID,Description";
     };
-  }
+  };
 }
 
