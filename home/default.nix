@@ -17,5 +17,6 @@
     ./packages.nix
     ./shell.nix
     ./syncthing.nix
+    ./taskwarrior.nix
   ];
 }
