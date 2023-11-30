@@ -33,7 +33,16 @@
       v = "\${EDITOR:-nvim}";
       rebuild = "sudo nixos-rebuild switch --flake $NIXOS_CONFIG_DIR --fast; notify-send 'Rebuild complete\!'";
     };
+
+    # Source additional bash aliases
+    # It contains a loop for aliasing k8s commands, thats why it is separate
+    initExtra = ''
+      source $HOME/.bash_aliases
+    ''
+
   };
+
+  home.file.".bash_aliases".source = ../assets/bash_aliases;
 
   # zsh prompt
   programs.starship = {
