@@ -12,6 +12,7 @@
     kubectx
     kubie
     fluxcd
+    kind
   ];
 
 }
