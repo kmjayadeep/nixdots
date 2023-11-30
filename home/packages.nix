@@ -14,6 +14,7 @@
     pcmanfm # file manager
     discord
     spotify
+    obs-studio # For screen recording
 
     # Other apps
     spotify-tui # spotify on terminal
