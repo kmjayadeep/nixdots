@@ -4,7 +4,5 @@
   inputs,
   ...
 }: {
-
   programs.steam.enable = true;
-
 }

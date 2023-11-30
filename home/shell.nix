@@ -39,7 +39,6 @@
     initExtra = ''
       source $HOME/.bash_aliases
     '';
-
   };
 
   home.file.".bash_aliases".source = ../assets/bash_aliases;

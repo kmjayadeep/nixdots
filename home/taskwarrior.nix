@@ -14,18 +14,17 @@
     config = {
       data.location = "~/private/psuite/todo";
       uda.reviewed.type = "date";
-      uda.reviewed.label= "Reviewed";
+      uda.reviewed.label = "Reviewed";
       report._reviewed.description = "Tasksh review report.  Adjust the filter to your needs.";
       report._reviewed.columns = "uuid";
       report._reviewed.sort = "reviewed+,modified+";
       report._reviewed.filter = "( reviewed.none: or reviewed.before:now-6days ) and ( +PENDING or +WAITING )";
       context.ct.read = "project:ct";
       context.ct.write = "project:ct";
-      context.avesha.read= "project:avesha";
-      context.avesha.write= "project:avesha";
-      context.nowork.read= "project.isnt:ct project.isnt:avesha project.isnt:vmo";
-      context.nooffice.read= "project.isnt:ct";
-
+      context.avesha.read = "project:avesha";
+      context.avesha.write = "project:avesha";
+      context.nowork.read = "project.isnt:ct project.isnt:avesha project.isnt:vmo";
+      context.nooffice.read = "project.isnt:ct";
 
       # GTD - get things done: https://nfraprado.net/post/managing-my-tasks-using-vit.html
       # GTD uda config
@@ -43,7 +42,6 @@
       uda.difficulty.type = "string";
       uda.difficulty.label = "Difficulty";
       uda.difficulty.values = "H,L,";
-
 
       # GTD reports config
       report.next.columns = "id,start.age,priority,project,tags,recur,scheduled.countdown,due.relative,until.remaining,description.count,folder,urgency";
@@ -74,4 +72,3 @@
     };
   };
 }
-
