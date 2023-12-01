@@ -5,7 +5,6 @@
   inputs,
   ...
 }: {
-
   # TODO: Move to https://github.com/nix-community/nixvim
 
   programs.neovim = let

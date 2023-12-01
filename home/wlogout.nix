@@ -3,17 +3,16 @@
   inputs,
   ...
 }: {
-
   home.packages = with pkgs; [
     yad # used for showing confirm dialog
   ];
 
-  home.file.".config/hypr/wlogout/actions" = {
+  home.file.".config/wlogout/actions" = {
     source = ./wlogout/actions;
     executable = true;
   };
 
-  home.file.".config/hypr/wlogout/icons" = {
+  home.file.".config/wlogout/icons" = {
     source = ./wlogout/icons;
     recursive = true;
   };
@@ -24,34 +23,33 @@
       {
         label = "suspend";
         text = "Suspend";
-        action = "~/.config/hypr/wlogout/actions --suspend";
+        action = "~/.config/wlogout/actions --suspend";
         keybind = "u";
       }
       {
         label = "logout";
         text = "Logout";
-        action = "~/.config/hypr/wlogout/actions --logout";
+        action = "~/.config/wlogout/actions --logout";
         keybind = "e";
       }
       {
         label = "lock";
         text = "Lock";
-        action = "~/.config/hypr/wlogout/actions --lock";
+        action = "~/.config/wlogout/actions --lock";
         keybind = "l";
       }
       {
         label = "reboot";
         text = "Reboot";
-        action = "~/.config/hypr/wlogout/actions --reboot";
+        action = "~/.config/wlogout/actions --reboot";
         keybind = "r";
       }
       {
         label = "shutdown";
         text = "Shutdown";
-        action = "~/.config/hypr/wlogout/actions --shutdown";
+        action = "~/.config/wlogout/actions --shutdown";
         keybind = "s";
       }
-
     ];
     style = ''
       ${builtins.readFile ./wlogout/style.css}
