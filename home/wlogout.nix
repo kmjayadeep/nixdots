@@ -39,6 +39,12 @@
         keybind = "l";
       }
       {
+        label = "hibernate";
+        text = "Hibernate";
+        action = "~/.config/wlogout/actions --hibernate";
+        keybind = "h";
+      }
+      {
         label = "reboot";
         text = "Reboot";
         action = "~/.config/wlogout/actions --reboot";
@@ -48,11 +54,12 @@
         label = "shutdown";
         text = "Shutdown";
         action = "~/.config/wlogout/actions --shutdown";
-        keybind = "s";
+        keybind = "S";
       }
     ];
-    style = ''
-      ${builtins.readFile ./wlogout/style.css}
-    '';
+    #TODO: Not working
+    #style = ''
+    # ${builtins.readFile ./wlogout/style.css}
+    #'';
   };
 }
