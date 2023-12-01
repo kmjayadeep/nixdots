@@ -33,6 +33,6 @@ vim.api.nvim_set_keymap('n', '<C-g>', ':Telescope git_files<CR>', opts)
 vim.api.nvim_set_keymap('n', '<Leader>l', ':Telescope buffers<CR>', opts)
 
 -- NerdCommenter
-vim.api.nvim_set_keymap('n', '<Leader>l', ":call nerdcommenter#Comment('Toggle', 'Toggle')<CR>", mapOpts)
-vim.api.nvim_set_keymap('i', '<Leader>l', "<esc>:call nerdcommenter#Comment('Toggle', 'Toggle')<CR>", mapOpts)
-vim.api.nvim_set_keymap('v', '<Leader>l', ":call nerdcommenter#Comment('Toggle', 'Toggle')<CR>gv", mapOpts)
+vim.api.nvim_set_keymap('n', '<Leader>/', ":call nerdcommenter#Comment('Toggle', 'Toggle')<CR>", mapOpts)
+vim.api.nvim_set_keymap('i', '<Leader>/', "<esc>:call nerdcommenter#Comment('Toggle', 'Toggle')<CR>", mapOpts)
+vim.api.nvim_set_keymap('v', '<Leader>/', ":call nerdcommenter#Comment('Toggle', 'Toggle')<CR>gv", mapOpts)
