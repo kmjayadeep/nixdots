@@ -81,8 +81,8 @@
     ];
 
     extraLuaConfig = ''
-      ${builtins.readFile ./nvim/binds.lua}
       ${builtins.readFile ./nvim/options.lua}
+      ${builtins.readFile ./nvim/binds.lua}
     '';
   };
 }

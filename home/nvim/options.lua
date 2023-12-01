@@ -49,6 +49,7 @@ vim.o.listchars = 'tab:┆·,trail:·,precedes:,extends:'
 
 -- NerdCommenter
 vim.g.NERDSpaceDelims = 1
+vim.g.NERDCreateDefaultMappings = 0
 
 -- GitGutter
 vim.g.gitgutter_override_sign_column_highlight = 0
