@@ -37,9 +37,9 @@
       }
 
       {
-        # More in https://github.com/catppuccin/nvim/
+        # More catppuccin flavors in https://github.com/catppuccin/nvim/
         plugin = catppuccin-nvim;
-        config = "colorscheme catppuccin-mocha";
+        config = "colorscheme catppuccin";
       }
 
       {
