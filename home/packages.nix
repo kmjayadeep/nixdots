@@ -20,6 +20,7 @@
     spotify-tui # spotify on terminal
     wlr-randr # xrandr alternative
     way-displays # arandr alternative
+    neofetch
 
     # programming
     go
