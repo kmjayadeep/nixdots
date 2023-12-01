@@ -1,48 +1,59 @@
-local options = {
-  backup = false,                          -- creates a backup file
-  clipboard = "unnamedplus",               -- allows neovim to access the system clipboard
-  cmdheight = 2,                           -- more space in the neovim command line for displaying messages
-  completeopt = { "menuone", "noselect" }, -- mostly just for cmp
-  conceallevel = 0,                        -- so that `` is visible in markdown files
-  fileencoding = "utf-8",                  -- the encoding written to a file
-  hlsearch = true,                         -- highlight all matches on previous search pattern
-  ignorecase = true,                       -- ignore case in search patterns
-  mouse = "a",                             -- allow the mouse to be used in neovim
-  pumheight = 10,                          -- pop up menu height
-  showmode = false,                        -- we don't need to see things like -- INSERT -- anymore
-  showtabline = 2,                         -- always show tabs
-  smartcase = true,                        -- smart case
-  smartindent = true,                      -- make indenting smarter again
-  swapfile = false,                        -- creates a swapfile
-  termguicolors = true,                    -- set term gui colors (most terminals support this)
-  timeoutlen = 300,                        -- time to wait for a mapped sequence to complete (in milliseconds)
-  undofile = true,                         -- enable persistent undo
-  updatetime = 300,                        -- faster completion (4000ms default)
-  writebackup = false,                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-  expandtab = true,                        -- convert tabs to spaces
-  shiftwidth = 2,                          -- the number of spaces inserted for each indentation
-  tabstop = 2,                             -- insert 2 spaces for a tab
-  cursorline = true,                       -- highlight the current line
-  number = true,                           -- set numbered lines
-  relativenumber = true,                   -- set relative numbered lines
-  numberwidth = 4,                         -- set number column width to 2 {default 4}
+-- Global options
+vim.o.background = 'dark'
+vim.o.termguicolors = true
+vim.o.splitright = true
+vim.o.splitbelow = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.hidden = true
+vim.o.incsearch = true
+vim.o.scrolloff = 7
+vim.o.mouse = 'a'
+-- vim.o.cmdheight = 2
+vim.o.updatetime = 100
+vim.o.undodir = os.getenv("HOME") .. '/.cache/vim/undo';
 
-  signcolumn = "yes",                      -- always show the sign column, otherwise it would shift the text each time
-  wrap = false,                            -- display lines as one long line
-  scrolloff = 8,                           -- minimal number of screen lines to keep above and below the cursor
-  sidescrolloff = 8,                       -- minimal number of screen columns either side of cursor if wrap is `false`
-  guifont = "monospace:h17",               -- the font used in graphical neovim applications
-  list = true,                             -- List extra whitespaces
-  listchars = 'tab:┆·,trail:·,precedes:,extends:', -- Indicators for extra whitespaces
-  undodir = os.getenv("HOME") .. '/.cache/vim/undo',
-}
 
-for k, v in pairs(options) do
-  vim.opt[k] = v
-end
+-- Window options
+vim.wo.number = true
+vim.wo.relativenumber = true
+vim.wo.signcolumn = 'number'
+vim.wo.wrap = false
+vim.wo.cursorline = true
 
--- vim.opt.shortmess = "ilmnrx"                        -- flags to shorten vim messages, see :help 'shortmess'
-vim.opt.shortmess:append "c"                           -- don't give |ins-completion-menu| messages
-vim.opt.iskeyword:append "-"                           -- hyphenated words recognized by searches
-vim.opt.formatoptions:remove({ "c", "r", "o" })        -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.
-vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")  -- separate vim plugins from neovim in case vim still in use
+
+-- Buffer options
+vim.o.tabstop = 2
+vim.bo.tabstop = 2
+vim.o.softtabstop = 2
+vim.bo.softtabstop = 2
+vim.o.shiftwidth = 2
+vim.bo.shiftwidth = 2
+vim.o.autoindent = true
+vim.bo.autoindent = true
+vim.o.expandtab = true
+vim.bo.expandtab = true
+vim.o.swapfile = false
+vim.bo.swapfile = false
+vim.o.undofile = true
+vim.bo.undofile = true
+
+
+vim.g.mapleader = ' '
+vim.b.mapleader = ' '
+
+-- Show extra whitespaces
+vim.wo.list = true
+vim.o.listchars = 'tab:┆·,trail:·,precedes:,extends:'
+
+
+-- NerdCommenter
+vim.g.NERDSpaceDelims = 1
+
+-- GitGutter
+vim.g.gitgutter_override_sign_column_highlight = 0
+vim.g.gitgutter_sign_added                     = '+'
+vim.g.gitgutter_sign_modified                  = '±'
+vim.g.gitgutter_sign_removed                   = '-'
+vim.g.gitgutter_sign_removed_first_line        = '×'
+vim.g.gitgutter_sign_modified_removed          = '×'

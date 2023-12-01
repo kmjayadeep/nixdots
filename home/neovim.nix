@@ -62,6 +62,9 @@
       lualine-nvim
       nvim-web-devicons
 
+      nerdcommenter
+      vim-gitgutter
+
       {
         plugin = nvim-treesitter.withPlugins (p: [
           p.tree-sitter-nix
@@ -78,6 +81,7 @@
     ];
 
     extraLuaConfig = ''
+      ${builtins.readFile ./nvim/binds.lua}
       ${builtins.readFile ./nvim/options.lua}
     '';
   };
