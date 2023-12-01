@@ -5,6 +5,9 @@
   inputs,
   ...
 }: {
+
+  # TODO: Move to https://github.com/nix-community/nixvim
+
   programs.neovim = let
     toLua = str: "lua << EOF\n${str}\nEOF\n";
     toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
@@ -21,6 +24,8 @@
     ];
 
     plugins = with pkgs.vimPlugins; [
+      neo-tree-nvim
+
       {
         plugin = nvim-lspconfig;
         config = toLuaFile ./nvim/plugin/lsp.lua;
@@ -32,13 +37,11 @@
       }
 
       {
-        plugin = gruvbox-nvim;
-        config = "colorscheme gruvbox";
+        # More in https://github.com/catppuccin/nvim/
+        plugin = catppuccin-nvim;
+        config = "colorscheme catppuccin-mocha";
       }
 
-      neodev-nvim
-
-      nvim-cmp
       {
         plugin = nvim-cmp;
         config = toLuaFile ./nvim/plugin/cmp.lua;
