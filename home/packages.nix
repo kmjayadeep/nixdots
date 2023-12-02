@@ -25,5 +25,6 @@
     # programming
     go
     docker-compose
+    ripgrep
   ];
 }
