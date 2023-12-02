@@ -8,3 +8,9 @@ Run
 ```
 sudo nixos-rebuild switch --flake .#jd-vm --fast
 ```
+
+# TODO
+
+* setup gammastep
+* wlogout
+* hyprland config
