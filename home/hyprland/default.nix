@@ -12,7 +12,7 @@
     waybar
   ];
 
-  # home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
+  home.file.".config/hypr/wallpaper.png".source = ./wallpaper.png;
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -85,9 +85,16 @@
           "workspaces, 1, 6, default"
         ];
       };
+
+      windowrule = [
+        "float,wlogout"
+        "move 0 0,wlogout"
+        "size 100% 100%,wlogout"
+        "animation slide,wlogout"
+      ];
     };
     extraConfig = ''
-      exec-once=${pkgs.swaybg}/bin/swaybg -i ~/workspace/nixdots/assets/wallpaper.png
+      exec-once=${pkgs.swaybg}/bin/swaybg -i ~/.config/hypr/wallpaper.png
       exec-once=${pkgs.wlsunset}/bin/wlsunset -l -23 -L -46
 
       ${builtins.readFile ./hyprland.conf}
