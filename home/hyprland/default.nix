@@ -12,7 +12,15 @@
     waybar
   ];
 
-  home.file.".config/hypr/hyprland.conf".source = ../../assets/hyprland.conf;
+  # home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
+
+
+  wayland.windowManager.hyprland = {
+    enable = true
+    settings = ''
+      ${builtins.readFile ./hyperland.conf}
+    ''
+  };
 
   # enable automounting disks
   services.udiskie.enable = true;
