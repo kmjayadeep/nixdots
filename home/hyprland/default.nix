@@ -14,12 +14,11 @@
 
   # home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
 
-
   wayland.windowManager.hyprland = {
-    enable = true
-    settings = ''
-      ${builtins.readFile ./hyperland.conf}
-    ''
+    enable = true;
+    extraConfig = ''
+      ${builtins.readFile ./hyprland.conf}
+    '';
   };
 
   # enable automounting disks
