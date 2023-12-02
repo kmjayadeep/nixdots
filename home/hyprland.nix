@@ -16,4 +16,5 @@
 
   # enable automounting disks
   services.udiskie.enable = true;
+  services.udiskie.tray = "never"; # tray doesn't work in wayland yet
 }
