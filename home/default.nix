@@ -12,7 +12,7 @@
     ./foot.nix
     ./git.nix
     ./gpg.nix
-    ./hyprland.nix
+    ./hyprland
     ./kubernetes.nix
     ./neovim.nix
     ./packages.nix

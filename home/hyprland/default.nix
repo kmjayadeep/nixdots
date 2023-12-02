@@ -12,7 +12,7 @@
     waybar
   ];
 
-  home.file.".config/hypr/hyprland.conf".source = ../assets/hyprland.conf;
+  home.file.".config/hypr/hyprland.conf".source = ../../assets/hyprland.conf;
 
   # enable automounting disks
   services.udiskie.enable = true;

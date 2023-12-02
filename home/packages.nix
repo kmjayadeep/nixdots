@@ -7,6 +7,7 @@
     eza # better ls
     bat # better cat
     tldr # better man
+    fzf # used by kubectx, notes
 
     alejandra # format nix files
 
