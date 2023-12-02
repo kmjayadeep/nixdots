@@ -3,9 +3,7 @@
   inputs,
   config,
   ...
-}:
-
-let
+}: let
   # Dependencies
   cat = "${pkgs.coreutils}/bin/cat";
   cut = "${pkgs.coreutils}/bin/cut";
@@ -26,7 +24,14 @@ let
   pavucontrol = "${pkgs.pavucontrol}/bin/pavucontrol";
 
   # Function to simplify making waybar outputs
-  jsonOutput = name: { pre ? "", text ? "", tooltip ? "", alt ? "", class ? "", percentage ? "" }: "${pkgs.writeShellScriptBin "waybar-${name}" ''
+  jsonOutput = name: {
+    pre ? "",
+    text ? "",
+    tooltip ? "",
+    alt ? "",
+    class ? "",
+    percentage ? "",
+  }: "${pkgs.writeShellScriptBin "waybar-${name}" ''
     set -euo pipefail
     ${pre}
     ${jq} -cn \
@@ -39,10 +44,7 @@ let
   ''}/bin/waybar-${name}";
 
   hyprland = config.wayland.windowManager.hyprland.package;
-in
-
-{
-
+in {
   programs.waybar = {
     enable = true;
     systemd.enable = true;
@@ -90,7 +92,7 @@ in
             headphone = "󰋋";
             headset = "󰋎";
             portable = "";
-            default = [ "" "" "" ];
+            default = ["" "" ""];
           };
           on-click = pavucontrol;
         };
@@ -220,10 +222,8 @@ in
           on-click = "${playerctl} play-pause";
         };
       };
-
     };
 
-    # TODO: Add style 
-
+    # TODO: Add style
   };
 }

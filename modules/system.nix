@@ -42,5 +42,4 @@
 
   # auto mount usb devices
   services.udisks2.enable = true;
-
 }
