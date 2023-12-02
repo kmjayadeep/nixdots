@@ -96,6 +96,10 @@
       # No windows can request maximize
       windowrulev2 = [
         "nomaximizerequest, class:.*"
+        "workspace 6 silent,class:^(discord)$"
+        "workspace 7 silent,class:^(steam)$"
+        "workspace 8 silent,class:^(dota2)$"
+        "workspace 0 silent,title:^(Spotify)$"
       ];
     };
     extraConfig = ''
