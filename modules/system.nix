@@ -38,4 +38,8 @@
 
   # Set neovim as default editor
   programs.neovim.defaultEditor = true;
+
+  # auto mount usb devices
+  services.udisks2.enable = true;
+
 }
