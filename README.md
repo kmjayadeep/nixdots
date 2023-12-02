@@ -14,3 +14,5 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 * setup gammastep
 * wlogout
 * hyprland config
+* neovim clipboard
+* gtk theme

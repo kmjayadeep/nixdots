@@ -10,6 +10,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  programs.nm-applet.enable = true;
 
   # Set default shell for all users
   # also important to set global env vars correctly
