@@ -88,9 +88,13 @@
 
       windowrule = [
         "float,wlogout"
-        "move 0 0,wlogout"
-        "size 100% 100%,wlogout"
+        "center,wlogout"
         "animation slide,wlogout"
+      ];
+
+      # No windows can request maximize
+      windowrulev2 = [
+        "nomaximizerequest, class:.*"
       ];
     };
     extraConfig = ''
