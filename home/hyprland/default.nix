@@ -10,6 +10,7 @@
     swaybg
     rofi-wayland
     waybar
+    pamixer
   ];
 
   home.file.".config/hypr/wallpaper.png".source = ./wallpaper.png;
@@ -102,6 +103,11 @@
       exec-once=${pkgs.wlsunset}/bin/wlsunset -l -23 -L -46
 
       ${builtins.readFile ./hyprland.conf}
+
+      # Audio
+      bind =,xf86audiolowervolume,exec,${pkgs.pamixer}/bin/pamixer -d 5
+      bind =,xf86audioraisevolume,exec,${pkgs.pamixer}/bin/pamixer -i 5
+      bind =,xf86audiomute,exec,${pkgs.pamixer}/bin/pamixer -t
     '';
   };
 

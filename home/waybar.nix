@@ -73,7 +73,6 @@ in {
         modules-right = [
           "network"
           "tray"
-          "custom/hostname"
         ];
 
         clock = {
@@ -114,10 +113,6 @@ in {
             Up: {bandwidthUpBits}
             Down: {bandwidthDownBits}'';
           on-click = "";
-        };
-        "custom/hostname" = {
-          exec = "echo $USER@$HOSTNAME";
-          on-click = "${systemctl} --user restart waybar";
         };
         "custom/unread-mail" = {
           interval = 5;
