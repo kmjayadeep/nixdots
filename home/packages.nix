@@ -21,6 +21,7 @@
     wlr-randr # xrandr alternative
     way-displays # arandr alternative
     neofetch
+    restic # for backup
 
     # programming
     go
