@@ -19,6 +19,7 @@
     ./shell.nix
     ./syncthing.nix
     ./taskwarrior.nix
+    ./theme.nix
     ./waybar.nix
     ./wlogout.nix
   ];

@@ -99,7 +99,7 @@
         "workspace 6 silent,class:^(discord)$"
         "workspace 7 silent,class:^(steam)$"
         "workspace 8 silent,class:^(dota2)$"
-        "workspace 0 silent,title:^(Spotify)$"
+        "workspace 10 silent,title:^(Spotify)$"
       ];
     };
     extraConfig = ''
@@ -112,6 +112,12 @@
       bind =,xf86audiolowervolume,exec,${pkgs.pamixer}/bin/pamixer -d 5
       bind =,xf86audioraisevolume,exec,${pkgs.pamixer}/bin/pamixer -i 5
       bind =,xf86audiomute,exec,${pkgs.pamixer}/bin/pamixer -t
+
+      # TODO: not working
+      # Super with , and . keys
+      bind = $mainMod,code:44,exec,${pkgs.pamixer}/bin/pamixer -d 5
+      bind = $mainMod,code:46,exec,${pkgs.pamixer}/bin/pamixer -d 5
+
     '';
   };
 
