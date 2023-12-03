@@ -51,7 +51,6 @@ in {
 
     settings = {
       primary = {
-        mode = "dock";
         layer = "top";
         height = 40;
         margin = "6";
@@ -77,8 +76,8 @@ in {
 
         clock = {
           interval = 1;
-          format = "{:%d/%m %H:%M:%S}";
-          format-alt = "{:%Y-%m-%d %H:%M:%S %z}";
+          format = "{:%b %d  %I:%M %p}";
+          format-alt = "{:%a, %Y %b %d  %I:%M %p}";
           on-click-left = "mode";
           tooltip-format = ''
             <big>{:%Y %B}</big>
@@ -104,7 +103,8 @@ in {
         };
         network = {
           interval = 3;
-          format-wifi = "   {essid}";
+          tooltip = false;
+          format-wifi = "   {essid} | {ipaddr} |   {bandwidthUpBytes}   {bandwidthDownBytes}";
           format-ethernet = "󰈁 Connected";
           format-disconnected = "";
           tooltip-format = ''
