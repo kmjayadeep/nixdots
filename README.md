@@ -14,10 +14,9 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 * setup gammastep
 * wlogout
 * hyprland config
-* neovim clipboard
 * fonts
-* pass
 * backup
 * scripts
 * syncthing
 * notes
+* psuite

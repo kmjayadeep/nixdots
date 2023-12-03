@@ -20,6 +20,7 @@
     extraPackages = with pkgs; [
       lua-language-server
       gopls
+      wl-clipboard
     ];
 
     plugins = with pkgs.vimPlugins; [

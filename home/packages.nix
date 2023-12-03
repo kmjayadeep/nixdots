@@ -28,5 +28,6 @@
     go
     docker-compose
     ripgrep
+    jq
   ];
 }

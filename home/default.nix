@@ -14,8 +14,10 @@
     ./gpg.nix
     ./hyprland
     ./kubernetes.nix
+    ./misc.nix
     ./neovim.nix
     ./packages.nix
+    ./pass.nix
     ./shell.nix
     ./syncthing.nix
     ./taskwarrior.nix
