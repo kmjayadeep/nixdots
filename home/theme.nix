@@ -6,13 +6,13 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Flat-Remix-Darkest-GTK-Blue";
+      name = "Flat-Remix-GTK-Blue-Dark";
       package = pkgs.flat-remix-gtk;
     };
 
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      name = "Flat-Remix-Blue-Dark";
+      package = pkgs.flat-remix-icon-theme;
     };
 
     gtk3.extraConfig = {
