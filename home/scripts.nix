@@ -5,5 +5,8 @@
   ...
 }: {
 
-  home.packages = [ (pkgs.buildEnv { name = "my-scripts"; paths = [ ../scripts ]; }) ];
+  home.sessionPath = [
+    "$HOME/workspace/scripts",
+  ];
+
 }
