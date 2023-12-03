@@ -64,9 +64,8 @@ in {
 
         modules-center = [
           "pulseaudio"
-          "battery"
           "clock"
-          "custom/unread-mail"
+          # "custom/unread-mail"
         ];
 
         modules-right = [

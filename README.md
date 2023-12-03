@@ -15,8 +15,8 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 * wlogout
 * hyprland config
 * fonts
-* backup
+* backup & crontab
 * scripts
-* syncthing
-* notes
-* psuite
+* https://github.com/Misterio77/nix-colors
+* lockscreen
+* dns encryption

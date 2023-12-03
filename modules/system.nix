@@ -9,8 +9,19 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Enable networking
-  networking.networkmanager.enable = true;
+  networking = {
+    networkmanager.enable = true;
+    nameservers = [
+      "1.1.1.1"
+      "1.0.0.1"
+      "2606:4700:4700::1111"
+      "2606:4700:4700::1001"
+    ];
+    # If using NetworkManager:
+    networkmanager.dns = "none";
+  };
   programs.nm-applet.enable = true;
+
 
   # Set default shell for all users
   # also important to set global env vars correctly

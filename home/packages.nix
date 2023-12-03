@@ -23,6 +23,7 @@
     way-displays # arandr alternative
     neofetch
     restic # for backup
+    dig
 
     # programming
     go
