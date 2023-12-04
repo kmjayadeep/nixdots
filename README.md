@@ -16,9 +16,8 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 * hyprland config
 * fonts
 * backup & crontab
-* scripts
 * https://github.com/Misterio77/nix-colors
-* lockscreen
 * dns encryption
 * lsp
 * cursor theme
+* sound keys in hypr

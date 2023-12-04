@@ -40,7 +40,15 @@
 
   # Enable bluetooth, enable pulseaudio, enable opengl (for Wayland)
   hardware = {
-    bluetooth.enable = true;
+    bluetooth = {
+      enable = true;
+      settings = {
+        General = {
+          # Show battery percentage of bt headset
+          Experimental = true;
+        };
+      };
+    };
     opengl = {
       enable = true;
       driSupport = true;
