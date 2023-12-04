@@ -21,3 +21,4 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 * lockscreen
 * dns encryption
 * lsp
+* cursor theme

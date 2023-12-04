@@ -123,6 +123,11 @@
       bind = $mainMod, Print, exec, grim "$HOME/media/screenshots/$(date --rfc-3339=s).png" && ${pkgs.libnotify}/bin/notify-send 'Screenshot saved'
       bind = $mainMod SHIFT, Print, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" "$HOME/media/screenshots/$(date --rfc-3339=s).png" && ${pkgs.libnotify}/bin/notify-send 'Screenshot saved'
 
+
+      # Logout
+      bind = $mainMod,X,exec,${pkgs.wlogout}/bin/wlogout
+      bind = CTRLALT,L,exec,${pkgs.swaylock}/bin/swaylock
+
     '';
   };
 

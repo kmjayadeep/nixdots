@@ -4,6 +4,10 @@
   inputs,
   ...
 }: {
+  imports = [
+    ./swayidle.nix
+  ];
+
   programs.swaylock = {
     enable = true;
     package = pkgs.swaylock-effects;
