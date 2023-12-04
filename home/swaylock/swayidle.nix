@@ -8,12 +8,14 @@
     enable = true;
     timeouts = [
       {
-        timeout = 20;
-        command = "${pkgs.swaylock}/bin/swaylock -fF";
+        # Lock when idle for 10m
+        timeout = 600;
+        command = "${pkgs.swaylock-effects}/bin/swaylock -fF";
       }
       {
-        timeout = 90;
-        command = "${pkgs.systemd}/bin/systemctl suspend";
+        # Suspend when idle for 1h
+        timeout = 3600;
+        command = "${pkgs.swaylock-effects}/bin/systemctl suspend";
       }
     ];
   };

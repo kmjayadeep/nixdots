@@ -125,7 +125,7 @@
 
 
       # Logout
-      bind = $mainMod,X,exec,${pkgs.wlogout}/bin/wlogout
+      bind = $mainMod SHIFT,P,exec,${pkgs.wlogout}/bin/wlogout
       bind = CTRLALT,L,exec,${pkgs.swaylock}/bin/swaylock
 
     '';
