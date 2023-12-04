@@ -22,7 +22,6 @@
   };
   programs.nm-applet.enable = true;
 
-
   # Set default shell for all users
   # also important to set global env vars correctly
   users.defaultUserShell = pkgs.zsh;
@@ -53,4 +52,7 @@
 
   # auto mount usb devices
   services.udisks2.enable = true;
+
+  # For swaylock to work
+  security.pam.services.swaylock = {};
 }

@@ -20,6 +20,7 @@
     ./misc.nix
     ./packages.nix
     ./pass.nix
+    ./scripts.nix
     ./shell.nix
     ./syncthing.nix
     ./taskwarrior.nix

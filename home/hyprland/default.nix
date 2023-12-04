@@ -104,7 +104,6 @@
     };
     extraConfig = ''
       exec-once=${pkgs.swaybg}/bin/swaybg -i ~/.config/hypr/wallpaper.png
-      exec-once=${pkgs.wlsunset}/bin/wlsunset -l -23 -L -46
 
       ${builtins.readFile ./hyprland.conf}
 

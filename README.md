@@ -20,3 +20,4 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 * https://github.com/Misterio77/nix-colors
 * lockscreen
 * dns encryption
+* lsp

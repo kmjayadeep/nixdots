@@ -4,9 +4,7 @@
   inputs,
   ...
 }: {
-
   home.sessionPath = [
-    "$HOME/workspace/scripts",
+    "$HOME/workspace/scripts"
   ];
-
 }
