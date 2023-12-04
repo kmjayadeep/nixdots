@@ -8,7 +8,7 @@
     bat # better cat
     tldr # better man
     fzf # used by kubectx, notes
-
+    wl-clipboard # clipboard
     alejandra # format nix files
 
     # GUI apps
