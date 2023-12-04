@@ -22,6 +22,8 @@
   playerctl = "${pkgs.playerctl}/bin/playerctl";
   playerctld = "${pkgs.playerctl}/bin/playerctld";
   pavucontrol = "${pkgs.pavucontrol}/bin/pavucontrol";
+  foot = "${pkgs.foot}/bin/foot";
+  neomutt = "${pkgs.neomutt}/bin/neomutt";
 
   # Function to simplify making waybar outputs
   jsonOutput = name: {
@@ -137,6 +139,7 @@ in {
             "unread" = "󰇮";
             "syncing" = "󰁪";
           };
+          on-click = "${foot} -T neomutt ${neomutt}";
         };
         "custom/gammastep" = {
           interval = 5;

@@ -2,6 +2,8 @@
 
 {
   programs.mbsync.enable = true;
+  services.mbsync.enable = true;
+
   programs.msmtp.enable = true;
   programs.notmuch.enable = true;
   programs.neomutt.enable = true;
@@ -29,7 +31,7 @@
             "![Gmail]*"
           ];
         };
-        passwordCommand = "gpg -q --decrypt ~/private/mail/secrets/jayadeepkm99.asc";
+        passwordCommand = "${pkgs.gnupg}/bin/gpg -q --yes --decrypt ~/private/mail/secrets/jayadeepkm99.asc";
 
         msmtp = {
           enable = true;
