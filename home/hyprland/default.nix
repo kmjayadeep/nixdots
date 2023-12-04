@@ -6,11 +6,12 @@
 }: {
   # hyprland is already installed at system level, this module configures it
   home.packages = with pkgs; [
-    # for wallpaper
-    swaybg
+    swaybg # for wallpaper
     rofi-wayland
     waybar
     pamixer
+    grim
+    slurp
   ];
 
   home.file.".config/hypr/wallpaper.png".source = ./wallpaper.png;
@@ -116,6 +117,11 @@
       # Super with , and . keys
       bind = $mainMod,code:44,exec,${pkgs.pamixer}/bin/pamixer -d 5
       bind = $mainMod,code:46,exec,${pkgs.pamixer}/bin/pamixer -d 5
+
+      # Screnshot
+      bind = , Print, exec, grim "$HOME/media/screenshots/$(date --rfc-3339=s).png" # Silent
+      bind = $mainMod, Print, exec, grim "$HOME/media/screenshots/$(date --rfc-3339=s).png" && ${pkgs.libnotify}/bin/notify-send 'Screenshot saved'
+      bind = $mainMod SHIFT, Print, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" "$HOME/media/screenshots/$(date --rfc-3339=s).png" && ${pkgs.libnotify}/bin/notify-send 'Screenshot saved'
 
     '';
   };

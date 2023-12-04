@@ -24,7 +24,6 @@
     };
 
     shellAliases = {
-      cat = "bat";
       sl = "eza";
       ls = "eza";
       l = "eza -l --icons";
