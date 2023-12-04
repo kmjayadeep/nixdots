@@ -32,6 +32,6 @@
     };
   };
 
-  home.file.".private/mail/jayadeepkm99.asc".source = ./files/jayadeepkm99.gpg;
-  home.file.".private/mail/signature".source = ./files/signature;
+  home.file."private/mail/jayadeepkm99.asc".source = ./files/jayadeepkm99.asc;
+  home.file."private/mail/signature".source = ./files/signature;
 }
