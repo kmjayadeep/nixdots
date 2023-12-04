@@ -63,4 +63,9 @@
 
   # For swaylock to work
   security.pam.services.swaylock = {};
+
+  # for ssh and gpg auto unlock at login
+  # Not using ssh agent at the moment
+  services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true;
 }

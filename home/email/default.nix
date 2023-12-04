@@ -1,12 +1,17 @@
 { config, lib, pkgs, ... }:
 
 {
-  programs.mbsync.enable = true;
-  services.mbsync.enable = true;
 
   programs.msmtp.enable = true;
   programs.notmuch.enable = true;
   programs.neomutt.enable = true;
+
+  programs.mbsync.enable = true;
+  services.mbsync = {
+    enable = true;
+    # Run every 2 mins
+    frequency = "*:0/2";
+  };
 
   accounts.email = {
     # Relative to home
