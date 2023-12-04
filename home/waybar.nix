@@ -63,12 +63,12 @@ in {
         ];
 
         modules-center = [
-          "pulseaudio"
           "clock"
-          # "custom/unread-mail"
+          "custom/unread-mail"
         ];
 
         modules-right = [
+          "pulseaudio"
           "network"
           "tray"
         ];
@@ -118,7 +118,7 @@ in {
           return-type = "json";
           exec = jsonOutput "unread-mail" {
             pre = ''
-              count=$(${find} ~/Mail/*/Inbox/new -type f | ${wc} -l)
+              count=$(${find} ~/private/mail/accounts/*/Inbox/new -type f | ${wc} -l)
               if ${pgrep} mbsync &>/dev/null; then
                 status="syncing"
               else if [ "$count" == "0" ]; then

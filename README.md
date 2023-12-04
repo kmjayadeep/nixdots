@@ -21,3 +21,4 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 * lsp
 * cursor theme
 * sound keys in hypr
+* nvim plugins - autopairs, surround etc
