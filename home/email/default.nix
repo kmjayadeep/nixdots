@@ -15,11 +15,6 @@
     postExec = "${pkgs.notmuch}/bin/notmuch new";
   };
 
-  programs.lieer.enable = true;
-  services.lieer = {
-    enable = true;
-  };
-
   accounts.email = {
     # Relative to home
     maildirBasePath = "private/mail/accounts";
@@ -36,16 +31,22 @@
           neomutt.enable = true; # Use notmuch virtual mailboxes in neomutt
         };
 
-        passwordCommand = "${pkgs.pass}/bin/pass mutt/jayadeepkm99@gmail.com";
+        mbsync = {
+          enable = true;
+          create = "both";
+          expunge = "both";
+          remove = "both";
+
+          patterns = [
+            "*"
+            "![Gmail]*"
+          ];
+        };
+
+        passwordCommand = "PASSWORD_STORE_DIR=$HOME/private/password-store ${pkgs.pass}/bin/pass mutt/jayadeepkm99@gmail.com";
 
         msmtp = {
           enable = true;
-        };
-
-        lieer.sync = {
-          enable = true;
-          # Run every 2 mins
-          frequency = "*:0/2";
         };
 
         neomutt = {
@@ -85,7 +86,7 @@
           ];
         };
 
-        passwordCommand = "${pkgs.pass}/bin/pass mutt/zoho-temp";
+        passwordCommand = "PASSWORD_STORE_DIR=$HOME/private/password-store ${pkgs.pass}/bin/pass mutt/zoho-temp";
 
         msmtp = {
           enable = true;
@@ -100,6 +101,5 @@
 
   };
 
-  home.file."private/mail/secrets/jayadeepkm99.asc".source = ./files/jayadeepkm99.asc;
   home.file."private/mail/secrets/signature".source = ./files/signature;
 }
