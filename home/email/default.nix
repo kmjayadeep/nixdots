@@ -41,7 +41,50 @@
             "![Gmail]*"
           ];
         };
-        passwordCommand = "${pkgs.gnupg}/bin/gpg -q --yes --decrypt ~/private/mail/secrets/jayadeepkm99.asc";
+        passwordCommand = "${pkgs.pass}/bin/pass mutt/jayadeepkm99@gmail.com";
+
+        msmtp = {
+          enable = true;
+        };
+
+        neomutt = {
+          enable = true;
+        };
+      };
+
+      "zoho-temp" = {
+        address = "mail@jayadeep.me";
+        realName = "Jayadeep KM";
+
+        flavor = "plain";
+        userName = "mail@jayadeep.me";
+
+        smtp = {
+          host = "smtp.zoho.com";
+          port = 587;
+        };
+        imap = {
+          host = "imap.zoho.com";
+          port = 993;
+        };
+
+        notmuch = {
+          enable = true;
+          neomutt.enable = true; # Use notmuch virtual mailboxes in neomutt
+        };
+
+        mbsync = {
+          enable = true;
+          create = "both";
+          expunge = "both";
+          remove = "both";
+
+          patterns = [
+            "*"
+          ];
+        };
+
+        passwordCommand = "${pkgs.pass}/bin/pass mutt/zoho-temp";
 
         msmtp = {
           enable = true;
