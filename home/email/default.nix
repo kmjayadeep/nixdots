@@ -15,6 +15,11 @@
     postExec = "${pkgs.notmuch}/bin/notmuch new";
   };
 
+  programs.lieer.enable = true;
+  services.lieer = {
+    enable = true;
+  };
+
   accounts.email = {
     # Relative to home
     maildirBasePath = "private/mail/accounts";
@@ -25,26 +30,22 @@
         realName = "Jayadeep KM";
         primary = true;
         flavor = "gmail.com";
+
         notmuch = {
           enable = true;
           neomutt.enable = true; # Use notmuch virtual mailboxes in neomutt
         };
 
-        mbsync = {
-          enable = true;
-          create = "both";
-          expunge = "both";
-          remove = "both";
-
-          patterns = [
-            "*"
-            "![Gmail]*"
-          ];
-        };
         passwordCommand = "${pkgs.pass}/bin/pass mutt/jayadeepkm99@gmail.com";
 
         msmtp = {
           enable = true;
+        };
+
+        lieer.sync = {
+          enable = true;
+          # Run every 2 mins
+          frequency = "*:0/2";
         };
 
         neomutt = {
