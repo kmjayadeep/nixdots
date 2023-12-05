@@ -21,9 +21,6 @@
 
     # browser
     brave
-
-    # networking
-    tailscale
   ];
 
   # Remove unecessary preinstalled packages

@@ -68,4 +68,10 @@
   # Not using ssh agent at the moment
   services.gnome.gnome-keyring.enable = true;
   programs.seahorse.enable = true;
+
+  # Prometheus Node-exporter for exposing node metrics to prometheus
+  services.prometheus.exporters.node.enable = true;
+
+  # install tailscale vpn; run tailscale up to setup initially
+  services.tailscale.enable = true;
 }
