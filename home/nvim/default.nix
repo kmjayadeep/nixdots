@@ -21,6 +21,7 @@
       lua-language-server
       gopls
       wl-clipboard
+      rnix-lsp
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -72,7 +73,6 @@
           p.tree-sitter-vim
           p.tree-sitter-bash
           p.tree-sitter-lua
-          p.tree-sitter-python
           p.tree-sitter-json
         ]);
         config = toLuaFile ./plugin/treesitter.lua;
