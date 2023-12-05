@@ -24,16 +24,17 @@ elif [[ "$1" == '--reboot' ]]; then
 elif [[ "$1" == '--hibernate' ]]; then
 	cdialog
 	if [[ "$?" == 0 ]]; then
+		swaylock -f
 		systemctl hibernate
     else
 		exit
     fi
 elif [[ "$1" == '--lock' ]]; then
-	swaylock
+	swaylock -f
 elif [[ "$1" == '--suspend' ]]; then
 	cdialog
 	if [[ "$?" == 0 ]]; then
-		swaylock
+		swaylock -f
 		systemctl suspend
     else
 		exit
