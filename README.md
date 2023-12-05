@@ -19,5 +19,4 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 * dns encryption
 * nvim plugins - autopairs, surround etc
 * neotree - follow directory
-* rofi theme
 * scripts wrapper

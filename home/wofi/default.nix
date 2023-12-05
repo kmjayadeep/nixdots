@@ -10,7 +10,7 @@
       ## General
       show="drun";
       prompt="Apps";
-      normal_window=tr20;
+      normal_window="tr20";
       layer="top";
       term="foot";
 
