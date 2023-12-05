@@ -11,6 +11,8 @@
     enable = true;
     # Run every 2 mins
     frequency = "*:0/2";
+    # Run notmuch indexer
+    postExec = "${pkgs.notmuch}/bin/notmuch new";
   };
 
   accounts.email = {
@@ -23,7 +25,10 @@
         realName = "Jayadeep KM";
         primary = true;
         flavor = "gmail.com";
-        notmuch.enable = true;
+        notmuch = {
+          enable = true;
+          neomutt.enable = true; # Use notmuch virtual mailboxes in neomutt
+        };
 
         mbsync = {
           enable = true;

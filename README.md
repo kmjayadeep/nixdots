@@ -22,3 +22,6 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 * cursor theme
 * sound keys in hypr
 * nvim plugins - autopairs, surround etc
+* neomutt - new accounts, editor bug
+* neotree - follow directory
+* lieer with notmuch
