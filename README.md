@@ -19,8 +19,6 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 * https://github.com/Misterio77/nix-colors
 * dns encryption
 * lsp
-* cursor theme
-* sound keys in hypr
 * nvim plugins - autopairs, surround etc
 * neomutt - new accounts, editor bug
 * neotree - follow directory

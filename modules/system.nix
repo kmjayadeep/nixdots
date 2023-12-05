@@ -72,6 +72,7 @@
   # Prometheus Node-exporter for exposing node metrics to prometheus
   services.prometheus.exporters.node.enable = true;
 
-  # install tailscale vpn; run tailscale up to setup initially
+  # install tailscale vpn; run the following to setup initially
+  # sudo tailscale up --accept-routes --accept-dns=false
   services.tailscale.enable = true;
 }

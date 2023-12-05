@@ -113,10 +113,9 @@
       bind =,xf86audioraisevolume,exec,${pkgs.pamixer}/bin/pamixer -i 5
       bind =,xf86audiomute,exec,${pkgs.pamixer}/bin/pamixer -t
 
-      # TODO: not working
       # Super with , and . keys
-      bind = $mainMod,code:44,exec,${pkgs.pamixer}/bin/pamixer -d 5
-      bind = $mainMod,code:46,exec,${pkgs.pamixer}/bin/pamixer -d 5
+      bind = $mainMod, Comma, exec,${pkgs.pamixer}/bin/pamixer -d 5
+      bind = $mainMod, Period, exec,${pkgs.pamixer}/bin/pamixer -i 5
 
       # Screnshot
       bind = , Print, exec, grim "$HOME/media/screenshots/$(date --rfc-3339=s).png" # Silent
