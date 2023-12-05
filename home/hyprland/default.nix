@@ -7,7 +7,6 @@
   # hyprland is already installed at system level, this module configures it
   home.packages = with pkgs; [
     swaybg # for wallpaper
-    rofi-wayland
     waybar
     pamixer
     grim

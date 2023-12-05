@@ -11,6 +11,7 @@
     ./hyprland
     ./nvim
     ./swaylock
+    ./wofi
 
     ./dunst.nix
     ./env.nix
