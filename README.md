@@ -25,3 +25,5 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 * neomutt - new accounts, editor bug
 * neotree - follow directory
 * lieer with notmuch
+* rofi theme
+* scripts wrapper

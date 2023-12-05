@@ -10,6 +10,11 @@
       package = pkgs.flat-remix-gtk;
     };
 
+    cursorTheme = {
+      name = "Catppuccin-Frappe-Dark-Cursors";
+      package = pkgs.catppuccin-cursors.frappeDark;
+    };
+
     iconTheme = {
       name = "Flat-Remix-Blue-Dark";
       package = pkgs.flat-remix-icon-theme;
