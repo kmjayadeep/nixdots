@@ -11,6 +11,7 @@
     ./hyprland
     ./nvim
     ./swaylock
+    ./waybar
     ./wofi
 
     ./dunst.nix
@@ -28,7 +29,6 @@
     ./taskwarrior.nix
     ./theme.nix
     ./timers.nix
-    ./waybar.nix
     ./wlogout.nix
   ];
 }

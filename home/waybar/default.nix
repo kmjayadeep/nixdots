@@ -51,6 +51,10 @@ in {
     enable = true;
     systemd.enable = true;
 
+    style = ''
+      ${builtins.readFile ./style.css}
+    '';
+
     settings = {
       primary = {
         layer = "top";
@@ -191,6 +195,5 @@ in {
       };
     };
 
-    # TODO: Add style
   };
 }
