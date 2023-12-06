@@ -21,6 +21,7 @@
 
     # browser
     brave
+    google-chrome
   ];
 
   # Remove unecessary preinstalled packages
