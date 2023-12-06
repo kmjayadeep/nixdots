@@ -59,7 +59,6 @@ in {
       primary = {
         layer = "top";
         height = 40;
-        margin = "6";
         position = "top";
         modules-left = [
           "hyprland/workspaces"
@@ -78,6 +77,24 @@ in {
           "network"
           "tray"
         ];
+
+        "hyprland/workspaces" = {
+          "format"=  "{icon}";
+          "on-click"= "activate";
+          "format-icons" =  {
+            "1" =  "1:    Web";
+            "2" =  "2:    Editor";
+            "3" =  "3:    Term";
+            "4" =  "4:    Remote";
+            "5" =  "5:    Todo";
+            "6" =  "6:    Social";
+            "7" =  "7:    Steam";
+            "8" =  "8:    Game";
+            "9" =  "9:    Scripts";
+            "10" =  "10:    Media";
+          };
+          "sort-by-number"= true;
+        };
 
         clock = {
           interval = 1;

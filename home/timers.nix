@@ -51,7 +51,7 @@
 
     };
 
-    backup-nuc = {
+    backup-private = {
       Unit = {
         Description = "Backup private folder";
       };
