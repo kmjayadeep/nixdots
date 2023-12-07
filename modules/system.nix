@@ -12,15 +12,39 @@
   networking = {
     networkmanager.enable = true;
     nameservers = [
-      "1.1.1.1"
-      "1.0.0.1"
-      "2606:4700:4700::1111"
-      "2606:4700:4700::1001"
+      "127.0.0.1" # Point to dnscrypt server running locally
+      # "1.1.1.1"
+      # "1.0.0.1"
+      # "2606:4700:4700::1111"
+      # "2606:4700:4700::1001"
     ];
-    # If using NetworkManager:
     networkmanager.dns = "none";
   };
   programs.nm-applet.enable = true;
+
+  # Encrypted DNS
+  services.dnscrypt-proxy2 = {
+    enable = true;
+    settings = {
+      ipv6_servers = true;
+      require_dnssec = true;
+
+      sources.public-resolvers = {
+        urls = [
+          "https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md"
+          "https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md"
+        ];
+        cache_file = "/var/lib/dnscrypt-proxy2/public-resolvers.md";
+        minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3";
+      };
+
+      server_names = ["cloudflare" "cloudflare-ipv6"];
+    };
+  };
+
+  systemd.services.dnscrypt-proxy2.serviceConfig = {
+    StateDirectory = "dnscrypt-proxy";
+  };
 
   # Set default shell for all users
   # also important to set global env vars correctly

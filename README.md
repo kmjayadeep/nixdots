@@ -16,7 +16,6 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 * fonts
 * backup & crontab
 * https://github.com/Misterio77/nix-colors
-* dns encryption
 * nvim plugins - autopairs, surround etc
 * neotree - follow directory
 * scripts wrapper
