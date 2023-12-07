@@ -54,12 +54,12 @@
         };
       };
 
-      "zoho-temp" = {
-        address = "mail@jayadeep.me";
+      "personal" = {
+        address = "kmjayadeep@zohomail.com";
         realName = "Jayadeep KM";
 
         flavor = "plain";
-        userName = "mail@jayadeep.me";
+        userName = "kmjayadeep@zohomail.com";
 
         smtp = {
           host = "smtp.zoho.com";
@@ -86,7 +86,7 @@
           ];
         };
 
-        passwordCommand = "PASSWORD_STORE_DIR=$HOME/private/password-store ${pkgs.pass}/bin/pass mutt/zoho-temp";
+        passwordCommand = "PASSWORD_STORE_DIR=$HOME/private/password-store ${pkgs.pass}/bin/pass mutt/kmjayadeep@zohomail.com";
 
         msmtp = {
           enable = true;
