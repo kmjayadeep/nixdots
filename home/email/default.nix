@@ -4,7 +4,6 @@
 
   programs.msmtp.enable = true;
   programs.notmuch.enable = true;
-  programs.neomutt.enable = true;
 
   programs.mbsync.enable = true;
   services.mbsync = {
@@ -39,7 +38,6 @@
 
           patterns = [
             "*"
-            "![Gmail]*"
           ];
         };
 
@@ -99,6 +97,12 @@
 
     };
 
+  };
+
+  programs.neomutt = {
+    enable = true;
+    vimKeys = true;
+    sidebar.enable = true;
   };
 
   home.file."private/mail/secrets/signature".source = ./files/signature;
