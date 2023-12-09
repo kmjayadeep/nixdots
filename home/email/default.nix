@@ -62,6 +62,7 @@
         smtp = {
           host = "smtp.zoho.com";
           port = 587;
+          tls.useStartTls = true;
         };
         imap = {
           host = "imap.zoho.com";

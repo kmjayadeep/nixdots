@@ -18,6 +18,7 @@
     wget
     kitty
     pavucontrol # Sound control
+    wireguard-tools # Wg-quick
 
     # browser
     brave
