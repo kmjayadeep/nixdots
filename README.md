@@ -11,7 +11,7 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 
 # TODO
 
-* hyprland config
+* hyprland config, group styles
 * fonts
 * backup & crontab
 * https://github.com/Misterio77/nix-colors

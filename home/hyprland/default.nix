@@ -20,7 +20,7 @@
     settings = {
       monitor = ",preferred,auto,auto";
 
-      env = "XCURSOR_SIZE,24";
+      env = "XCURSOR_SIZE,30";
 
       general = {
         gaps_in = 5;
@@ -33,6 +33,17 @@
 
         # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
         allow_tearing = false;
+      };
+
+      group = {
+        "col.border_active" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.border_inactive" = "rgba(595959aa)";
+        groupbar = {
+          gradients = false;
+          font_size = 14;
+          "col.active" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+          "col.inactive" = "rgba(595959aa)";
+        };
       };
 
       input = {

@@ -63,8 +63,7 @@ in {
         modules-left = [
           "hyprland/workspaces"
           "hyprland/submap"
-          "custom/currentplayer"
-          "custom/player"
+          "hyprland/window"
         ];
 
         modules-center = [
@@ -73,6 +72,8 @@ in {
         ];
 
         modules-right = [
+          "custom/currentplayer"
+          "custom/player"
           "pulseaudio"
           "network"
           "tray"
