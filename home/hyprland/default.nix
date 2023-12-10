@@ -103,7 +103,7 @@
         "workspace 6 silent,class:^(discord)$"
         "workspace 7 silent,class:^(steam)$"
         "workspace 8 silent,class:^(dota2)$"
-        "workspace 8 silent,class:^(DawnOfWar2)$"
+        "workspace 8,title:^(Warhammer)(.*)$"
         "workspace 10 silent,title:^(Spotify)$"
       ];
     };
