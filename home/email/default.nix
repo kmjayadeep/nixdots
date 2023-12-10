@@ -1,7 +1,9 @@
-{ config, lib, pkgs, ... }:
-
 {
-
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   programs.msmtp.enable = true;
   programs.notmuch.enable = true;
 
@@ -95,9 +97,7 @@
           enable = true;
         };
       };
-
     };
-
   };
 
   programs.neomutt = {

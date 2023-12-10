@@ -22,44 +22,44 @@
     layout = [
       {
         label = "suspend";
-        text = "Suspend";
+        text = "Suspend [s]";
         action = "~/.config/wlogout/actions --suspend";
-        keybind = "u";
+        keybind = "s";
       }
       {
         label = "logout";
-        text = "Logout";
+        text = "Logout [x]";
         action = "~/.config/wlogout/actions --logout";
-        keybind = "e";
+        keybind = "x";
       }
       {
         label = "lock";
-        text = "Lock";
+        text = "Lock [l]";
         action = "~/.config/wlogout/actions --lock";
         keybind = "l";
       }
       {
-        label = "hibernate";
-        text = "Hibernate";
-        action = "~/.config/wlogout/actions --hibernate";
-        keybind = "h";
-      }
-      {
         label = "reboot";
-        text = "Reboot";
+        text = "Reboot [r]";
         action = "~/.config/wlogout/actions --reboot";
         keybind = "r";
       }
       {
+        label = "hibernate";
+        text = "Hibernate [h]";
+        action = "~/.config/wlogout/actions --hibernate";
+        keybind = "h";
+      }
+      {
         label = "shutdown";
-        text = "Shutdown";
+        text = "Shutdown [S]";
         action = "~/.config/wlogout/actions --shutdown";
         keybind = "S";
       }
     ];
     #TODO: Not working
-    #style = ''
-    # ${builtins.readFile ./wlogout/style.css}
-    #'';
+    style = ''
+      ${builtins.readFile ./wlogout/style.css}
+    '';
   };
 }

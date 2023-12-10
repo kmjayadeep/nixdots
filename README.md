@@ -11,7 +11,6 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 
 # TODO
 
-* wlogout
 * hyprland config
 * fonts
 * backup & crontab

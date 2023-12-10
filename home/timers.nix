@@ -12,13 +12,13 @@
 
       Timer = {
         # Every day 9am
-        OnCalendar="*-*-* 9:00:00";
+        OnCalendar = "*-*-* 9:00:00";
         # Start immedietly if it missed the last schedule when the system is off
-        Persistent=true;
+        Persistent = true;
       };
 
       Install = {
-        WantedBy= [ "timers.target" ];
+        WantedBy = ["timers.target"];
       };
     };
     backup-private = {
@@ -28,15 +28,14 @@
 
       Timer = {
         # Every hour
-        OnCalendar="*-*-* *:00:00";
+        OnCalendar = "*-*-* *:00:00";
       };
 
       Install = {
-        WantedBy= [ "timers.target" ];
+        WantedBy = ["timers.target"];
       };
     };
   };
-
 
   systemd.user.services = {
     backup-nuc = {
@@ -45,10 +44,9 @@
       };
 
       Service = {
-        ExecStart="${config.home.homeDirectory}/workspace/scripts/backup";
-        Type="oneshot";
+        ExecStart = "${config.home.homeDirectory}/workspace/scripts/backup";
+        Type = "oneshot";
       };
-
     };
 
     backup-private = {
@@ -57,12 +55,9 @@
       };
 
       Service = {
-        ExecStart="${config.home.homeDirectory}/workspace/scripts/backup_private";
-        Type="oneshot";
+        ExecStart = "${config.home.homeDirectory}/workspace/scripts/backup_private";
+        Type = "oneshot";
       };
-
     };
-
   };
-
 }

@@ -88,17 +88,22 @@
       };
 
       windowrule = [
+        # Wlogout - show in current workspace with animation
         "float,wlogout"
-        "center,wlogout"
+        "move 0 0,wlogout"
+        "size 100% 100%,wlogout"
         "animation slide,wlogout"
       ];
 
-      # No windows can request maximize
       windowrulev2 = [
+        # No windows can request maximize
         "nomaximizerequest, class:.*"
+
+        # Workspace rules
         "workspace 6 silent,class:^(discord)$"
         "workspace 7 silent,class:^(steam)$"
         "workspace 8 silent,class:^(dota2)$"
+        "workspace 8 silent,class:^(DawnOfWar2)$"
         "workspace 10 silent,title:^(Spotify)$"
       ];
     };
