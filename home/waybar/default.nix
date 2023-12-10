@@ -74,7 +74,7 @@ in {
         modules-right = [
           "custom/tailscale"
           "custom/currentplayer"
-          "custom/player"
+          "custom/nowplaying"
           "pulseaudio"
           "network"
           "tray"
@@ -197,9 +197,18 @@ in {
           on-click = "${playerctld} shift";
           on-click-right = "${playerctld} unshift";
         };
-        "custom/player" = {
+        "custom/nowplaying" = {
           exec-if = "${playerctl} --ignore-player=brave status 2>/dev/null";
-          exec = ''${playerctl} --ignore-player=brave metadata --format '{"text": "{{title}} - {{artist}}", "alt": "{{status}}", "tooltip": "{{title}} - {{artist}} ({{album}})"}' 2>/dev/null '';
+          exec = jsonOutput "nowplaying" {
+            pre = ''
+              text="$(${playerctl} --ignore-player=brave metadata --format '{{title}} - {{artist}}')"
+              alt="$(${playerctl} --ignore-player=brave metadata --format '{{status}}')"
+              tooltip="$(${playerctl} --ignore-player=brave metadata --format '{{title}} - {{artist}} ({{album}})')"
+            '';
+            alt = "$alt";
+            tooltip = "$tooltip";
+            text = "$text";
+          };
           return-type = "json";
           interval = 2;
           max-length = 30;
