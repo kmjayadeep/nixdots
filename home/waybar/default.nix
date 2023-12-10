@@ -72,6 +72,7 @@ in {
         ];
 
         modules-right = [
+          "custom/tailscale"
           "custom/currentplayer"
           "custom/player"
           "pulseaudio"
@@ -168,8 +169,8 @@ in {
           return-type = "json";
           exec = jsonOutput "currentplayer" {
             pre = ''
-              player="$(${playerctl} status -f "{{playerName}}" 2>/dev/null || echo "No player active" | ${cut} -d '.' -f1)"
-              count="$(${playerctl} -l 2>/dev/null | ${wc} -l)"
+              player="$(${playerctl} --ignore-player=brave status -f "{{playerName}}" 2>/dev/null || echo "No player active" | ${cut} -d '.' -f1)"
+              count="$(${playerctl} --ignore-player=brave -l 2>/dev/null | ${wc} -l)"
               if ((count > 1)); then
                 more=" +$((count - 1))"
               else
@@ -197,8 +198,8 @@ in {
           on-click-right = "${playerctld} unshift";
         };
         "custom/player" = {
-          exec-if = "${playerctl} status 2>/dev/null";
-          exec = ''${playerctl} metadata --format '{"text": "{{title}} - {{artist}}", "alt": "{{status}}", "tooltip": "{{title}} - {{artist}} ({{album}})"}' 2>/dev/null '';
+          exec-if = "${playerctl} --ignore-player=brave status 2>/dev/null";
+          exec = ''${playerctl} --ignore-player=brave metadata --format '{"text": "{{title}} - {{artist}}", "alt": "{{status}}", "tooltip": "{{title}} - {{artist}} ({{album}})"}' 2>/dev/null '';
           return-type = "json";
           interval = 2;
           max-length = 30;
@@ -209,6 +210,15 @@ in {
             "Stopped" = "󰓛";
           };
           on-click = "${playerctl} play-pause";
+          on-scroll-up = "${playerctl} previous";
+          on-scroll-down = "${playerctl} next";
+        };
+        "custom/tailscale" = {
+          format= "TS ";
+          exec= "echo '{\"class\": \"connected\"}'";
+          exec-if= "test -d /proc/sys/net/ipv4/conf/tailscale0";
+          return-type= "json";
+          interval= 5;
         };
       };
     };
