@@ -13,7 +13,6 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 
 * hyprland config, group styles
 * fonts
-* backup & crontab
 * https://github.com/Misterio77/nix-colors
 * nvim plugins - autopairs, surround etc
 * neotree - follow directory

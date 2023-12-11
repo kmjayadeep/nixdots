@@ -44,6 +44,7 @@
       };
 
       Service = {
+        Environment = "PATH=/etc/profiles/per-user/jayadeep/bin:/run/current-system/sw/bin";
         ExecStart = "${config.home.homeDirectory}/workspace/scripts/backup";
         Type = "oneshot";
       };
@@ -55,6 +56,7 @@
       };
 
       Service = {
+        Environment = "PATH=/etc/profiles/per-user/jayadeep/bin:/run/current-system/sw/bin";
         ExecStart = "${config.home.homeDirectory}/workspace/scripts/backup_private";
         Type = "oneshot";
       };
