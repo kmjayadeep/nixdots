@@ -25,7 +25,10 @@
     ];
 
     plugins = with pkgs.vimPlugins; [
-      neo-tree-nvim
+      {
+        plugin = neo-tree-nvim;
+        config = toLuaFile ./plugin/neotree.lua;
+      }
 
       {
         plugin = nvim-lspconfig;
