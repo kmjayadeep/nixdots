@@ -11,6 +11,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    go-todo-exporter = {
+      url = "github:kmjayadeep/go-todo-exporter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   # All outputs for the system (configs)
@@ -22,6 +28,7 @@
     system = "x86_64-linux"; #current system
     pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
     lib = nixpkgs.lib;
+    go-todo-exporter = inputs.go-todo-exporter.packages.${system};
 
     # This lets us reuse the code to "create" a system
     # Credits go to sioodmy on this one!
@@ -39,7 +46,10 @@
             home-manager = {
               useUserPackages = true;
               useGlobalPkgs = true;
-              extraSpecialArgs = {inherit inputs;};
+              extraSpecialArgs = {
+                inherit inputs;
+                go-todo-exporter = go-todo-exporter;
+              };
               # Home manager config (configures user specific stuff like shell, aliases etc)
               users.jayadeep = ./home;
             };

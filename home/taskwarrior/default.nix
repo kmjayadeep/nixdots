@@ -3,6 +3,10 @@
   inputs,
   ...
 }: {
+  imports = [
+    ./todo-exporter.nix
+  ];
+
   home.packages = with pkgs; [
     # terminal ui for taskwarrior
     vit

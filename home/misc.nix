@@ -2,6 +2,7 @@
   config,
   lib,
   inputs,
+  go-todo-exporter,
   ...
 }: {
   home.sessionVariables = {

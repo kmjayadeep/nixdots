@@ -11,6 +11,7 @@
     ./hyprland
     ./nvim
     ./swaylock
+    ./taskwarrior
     ./waybar
     ./wofi
 
@@ -26,7 +27,6 @@
     ./scripts.nix
     ./shell.nix
     ./syncthing.nix
-    ./taskwarrior.nix
     ./theme.nix
     ./timers.nix
     ./wlogout.nix
