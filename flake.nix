@@ -17,6 +17,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # My bash scripts
+    scripts = {
+      url = "github:kmjayadeep/scripts";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   # All outputs for the system (configs)
@@ -29,6 +35,7 @@
     pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
     lib = nixpkgs.lib;
     go-todo-exporter = inputs.go-todo-exporter.packages.${system};
+    scripts = inputs.scripts.packages.${system};
 
     # This lets us reuse the code to "create" a system
     # Credits go to sioodmy on this one!
@@ -49,6 +56,7 @@
               extraSpecialArgs = {
                 inherit inputs;
                 go-todo-exporter = go-todo-exporter;
+                scripts = scripts;
               };
               # Home manager config (configures user specific stuff like shell, aliases etc)
               users.jayadeep = ./home;

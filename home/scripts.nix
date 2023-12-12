@@ -2,9 +2,15 @@
   config,
   lib,
   inputs,
+  scripts,
   ...
 }: {
-  home.sessionPath = [
-    "$HOME/workspace/scripts"
+
+  # Scripts to install
+  home.packages = with scripts; [
+    gitignore
+    pull
+    push
   ];
+
 }

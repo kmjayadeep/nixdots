@@ -146,7 +146,28 @@
         "go-todo-exporter": "go-todo-exporter",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "scripts": "scripts"
+      }
+    },
+    "scripts": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1702416560,
+        "narHash": "sha256-8bv6XnnoTskzUKIx1tzqehjq0dxHTaNOICJjYvZcRdc=",
+        "owner": "kmjayadeep",
+        "repo": "scripts",
+        "rev": "816af4a1c723527d3f97869f31cad4e484ed5faf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kmjayadeep",
+        "repo": "scripts",
+        "type": "github"
       }
     },
     "systems": {
