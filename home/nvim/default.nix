@@ -25,38 +25,45 @@
     ];
 
     plugins = with pkgs.vimPlugins; [
+
+      # File manager on the left
       {
         plugin = neo-tree-nvim;
         config = toLuaFile ./plugin/neotree.lua;
       }
+      nvim-web-devicons # Icons for file manager
 
+      # LSP
       {
         plugin = nvim-lspconfig;
         config = toLuaFile ./plugin/lsp.lua;
       }
 
-      {
-        plugin = comment-nvim;
-        config = toLua "require(\"Comment\").setup()";
-      }
-
-      {
-        # More catppuccin flavors in https://github.com/catppuccin/nvim/
-        plugin = catppuccin-nvim;
-        config = "colorscheme catppuccin";
-      }
-
+      # Autocomplete
       {
         plugin = nvim-cmp;
         config = toLuaFile ./plugin/cmp.lua;
       }
 
+      # Comment toggle with shortcuts
+      {
+        plugin = comment-nvim;
+        config = toLua "require(\"Comment\").setup()";
+      }
+
+      # Theme
+      # More catppuccin flavors in https://github.com/catppuccin/nvim/
+      {
+        plugin = catppuccin-nvim;
+        config = "colorscheme catppuccin";
+      }
+
+      # File opener, git files, fuzzy search etc
       {
         plugin = telescope-nvim;
         config = toLuaFile ./plugin/telescope.lua;
       }
-
-      telescope-fzf-native-nvim
+      telescope-fzf-native-nvim # Required for telescope to search files
 
       cmp_luasnip
       cmp-nvim-lsp
@@ -64,8 +71,11 @@
       luasnip
       friendly-snippets
 
-      lualine-nvim
-      nvim-web-devicons
+      # Status line
+      {
+        plugin = lualine-nvim;
+        config = toLua "require(\"lualine\").setup()";
+      }
 
       nerdcommenter
       vim-gitgutter
@@ -91,6 +101,12 @@
           p.tree-sitter-json
         ]);
         config = toLuaFile ./plugin/treesitter.lua;
+      }
+
+      # Make indentation more visible
+      {
+        plugin = indent-blankline-nvim;
+        config = toLuaFile ./plugin/ibl.lua;
       }
 
       vim-nix
