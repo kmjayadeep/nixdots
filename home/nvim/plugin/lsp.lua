@@ -4,8 +4,8 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', keys, func, { buffer = bufnr })
   end
 
-  bufmap('<leader>r', vim.lsp.buf.rename)
-  bufmap('<leader>a', vim.lsp.buf.code_action)
+  bufmap('<leader>rn', vim.lsp.buf.rename)
+  bufmap('<leader>ca', vim.lsp.buf.code_action)
 
   bufmap('gd', vim.lsp.buf.definition)
   bufmap('gD', vim.lsp.buf.declaration)
@@ -26,22 +26,14 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
-require('lspconfig').lua_ls.setup {
+-- Nix LS
+require('lspconfig').rnix.setup {
     on_attach = on_attach,
     capabilities = capabilities,
-	root_dir = function()
-        return vim.loop.cwd()
-    end,
-	cmd = { "lua-lsp" },
-    settings = {
-        Lua = {
-            workspace = { checkThirdParty = false },
-            telemetry = { enable = false },
-        },
-    }
 }
 
-require('lspconfig').rnix.setup {
+-- Golang LS
+require('lspconfig').gopls.setup{
     on_attach = on_attach,
     capabilities = capabilities,
 }

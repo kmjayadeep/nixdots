@@ -18,7 +18,6 @@
     vimdiffAlias = true;
 
     extraPackages = with pkgs; [
-      lua-language-server
       gopls
       wl-clipboard
       rnix-lsp
@@ -43,12 +42,10 @@
         plugin = nvim-cmp;
         config = toLuaFile ./plugin/cmp.lua;
       }
-
-      # Comment toggle with shortcuts
-      {
-        plugin = comment-nvim;
-        config = toLua "require(\"Comment\").setup()";
-      }
+      cmp-nvim-lsp # LSP integration for cmp
+      cmp_luasnip # luasnip integration for cmp
+      luasnip # Snippet engine for nvim
+      friendly-snippets # Snippets for a lot of languages
 
       # Theme
       # More catppuccin flavors in https://github.com/catppuccin/nvim/
@@ -64,11 +61,6 @@
       }
       telescope-fzf-native-nvim # Required for telescope to search files
 
-      cmp_luasnip
-      cmp-nvim-lsp
-
-      luasnip
-      friendly-snippets
 
       # Status line
       {
@@ -77,7 +69,7 @@
       }
 
       nerdcommenter
-      vim-gitgutter
+      vim-gitgutter # Show git diff +- on the left
 
       # For auto closing ( { etc
       {
@@ -91,6 +83,7 @@
         config = toLua "require(\"nvim-surround\").setup()";
       }
 
+      # Better syntax highlighting
       {
         plugin = nvim-treesitter.withPlugins (p: [
           p.tree-sitter-nix
@@ -98,6 +91,7 @@
           p.tree-sitter-bash
           p.tree-sitter-lua
           p.tree-sitter-json
+          p.tree-sitter-go
         ]);
         config = toLuaFile ./plugin/treesitter.lua;
       }
@@ -108,6 +102,7 @@
         config = toLuaFile ./plugin/ibl.lua;
       }
 
+      # Nix language support in nvim
       vim-nix
     ];
 
