@@ -30,5 +30,6 @@
     ./theme.nix
     ./timers.nix
     ./wlogout.nix
+    ./xdg.nix
   ];
 }

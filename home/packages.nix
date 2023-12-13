@@ -18,6 +18,8 @@
     obs-studio # For screen recording
     smplayer
     libsForQt5.kdenlive # For video editing
+    loupe # Image viewer
+    evince # PDF viewer
 
     # Other apps
     spotify-tui # spotify on terminal
