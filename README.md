@@ -14,3 +14,6 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 * hyprland config, group styles
 * fonts
 * https://github.com/Misterio77/nix-colors
+* vit
+* gameoff 
+* pomo

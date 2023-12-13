@@ -7,10 +7,10 @@
 }: {
   # Scripts to install
   home.packages = with scripts; [
-    gameoff
     gitignore
     mm
     notes
+    pomo
     pull
     push
     resticman

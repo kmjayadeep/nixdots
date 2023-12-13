@@ -31,10 +31,11 @@
       ip = "ip --color=auto";
       v = "\${EDITOR:-nvim}";
       rebuild = "sudo nixos-rebuild switch --flake $NIXOS_CONFIG_DIR --fast; notify-send 'Rebuild complete\!'";
+      gameoff = "killall -9 Discord steam dota2";
     };
 
-    # Source additional bash aliases
-    # It contains a loop for aliasing k8s commands, thats why it is separate
+    # Source additional shell aliases
+    # It contains a loop for aliasing k8s commands, thats why it needs to be sourced
     initExtra = ''
       source $HOME/.bash_aliases
     '';

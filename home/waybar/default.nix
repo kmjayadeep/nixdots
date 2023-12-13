@@ -2,6 +2,7 @@
   pkgs,
   inputs,
   config,
+  scripts,
   ...
 }: let
   # Dependencies
@@ -67,6 +68,7 @@ in {
         ];
 
         modules-center = [
+          "custom/pomo"
           "clock"
           "custom/unread-mail"
         ];
@@ -228,6 +230,11 @@ in {
           exec-if = "test -d /proc/sys/net/ipv4/conf/tailscale0";
           return-type = "json";
           interval = 5;
+        };
+        "custom/pomo" = {
+          exec = "${scripts.pomo}/bin/pomo show";
+          return-type = "text";
+          interval = 2;
         };
       };
     };
