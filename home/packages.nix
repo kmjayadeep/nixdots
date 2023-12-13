@@ -24,6 +24,7 @@
     neofetch
     restic # for backup
     dig
+    btop # Better htop
 
     # programming
     go

@@ -5,7 +5,6 @@
   scripts,
   ...
 }: {
-
   # Scripts to install
   home.packages = with scripts; [
     gameoff
@@ -17,5 +16,4 @@
     resticman
     vic
   ];
-
 }

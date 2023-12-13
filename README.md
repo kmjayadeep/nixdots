@@ -14,10 +14,6 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 * hyprland config, group styles
 * fonts
 * https://github.com/Misterio77/nix-colors
-* nvim plugins - autopairs, surround etc
-* neotree - follow directory
-* scripts wrapper
-* fix wofi colors
 * fix xdg dirs
 * fix mime types
 * pdf and image browsers

@@ -5,7 +5,6 @@
   go-todo-exporter,
   ...
 }: {
-
   systemd.user.services = {
     go-todo-exporter = {
       Unit = {
@@ -19,8 +18,6 @@
       Install = {
         WantedBy = ["graphical-session.target"];
       };
-
     };
-
   };
 }

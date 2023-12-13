@@ -223,11 +223,11 @@ in {
           on-scroll-down = "${playerctl} next";
         };
         "custom/tailscale" = {
-          format= "TS ";
-          exec= "echo '{\"class\": \"connected\"}'";
-          exec-if= "test -d /proc/sys/net/ipv4/conf/tailscale0";
-          return-type= "json";
-          interval= 5;
+          format = "TS ";
+          exec = "echo '{\"class\": \"connected\"}'";
+          exec-if = "test -d /proc/sys/net/ipv4/conf/tailscale0";
+          return-type = "json";
+          interval = 5;
         };
       };
     };

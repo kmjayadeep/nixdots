@@ -22,7 +22,6 @@
       url = "github:kmjayadeep/scripts";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
   # All outputs for the system (configs)

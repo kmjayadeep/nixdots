@@ -70,6 +70,18 @@
       nerdcommenter
       vim-gitgutter
 
+      # For auto closing ( { etc
+      {
+        plugin = autoclose-nvim;
+        config = toLua "require(\"autoclose\").setup()";
+      }
+
+      # For select/delete/change around { ( tags etc
+      {
+        plugin = nvim-surround;
+        config = toLua "require(\"nvim-surround\").setup()";
+      }
+
       {
         plugin = nvim-treesitter.withPlugins (p: [
           p.tree-sitter-nix
