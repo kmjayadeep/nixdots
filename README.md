@@ -17,5 +17,5 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 * fix xdg dirs
 * fix mime types
 * pdf and image browsers
-* video player
-* video editor
+* neovim lsp - go, snippets, completing text from buffer
+* nvim check installed plugins
