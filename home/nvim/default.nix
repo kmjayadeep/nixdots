@@ -25,7 +25,6 @@
     ];
 
     plugins = with pkgs.vimPlugins; [
-
       # File manager on the left
       {
         plugin = neo-tree-nvim;
