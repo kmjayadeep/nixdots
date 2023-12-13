@@ -15,5 +15,3 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 * fonts
 * https://github.com/Misterio77/nix-colors
 * vit
-* gameoff 
-* pomo
