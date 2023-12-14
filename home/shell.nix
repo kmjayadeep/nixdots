@@ -31,7 +31,7 @@
       ip = "ip --color=auto";
       v = "\${EDITOR:-nvim}";
       rebuild = "sudo nixos-rebuild switch --flake $NIXOS_CONFIG_DIR --fast; notify-send 'Rebuild complete\!'";
-      gameoff = "killall -9 Discord steam dota2";
+      gameoff = "killall -9 .Discord-wrapped steam dota2";
     };
 
     # Source additional shell aliases

@@ -58,11 +58,21 @@
     initialPassword = "password"; # Don't forget to change this
   };
 
-  # Sound
-  sound = {enable = true;};
-  hardware.pulseaudio.enable = true;
+  # Disable alsa and pulseaudio
+  sound = {enable = false;};
+  hardware.pulseaudio.enable = false;
 
-  # Enable bluetooth, enable pulseaudio, enable opengl (for Wayland)
+  # Sound with pipewire
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true;
+    wireplumber.enable = true;
+  };
+  security.rtkit.enable = true;
+
+  # Enable bluetooth, enable opengl (for Wayland)
   hardware = {
     bluetooth = {
       enable = true;
