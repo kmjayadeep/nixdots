@@ -17,6 +17,7 @@
     spotify
     obs-studio # For screen recording
     smplayer
+    mpv # dependency for smplayer
     libsForQt5.kdenlive # For video editing
     loupe # Image viewer
     evince # PDF viewer
@@ -35,5 +36,6 @@
     docker-compose
     ripgrep
     jq
+    ansible
   ];
 }

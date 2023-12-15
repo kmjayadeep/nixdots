@@ -19,6 +19,7 @@
     kitty
     pavucontrol # Sound control
     wireguard-tools # Wg-quick
+    nfs-utils
 
     # browser
     brave

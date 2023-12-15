@@ -8,6 +8,7 @@
     ./container.nix
     ./fonts.nix
     ./gui.nix
+    ./nfs.nix
     ./nixos.nix
     ./packages.nix
     ./ssh.nix
