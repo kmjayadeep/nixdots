@@ -8,12 +8,16 @@
   # Scripts to install
   home.packages = with scripts; [
     gitignore
+    kcontext
+    makescript
     mm
     notes
     pomo
+    publiclocation
     pull
     push
     resticman
+    todo
     vic
   ];
 }

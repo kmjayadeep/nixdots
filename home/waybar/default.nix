@@ -68,12 +68,15 @@ in {
         ];
 
         modules-center = [
+          "custom/todo"
           "custom/pomo"
           "clock"
           "custom/unread-mail"
+          "custom/kcontext"
         ];
 
         modules-right = [
+          "custom/publiclocation"
           "custom/tailscale"
           "custom/currentplayer"
           "custom/nowplaying"
@@ -235,6 +238,21 @@ in {
           exec = "${scripts.pomo}/bin/pomo show";
           return-type = "text";
           interval = 2;
+        };
+        "custom/todo" = {
+          exec = "${scripts.todo}/bin/todo count";
+          return-type = "text";
+          interval = 5;
+        };
+        "custom/kcontext" = {
+          exec = "${scripts.kcontext}/bin/kcontext";
+          return-type = "text";
+          interval = 2;
+        };
+        "custom/publiclocation" = {
+          exec = "${scripts.publiclocation}/bin/publiclocation";
+          return-type = "text";
+          interval = 5;
         };
       };
     };

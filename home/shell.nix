@@ -32,6 +32,7 @@
       v = "\${EDITOR:-nvim}";
       rebuild = "sudo nixos-rebuild switch --flake $NIXOS_CONFIG_DIR --fast; notify-send 'Rebuild complete\!'";
       gameoff = "killall -9 .Discord-wrapped steam dota2";
+      t = "task";
     };
 
     # Source additional shell aliases
