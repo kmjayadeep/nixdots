@@ -20,6 +20,8 @@
     pavucontrol # Sound control
     wireguard-tools # Wg-quick
     nfs-utils
+    gnumake
+    xdg-utils # for xdg-open
 
     # browser
     brave

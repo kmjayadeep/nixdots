@@ -10,24 +10,20 @@
   home.packages = with pkgs; [
     # terminal ui for taskwarrior
     vit
+    # Open task annoted items externally, eg: open urls in browser
+    taskopen
   ];
+
+  home.file.".vit/config.ini".source = ./vit-config.ini;
 
   # Enable taskwarrior
   programs.taskwarrior = {
     dataLocation = "~/private/psuite/todo";
     enable = true;
     config = {
-      uda.reviewed.type = "date";
-      uda.reviewed.label = "Reviewed";
-      report._reviewed.description = "Tasksh review report.  Adjust the filter to your needs.";
-      report._reviewed.columns = "uuid";
-      report._reviewed.sort = "reviewed+,modified+";
-      report._reviewed.filter = "( reviewed.none: or reviewed.before:now-6days ) and ( +PENDING or +WAITING )";
       context.ct.read = "project:ct";
       context.ct.write = "project:ct";
-      context.avesha.read = "project:avesha";
-      context.avesha.write = "project:avesha";
-      context.nowork.read = "project.isnt:ct project.isnt:avesha project.isnt:vmo";
+      context.nowork.read = "project.isnt:ct";
       context.nooffice.read = "project.isnt:ct";
 
       # GTD - get things done: https://nfraprado.net/post/managing-my-tasks-using-vit.html

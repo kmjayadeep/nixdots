@@ -12,5 +12,6 @@
     kubie
     fluxcd
     kind
+    ko
   ];
 }
