@@ -17,6 +17,7 @@
     pull
     push
     resticman
+    tchat
     todo
     vic
   ];
