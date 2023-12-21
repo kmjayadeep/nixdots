@@ -12,6 +12,8 @@
     enableAutosuggestions = true;
     syntaxHighlighting.enable = true;
 
+    history.path = "${config.home.homeDirectory}/private/zsh/zsh_history";
+
     oh-my-zsh = {
       enable = true;
       plugins = [

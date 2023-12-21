@@ -6,6 +6,7 @@
 }: {
   programs.gpg = {
     enable = true;
+    homedir = "${config.home.homeDirectory}/private/gpg";
   };
 
   services.gpg-agent = {
