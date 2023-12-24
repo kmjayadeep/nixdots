@@ -89,9 +89,9 @@ in {
           interval = 5;
         };
         "custom/kcontext" = {
-          exec = "${scripts.kcontext}/bin/kcontext";
+          exec = "KUBECONFIG=${config.home.homeDirectory}/private/kube/config ${scripts.kcontext}/bin/kcontext";
           return-type = "text";
-          interval = 5;
+          interval = 2;
         };
         "custom/tailscale" = {
           format = "TS ";
@@ -297,16 +297,6 @@ in {
         };
         "custom/pomo" = {
           exec = "${scripts.pomo}/bin/pomo show";
-          return-type = "text";
-          interval = 2;
-        };
-        "custom/todo" = {
-          exec = "${scripts.todo}/bin/todo count";
-          return-type = "text";
-          interval = 5;
-        };
-        "custom/kcontext" = {
-          exec = "${scripts.kcontext}/bin/kcontext";
           return-type = "text";
           interval = 2;
         };

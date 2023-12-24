@@ -198,6 +198,7 @@ window#waybar.hidden {
 #custom-tailscale,
 #custom-nowplaying,
 #custom-currentplayer,
+#custom-kcontext,
 #clock
 {
 	border-radius: 4px;

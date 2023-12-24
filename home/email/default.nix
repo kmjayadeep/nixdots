@@ -43,7 +43,7 @@
           ];
         };
 
-        passwordCommand = "PASSWORD_STORE_DIR=$HOME/private/password-store ${pkgs.pass}/bin/pass mutt/jayadeepkm99@gmail.com";
+        passwordCommand = "PASSWORD_STORE_DIR=$HOME/private/password-store GNUPGHOME=$HOME/private/gpg  ${pkgs.pass}/bin/pass mutt/jayadeepkm99@gmail.com";
 
         msmtp = {
           enable = true;
@@ -87,7 +87,7 @@
           ];
         };
 
-        passwordCommand = "PASSWORD_STORE_DIR=$HOME/private/password-store ${pkgs.pass}/bin/pass mutt/kmjayadeep@zohomail.com";
+        passwordCommand = "PASSWORD_STORE_DIR=$HOME/private/password-store GNUPGHOME=$HOME/private/gpg ${pkgs.pass}/bin/pass mutt/kmjayadeep@zohomail.com";
 
         msmtp = {
           enable = true;
