@@ -12,5 +12,5 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 # TODO
 
 * hyprland config, group styles
-* fonts
+* fonts (iosevka?)
 * https://github.com/Misterio77/nix-colors

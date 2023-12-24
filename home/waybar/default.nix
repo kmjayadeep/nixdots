@@ -13,6 +13,7 @@
   pgrep = "${pkgs.procps}/bin/pgrep";
   tail = "${pkgs.coreutils}/bin/tail";
   wc = "${pkgs.coreutils}/bin/wc";
+  tailscale = "${pkgs.tailscale}/bin/tailscale";
   xargs = "${pkgs.findutils}/bin/xargs";
   timeout = "${pkgs.coreutils}/bin/timeout";
   ping = "${pkgs.iputils}/bin/ping";
@@ -57,49 +58,105 @@ in {
     '';
 
     settings = {
-      primary = {
+      botttom = {
         layer = "top";
-        height = 40;
-        position = "top";
+        height = 32;
+        position = "bottom";
         modules-left = [
-          "hyprland/workspaces"
-          "hyprland/submap"
-          "hyprland/window"
+          "custom/kcontext"
         ];
 
         modules-center = [
           "custom/todo"
-          "custom/pomo"
-          "clock"
-          "custom/unread-mail"
-          "custom/kcontext"
         ];
 
         modules-right = [
-          "custom/publiclocation"
+          "custom/publicweather"
+          "network#speed"
           "custom/tailscale"
-          "custom/currentplayer"
+        ];
+
+        "network#speed" = {
+          interval = 3;
+          tooltip = false;
+          format = "  {bandwidthUpBytes}   {bandwidthDownBytes}";
+          on-click = "";
+        };
+
+        "custom/todo" = {
+          exec = "${scripts.todo}/bin/todo count";
+          return-type = "text";
+          interval = 5;
+        };
+        "custom/kcontext" = {
+          exec = "${scripts.kcontext}/bin/kcontext";
+          return-type = "text";
+          interval = 5;
+        };
+        "custom/tailscale" = {
+          format = "TS ";
+          exec = "echo '{\"class\": \"connected\"}'";
+          exec-if = "${tailscale} status";
+          return-type = "text";
+          interval = 5;
+        };
+        "custom/publicweather" = {
+          exec = "${scripts.publicweather}/bin/publicweather";
+          return-type = "text";
+          interval = 5;
+        };
+      };
+
+      primary = {
+        layer = "top";
+        height = 32;
+        position = "top";
+        modules-left = [
+          "hyprland/workspaces"
+        ];
+
+        modules-center = [
+          "custom/pomo"
+          "clock"
+          "custom/unread-mail"
+        ];
+
+        modules-right = [
           "custom/nowplaying"
+          "cpu"
+          "memory"
           "pulseaudio"
-          "network"
+          "network#info"
           "battery"
           "tray"
         ];
+
+        "memory" = {
+          "interval" = 30;
+          "format" = "{}% ";
+          "max-length" = 10;
+        };
+
+        "cpu" = {
+          "interval" = 10;
+          "format" = "{}% ";
+          "max-length" = 10;
+        };
 
         "hyprland/workspaces" = {
           "format" = "{icon}";
           "on-click" = "activate";
           "format-icons" = {
-            "1" = "1:    Web";
-            "2" = "2:    Editor";
-            "3" = "3:    Term";
-            "4" = "4:    Remote";
-            "5" = "5:    Todo";
-            "6" = "6:    Social";
-            "7" = "7:    Steam";
-            "8" = "8:    Game";
-            "9" = "9:    Scripts";
-            "10" = "10:    Media";
+            "1" = "  Web";
+            "2" = "  Editor";
+            "3" = "  Term";
+            "4" = "  Remote";
+            "5" = "  Todo";
+            "6" = "  Social";
+            "7" = "  Steam";
+            "8" = "  Game";
+            "9" = "  Scripts";
+            "10" = "  Media";
           };
           "sort-by-number" = true;
         };
@@ -107,7 +164,7 @@ in {
         clock = {
           interval = 1;
           format = "{:%b %d  %I:%M %p}";
-          format-alt = "{:%a, %Y %b %d  %I:%M %p}";
+          # format-alt = "{:%a, %Y %b %d  %I:%M %p}";
           on-click-left = "mode";
           tooltip-format = ''
             <big>{:%Y %B}</big>
@@ -131,17 +188,12 @@ in {
             deactivated = "󰒲";
           };
         };
-        network = {
+        "network#info" = {
           interval = 3;
-          tooltip = false;
-          format-wifi = "   {essid} |   {bandwidthUpBytes}   {bandwidthDownBytes}";
+          tooltip = true;
+          format-wifi = "  {essid}";
           format-ethernet = "󰈁 Connected";
           format-disconnected = "";
-          tooltip-format = ''
-            {ifname}
-            {ipaddr}/{cidr}
-            Up: {bandwidthUpBits}
-            Down: {bandwidthDownBits}'';
           on-click = "";
         };
         battery = {
@@ -176,7 +228,7 @@ in {
             text = "$count";
             alt = "$status";
           };
-          format = "{icon}  ({})";
+          format = "{icon} ({})";
           format-icons = {
             "read" = "󰇯";
             "unread" = "󰇮";
@@ -187,6 +239,7 @@ in {
         "custom/currentplayer" = {
           interval = 2;
           return-type = "json";
+          exec-if = "${playerctl} --ignore-player=brave status 2>/dev/null";
           exec = jsonOutput "currentplayer" {
             pre = ''
               player="$(${playerctl} --ignore-player=brave status -f "{{playerName}}" 2>/dev/null || echo "No player active" | ${cut} -d '.' -f1)"
@@ -242,13 +295,6 @@ in {
           on-scroll-up = "${playerctl} previous";
           on-scroll-down = "${playerctl} next";
         };
-        "custom/tailscale" = {
-          format = "TS ";
-          exec = "echo '{\"class\": \"connected\"}'";
-          exec-if = "test -d /proc/sys/net/ipv4/conf/tailscale0";
-          return-type = "json";
-          interval = 5;
-        };
         "custom/pomo" = {
           exec = "${scripts.pomo}/bin/pomo show";
           return-type = "text";
@@ -263,11 +309,6 @@ in {
           exec = "${scripts.kcontext}/bin/kcontext";
           return-type = "text";
           interval = 2;
-        };
-        "custom/publiclocation" = {
-          exec = "${scripts.publiclocation}/bin/publiclocation";
-          return-type = "text";
-          interval = 5;
         };
       };
     };
