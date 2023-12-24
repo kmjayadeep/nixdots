@@ -11,6 +11,7 @@
     pamixer
     grim
     slurp
+    light # for screen brightness
   ];
 
   home.file.".config/hypr/wallpaper.png".source = ./wallpaper.png;
@@ -137,6 +138,9 @@
       bind = $mainMod, Print, exec, grim "$HOME/media/screenshots/$(date --rfc-3339=s).png" && ${pkgs.libnotify}/bin/notify-send 'Screenshot saved'
       bind = $mainMod SHIFT, Print, exec, ${pkgs.grim}/bin/grim -g "$(${pkgs.slurp}/bin/slurp)" "$HOME/media/screenshots/$(date --rfc-3339=s).png" && ${pkgs.libnotify}/bin/notify-send 'Screenshot saved'
 
+      # Brightness
+      bindsym XF86MonBrightnessDown exec ${pkgs.light}/bin/light -U 10
+      bindsym XF86MonBrightnessUp exec ${pkgs.light}/bin/light -A 10
 
       # Logout
       bind = $mainMod SHIFT,P,exec,${pkgs.wlogout}/bin/wlogout

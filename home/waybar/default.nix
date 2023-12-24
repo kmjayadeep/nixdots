@@ -82,6 +82,7 @@ in {
           "custom/nowplaying"
           "pulseaudio"
           "network"
+          "battery"
           "tray"
         ];
 
@@ -133,7 +134,7 @@ in {
         network = {
           interval = 3;
           tooltip = false;
-          format-wifi = "   {essid} | {ipaddr} |   {bandwidthUpBytes}   {bandwidthDownBytes}";
+          format-wifi = "   {essid} |   {bandwidthUpBytes}   {bandwidthDownBytes}";
           format-ethernet = "󰈁 Connected";
           format-disconnected = "";
           tooltip-format = ''
@@ -142,6 +143,20 @@ in {
             Up: {bandwidthUpBits}
             Down: {bandwidthDownBits}'';
           on-click = "";
+        };
+        battery = {
+          interval = 60;
+          states = {
+            warning = 30;
+            critical = 15;
+          };
+          "format" = "{icon} {capacity}%";
+          "format-plugged" = "  {capacity}%";
+          "format-charging" = " {capacity}%";
+          "format-icons" = ["" "" "" "" ""];
+          "format-alt" = "{icon} {time}";
+          "format-time" = "{H}h {M}min";
+          "tooltip" = true;
         };
         "custom/unread-mail" = {
           interval = 5;

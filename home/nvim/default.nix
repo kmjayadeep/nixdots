@@ -61,7 +61,6 @@
       }
       telescope-fzf-native-nvim # Required for telescope to search files
 
-
       # Status line
       {
         plugin = lualine-nvim;

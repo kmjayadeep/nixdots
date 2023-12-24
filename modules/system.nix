@@ -53,7 +53,12 @@
   # Set up user and enable sudo
   users.users.jayadeep = {
     isNormalUser = true;
-    extraGroups = ["networkmanager" "wheel" "docker"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+      "light" # For screen brightness control
+    ];
     shell = pkgs.zsh;
     initialPassword = "password"; # Don't forget to change this
   };
