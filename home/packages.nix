@@ -11,9 +11,11 @@
     wl-clipboard # clipboard
     alejandra # format nix files
     protonmail-bridge # For protonmail
+    unzip
 
     # GUI apps
     pcmanfm # file manager
+    xarchiver # extract archives in pcmanfm
     discord
     spotify
     obs-studio # For screen recording
