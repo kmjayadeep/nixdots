@@ -32,13 +32,8 @@ elif [[ "$1" == '--hibernate' ]]; then
 elif [[ "$1" == '--lock' ]]; then
 	swaylock -f
 elif [[ "$1" == '--suspend' ]]; then
-	cdialog
-	if [[ "$?" == 0 ]]; then
-		swaylock -f
-		systemctl suspend
-    else
-		exit
-    fi
+  swaylock -f
+  systemctl suspend
 elif [[ "$1" == '--logout' ]]; then
 	cdialog
 	if [[ "$?" == 0 ]]; then
