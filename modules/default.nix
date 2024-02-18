@@ -7,6 +7,7 @@
   imports = [
     ./container.nix
     ./fonts.nix
+    # ./gnome.nix # testing
     ./gui.nix
     ./nfs.nix
     ./nixos.nix

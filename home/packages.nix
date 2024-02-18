@@ -10,7 +10,6 @@
     fzf # used by kubectx, notes
     wl-clipboard # clipboard
     alejandra # format nix files
-    protonmail-bridge # For protonmail
     unzip
 
     # GUI apps

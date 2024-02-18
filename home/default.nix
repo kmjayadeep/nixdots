@@ -24,6 +24,7 @@
     ./misc.nix
     ./packages.nix
     ./pass.nix
+    ./rbw.nix
     ./scripts.nix
     ./shell.nix
     ./syncthing.nix

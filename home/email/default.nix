@@ -7,6 +7,10 @@
   programs.msmtp.enable = true;
   programs.notmuch.enable = true;
 
+  home.packages = with pkgs; [
+    protonmail-bridge # for proton mail
+  ];
+
   programs.mbsync.enable = true;
   services.mbsync = {
     enable = true;
