@@ -4,6 +4,13 @@
   inputs,
   ...
 }: {
+
+  # github cli
+  programs.gh = {
+    enable = true;
+    settings.git_protocol = "ssh";
+  };
+
   programs.git = {
     enable = true;
     userName = "Jayadeep KM";
