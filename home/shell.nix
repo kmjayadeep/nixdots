@@ -41,6 +41,7 @@
     # It contains a loop for aliasing k8s commands, thats why it needs to be sourced
     initExtra = ''
       source $HOME/.bash_aliases
+      export PATH=$PATH:~/.local/bin
     '';
   };
 
