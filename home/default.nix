@@ -10,9 +10,9 @@
     ./email
     ./i3
     ./nvim
+    ./polybar
     ./swaylock
     ./taskwarrior
-    ./waybar
     ./wofi
 
     ./dunst.nix
