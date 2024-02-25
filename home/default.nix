@@ -8,7 +8,7 @@
 
   imports = [
     ./email
-    ./hyprland
+    ./i3
     ./nvim
     ./swaylock
     ./taskwarrior
