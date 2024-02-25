@@ -13,6 +13,7 @@
     ./polybar
     ./swaylock
     ./taskwarrior
+    ./wlogout
     ./wofi
 
     ./dunst.nix
@@ -30,7 +31,6 @@
     ./syncthing.nix
     ./theme.nix
     ./timers.nix
-    ./wlogout.nix
     ./xdg.nix
   ];
 }
