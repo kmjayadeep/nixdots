@@ -11,6 +11,7 @@
     wl-clipboard # clipboard
     alejandra # format nix files
     unzip
+    tree
 
     # GUI apps
     pcmanfm # file manager

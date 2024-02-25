@@ -214,13 +214,10 @@ bindsym Control+Shift+space exec dunstctl close-all
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id nitrogen --restore
-# exec_always ~/.config/i3/scripts/gnome-keyring.sh
-#exec --no-startup-id xmodmap /home/jayadeep/.Xmodmap
 exec --no-startup-id dunst
 
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
-exec --no-startup-id nitrogen --restore 
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart

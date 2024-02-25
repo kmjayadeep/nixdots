@@ -51,7 +51,11 @@
       # More catppuccin flavors in https://github.com/catppuccin/nvim/
       {
         plugin = catppuccin-nvim;
-        config = "colorscheme catppuccin";
+        # config = "colorscheme catppuccin";
+      }
+      {
+        plugin = gruvbox-nvim;
+        config = "colorscheme gruvbox";
       }
 
       # File opener, git files, fuzzy search etc

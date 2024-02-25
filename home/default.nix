@@ -11,10 +11,9 @@
     ./i3
     ./nvim
     ./polybar
-    ./swaylock
+    ./rofi
     ./taskwarrior
     ./wlogout
-    ./wofi
 
     ./dunst.nix
     ./env.nix
