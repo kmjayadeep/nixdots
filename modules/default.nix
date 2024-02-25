@@ -9,7 +9,8 @@
     ./fonts.nix
     # ./gnome.nix # testing
     # ./hyprland.nix # not used now
-    ./sway.nix
+    # ./sway.nix
+    ./i3.nix
     ./nfs.nix
     ./nixos.nix
     ./packages.nix
