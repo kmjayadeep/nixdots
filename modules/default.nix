@@ -8,7 +8,8 @@
     ./container.nix
     ./fonts.nix
     # ./gnome.nix # testing
-    ./gui.nix
+    # ./hyprland.nix # not used now
+    ./sway.nix
     ./nfs.nix
     ./nixos.nix
     ./packages.nix

@@ -57,7 +57,7 @@
       "networkmanager"
       "wheel"
       "docker"
-      "light" # For screen brightness control
+      "video" # For screen brightness control
     ];
     shell = pkgs.zsh;
     initialPassword = "password"; # Don't forget to change this
@@ -66,6 +66,9 @@
   # Disable alsa and pulseaudio
   sound = {enable = false;};
   hardware.pulseaudio.enable = false;
+
+  # brightness control
+  programs.light.enable = true;
 
   # Sound with pipewire
   services.pipewire = {
