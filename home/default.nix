@@ -17,7 +17,7 @@
 
     ./dunst.nix
     ./env.nix
-    ./foot.nix
+    ./fonts.nix
     ./git.nix
     ./gpg.nix
     ./kubernetes.nix
