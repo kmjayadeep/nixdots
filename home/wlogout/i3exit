@@ -2,7 +2,6 @@
 lock() {
   notify-send "Locking screen..."
   loginctl lock-session
-  sleep 5;
 }
 
 case "$1" in

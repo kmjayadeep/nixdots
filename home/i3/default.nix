@@ -26,6 +26,7 @@
     xsecurelock # better lock than xlock
     autorandr # also install from apt to setup systemd service
     xclip # copy and paste
+    xscreensaver # for screensaver with xsecurelock
   ];
 
 }
