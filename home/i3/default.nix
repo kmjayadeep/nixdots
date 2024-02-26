@@ -12,9 +12,7 @@
 
   home.file.".config/i3/config".source = ./config;
 
-  home.file.".config/i3/wall.jpg" = {
-    source = ./wall.jpg;
-  };
+  home.file.".config/i3/wall.jpg".source = ./wall2.jpg;
 
   home.packages = with pkgs; [
     rofi # app launcher

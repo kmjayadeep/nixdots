@@ -9,6 +9,7 @@
   imports = [
     ./email
     ./i3
+    ./kitty
     ./nvim
     ./polybar
     ./rofi
