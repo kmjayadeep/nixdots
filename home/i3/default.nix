@@ -23,6 +23,7 @@
     xss-lock # lock automatically on suspend, screensaver
     xsecurelock # better lock than xlock
     autorandr # also install from apt to setup systemd service
+    xclip # copy and paste
   ];
 
 }

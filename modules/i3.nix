@@ -17,4 +17,6 @@
     lxappearance
   ];
 
+  programs.dconf.enable = true;
+
 }
