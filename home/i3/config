@@ -217,6 +217,10 @@ exec --no-startup-id dex --autostart --environment i3
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec_always --no-startup-id xset s 300 5
 exec_always --no-startup-id xss-lock --transfer-sleep-lock -- i3lock-fancy
+
+# set keyboard repeat rate
+exec_always --no-startup-id xset r rate 250 60
+# swap caps with escape
 exec_always --no-startup-id setxkbmap -layout us -option caps:escape
 
 # polkit  - maybe needed by xlock?
