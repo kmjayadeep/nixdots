@@ -26,6 +26,8 @@
     # browser
     brave
     google-chrome
+
+    lynx
   ];
 
   # Remove unecessary preinstalled packages

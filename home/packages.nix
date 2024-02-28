@@ -24,6 +24,7 @@
     libsForQt5.kdenlive # For video editing
     loupe # Image viewer
     evince # PDF viewer
+    thunderbird-bin # email client
 
     # Other apps
     spotify-tui # spotify on terminal
