@@ -10,6 +10,7 @@
     settings =  {
       date-format = "%Y-%m-%d";
       file = [
+        "~/private/psuite/notes/ledger/accounts"
         "~/private/psuite/notes/ledger/journal.ledger"
       ];
       sort = "date";

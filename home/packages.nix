@@ -13,6 +13,7 @@
     unzip
     tree
     tmux
+    python3
 
     # GUI apps
     pcmanfm # file manager
