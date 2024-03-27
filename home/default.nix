@@ -16,12 +16,14 @@
     ./taskwarrior
     ./wlogout
 
+    ./barrier.nix
     ./dunst.nix
     ./env.nix
     ./fonts.nix
     ./git.nix
     ./gpg.nix
     ./kubernetes.nix
+    ./ledger.nix
     ./misc.nix
     ./packages.nix
     ./pass.nix

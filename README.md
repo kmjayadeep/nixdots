@@ -14,3 +14,4 @@ sudo nixos-rebuild switch --flake .#jd-vm --fast
 * hyprland config, group styles
 * fonts (iosevka?)
 * https://github.com/Misterio77/nix-colors
+* remove barrier

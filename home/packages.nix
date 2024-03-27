@@ -12,6 +12,7 @@
     alejandra # format nix files
     unzip
     tree
+    tmux
 
     # GUI apps
     pcmanfm # file manager
