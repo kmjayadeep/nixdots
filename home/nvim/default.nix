@@ -95,6 +95,7 @@
           p.tree-sitter-lua
           p.tree-sitter-json
           p.tree-sitter-go
+          p.tree-sitter-ledger
         ]);
         config = toLuaFile ./plugin/treesitter.lua;
       }
