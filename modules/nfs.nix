@@ -5,16 +5,17 @@
   ...
 }: {
   services.rpcbind.enable = true; # needed for NFS
-  systemd.mounts = [
-    {
-      type = "nfs";
-      mountConfig = {
-        Options = "noatime";
-      };
-      what = "nfs.cosmos.cboxlab.com:/";
-      where = "/nfs";
-    }
-  ];
+  # TODO: Temporarily disable mount
+  # systemd.mounts = [
+  #   {
+  #     type = "nfs";
+  #     mountConfig = {
+  #       Options = "noatime";
+  #     };
+  #     what = "nfs.cosmos.cboxlab.com:/";
+  #     where = "/nfs";
+  #   }
+  # ];
 
   systemd.automounts = [
     {

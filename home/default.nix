@@ -22,6 +22,7 @@
     ./fonts.nix
     ./git.nix
     ./gpg.nix
+    ./hidpi.nix
     ./kubernetes.nix
     ./ledger.nix
     ./misc.nix
