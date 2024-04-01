@@ -49,14 +49,14 @@
       # -- All completed tasks for today, irrespective of schedule
       # -- Everything scheduled for today, which are not completed yet
       # -- All tasks in progress, irrespective of start date and other fields
-      report.today.filter = "(end.after:today) or (scheduled.before:tomorrow status:pending) or (start.any: status.not:completed)";
-      report.today.sort = "status,due+,project+,scheduled+";
+      report.today.filter = "(end.after:today status:completed) or (scheduled.before:tomorrow status:pending) or (start.any: status.not:completed)";
+      report.today.sort = "status-/,due+,project+,scheduled+";
 
       report.backlog.description = "Tasks in backlog by project";
       report.backlog.columns = "id,priority,project,tags,scheduled,scheduled.relative,description.count,due.relative";
       report.backlog.labels = "ID,P,Project,Tag,Schedule,S,Description,Due";
       report.backlog.filter = "project.any: status:pending";
-      report.backlog.sort = "project+,scheduled+";
+      report.backlog.sort = "project+/,scheduled+";
 
       # report.someday.columns = "id,description.count";
       # report.someday.description = "Someday/Maybe";
