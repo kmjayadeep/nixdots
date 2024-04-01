@@ -23,6 +23,7 @@
     nfs-utils
     gnumake
     xdg-utils # for xdg-open
+    razergenie # manage razor mouse
 
     # browser
     brave
