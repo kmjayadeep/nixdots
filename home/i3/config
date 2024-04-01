@@ -93,9 +93,9 @@ set $ws2 "2: Editor"
 set $ws3 "3: Term"
 set $ws4 "4: Term"
 set $ws5 "5: Todo"
-set $ws6 "6: Misc"
-set $ws7 "7: Slack"
-set $ws8 "8: Zoom"
+set $ws6 "6: Misc"
+set $ws7 "7: Steam"
+set $ws8 "8: Dota2"
 set $ws9 "9: Background"
 set $ws0 "10: Media"
 
@@ -189,6 +189,11 @@ for_window [class="^.*"] border pixel 1
 # automatically float windows for
 for_window [title="tty-clock"] floating enable
 
+
+# window assignments
+assign [class="^steam.*"] → $ws7
+assign [class="^dota2"] → $ws8
+assign [class="^discord"] → $ws6
 
 # Volume bindings
 bindsym Mod4+comma exec pactl set-sink-volume @DEFAULT_SINK@ -5%
