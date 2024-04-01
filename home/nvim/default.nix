@@ -20,7 +20,6 @@
     extraPackages = with pkgs; [
       gopls
       wl-clipboard
-      rnix-lsp
     ];
 
     plugins = with pkgs.vimPlugins; [

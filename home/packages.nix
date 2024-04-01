@@ -29,9 +29,6 @@
     thunderbird-bin # email client
 
     # Other apps
-    spotify-tui # spotify on terminal
-    wlr-randr # xrandr alternative
-    way-displays # arandr alternative
     neofetch
     restic # for backup
     dig

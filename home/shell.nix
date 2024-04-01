@@ -9,7 +9,7 @@
     enable = true;
     dotDir = ".config/zsh";
     enableCompletion = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
 
     history.path = "${config.home.homeDirectory}/private/zsh/zsh_history";

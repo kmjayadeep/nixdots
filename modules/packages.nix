@@ -11,6 +11,7 @@
     htop
     xdg-desktop-portal-gtk
     greetd.tuigreet
+    mesa # 3d graphics
 
     # Essentials
     git
