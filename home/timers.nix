@@ -11,8 +11,8 @@
       };
 
       Timer = {
-        # Every day 9am
-        OnCalendar = "*-*-* 9:00:00";
+        # Every day 7am
+        OnCalendar = "*-*-* 7:00:00";
         # Start immedietly if it missed the last schedule when the system is off
         Persistent = true;
       };
