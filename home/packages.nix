@@ -28,6 +28,10 @@
     evince # PDF viewer
     thunderbird-bin # email client
 
+    # work
+    zoom-us # video calls
+    slack
+
     # Other apps
     neofetch
     restic # for backup
