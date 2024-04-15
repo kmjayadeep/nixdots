@@ -14,6 +14,7 @@
     tree
     tmux
     python3
+    hledger
 
     # GUI apps
     pcmanfm # file manager
@@ -27,6 +28,7 @@
     loupe # Image viewer
     evince # PDF viewer
     thunderbird-bin # email client
+    libsForQt5.okular
 
     # work
     zoom-us # video calls
