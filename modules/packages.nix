@@ -30,6 +30,9 @@
     google-chrome
 
     lynx
+
+    # others
+    iperf
   ];
 
   # Remove unecessary preinstalled packages
