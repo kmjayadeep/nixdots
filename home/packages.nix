@@ -39,6 +39,7 @@
     restic # for backup
     dig
     btop # Better htop
+    nodePackages_latest.http-server
 
     # programming
     go
@@ -46,5 +47,6 @@
     ripgrep
     jq
     ansible
+    kubeseal
   ];
 }
