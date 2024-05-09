@@ -33,11 +33,19 @@
 
     # others
     iperf
+    pciutils
+
+    # Nas Access
+    cifs-utils
+    samba
   ];
 
   # Remove unecessary preinstalled packages
   environment.defaultPackages = [];
   services.xserver.desktopManager.xterm.enable = false;
+
+  # to allow accessing smb:// protocol in pcmanfm
+  services.gvfs.enable = true;
 
   # shell
   programs.zsh.enable = true;

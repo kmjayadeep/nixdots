@@ -40,6 +40,7 @@
     dig
     btop # Better htop
     nodePackages_latest.http-server
+    vlc
 
     # programming
     go
