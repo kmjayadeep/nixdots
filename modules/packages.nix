@@ -12,6 +12,9 @@
     xdg-desktop-portal-gtk
     greetd.tuigreet
     mesa # 3d graphics
+    exfat # sd card
+    gphoto2
+    gphoto2fs
 
     # Essentials
     git

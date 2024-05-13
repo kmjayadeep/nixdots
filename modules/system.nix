@@ -80,6 +80,11 @@
   };
   security.rtkit.enable = true;
 
+  # https://nixos.wiki/wiki/Accelerated_Video_Playback
+  nixpkgs.config.packageOverrides = pkgs: {
+    intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
+  };
+
   # Enable bluetooth, enable opengl (for Wayland)
   hardware = {
     bluetooth = {
@@ -94,6 +99,11 @@
     opengl = {
       enable = true;
       driSupport = true;
+      extraPackages = with pkgs; [
+        intel-media-driver # LIBVA_DRIVER_NAME=iHD
+        intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
+        libvdpau-va-gl
+      ];
     };
   };
 
