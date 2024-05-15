@@ -11,8 +11,8 @@
       mountConfig = {
         Options = "noatime";
       };
-      what = "nfs.cosmos.cboxlab.com:/";
-      where = "/nfs";
+      what = "truenas.cosmos.cboxlab.com:/mnt/ssd/media/tv";
+      where = "/nfs/tv";
     }
   ];
 
@@ -22,7 +22,7 @@
       automountConfig = {
         TimeoutIdleSec = "600";
       };
-      where = "/nfs";
+      where = "/nfs/tv";
     }
   ];
 }

@@ -27,6 +27,7 @@
     gnumake
     xdg-utils # for xdg-open
     razergenie # manage razor mouse
+    isoimagewriter
 
     # browser
     brave
