@@ -42,6 +42,8 @@
     btop # Better htop
     nodePackages_latest.http-server
     vlc
+    postgresql
+    rclone
 
     # programming
     go
