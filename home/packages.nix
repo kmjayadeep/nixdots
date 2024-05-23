@@ -15,6 +15,7 @@
     tmux
     python3
     hledger
+    immich-cli
 
     # GUI apps
     pcmanfm # file manager
