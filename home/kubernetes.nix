@@ -3,6 +3,8 @@
   inputs,
   ...
 }: {
+  home.file.".kube/kubie.yaml".source = ../assets/kubie.yaml;
+
   home.packages = with pkgs; [
     kubectl
     k9s
