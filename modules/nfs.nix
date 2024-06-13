@@ -11,7 +11,7 @@
       mountConfig = {
         Options = "noatime";
       };
-      what = "truenas.cosmos.cboxlab.com:/mnt/ssd/media/tv";
+      what = "truenas.cosmos.cboxlab.com:/mnt/main/media/tv";
       where = "/nfs/tv";
     }
     {
@@ -19,7 +19,7 @@
       mountConfig = {
         Options = "noatime";
       };
-      what = "truenas.cosmos.cboxlab.com:/mnt/ssd/drive";
+      what = "truenas.cosmos.cboxlab.com:/mnt/main/drive";
       where = "/nfs/drive";
     }
   ];
