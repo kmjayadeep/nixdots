@@ -20,5 +20,6 @@
     tchat
     todo
     vic
+    backup_nuc_restic
   ];
 }
