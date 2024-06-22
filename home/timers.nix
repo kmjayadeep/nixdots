@@ -11,8 +11,8 @@
       };
 
       Timer = {
-        # Every day 7am
-        OnCalendar = "*-*-* 7:00:00";
+        # Every day 5am
+        OnCalendar = "*-*-* 05:00:00";
         # Start immedietly if it missed the last schedule when the system is off
         Persistent = true;
       };
@@ -41,6 +41,8 @@
     backup-nuc = {
       Unit = {
         Description = "Backup the workspace";
+        Wants = ["network-online.target"];
+        After = ["network-online.target"];
       };
 
       Service = {
@@ -53,6 +55,8 @@
     backup-private = {
       Unit = {
         Description = "Backup private folder";
+        Wants = ["network-online.target"];
+        After = ["network-online.target"];
       };
 
       Service = {
