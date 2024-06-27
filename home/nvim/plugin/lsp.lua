@@ -31,3 +31,12 @@ require('lspconfig').gopls.setup{
     on_attach = on_attach,
     capabilities = capabilities,
 }
+
+-- Beancount LS
+require('lspconfig').beancount.setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
+    init_options = {
+        journal_file = "/home/jayadeep/private/psuite/beancount/journal.beancount",
+    };
+}

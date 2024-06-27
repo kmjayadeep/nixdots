@@ -20,6 +20,7 @@
     extraPackages = with pkgs; [
       gopls
       wl-clipboard
+      beancount-language-server
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -95,6 +96,7 @@
           p.tree-sitter-json
           p.tree-sitter-go
           p.tree-sitter-ledger
+          p.tree-sitter-beancount
         ]);
         config = toLuaFile ./plugin/treesitter.lua;
       }

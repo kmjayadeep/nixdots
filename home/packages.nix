@@ -45,6 +45,7 @@
     vlc
     postgresql
     rclone
+    hugo
 
     # programming
     go

@@ -17,4 +17,9 @@
       strict = true;
     };
   };
+  home.packages = with pkgs; [
+    beancount
+    ledger2beancount
+    fava
+  ];
 }
