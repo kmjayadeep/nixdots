@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  syncall,
   ...
 }: {
   imports = [
@@ -13,6 +14,7 @@
     # Open task annoted items externally, eg: open urls in browser
     taskopen
     tasksh # for review
+    syncall.syncall
   ];
 
   home.file.".vit/config.ini".source = ./vit-config.ini;
