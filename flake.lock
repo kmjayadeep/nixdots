@@ -345,11 +345,11 @@
         "poetry2nix": "poetry2nix"
       },
       "locked": {
-        "lastModified": 1719769294,
-        "narHash": "sha256-aHvrVyBpHuAaATTKt0XsYKds2z5UjT2FXuICKKlRXUs=",
+        "lastModified": 1719773405,
+        "narHash": "sha256-axdsPWsuJfvo9klAQ//hvWAvVs3ub/eXkxjQ8SUVtNA=",
         "owner": "kmjayadeep",
         "repo": "syncall",
-        "rev": "3d9729bb84da65dca756d4a16252fbc6204380d1",
+        "rev": "b0b7582a5809186372b39fb3cd1b9ae66c45c61e",
         "type": "github"
       },
       "original": {
