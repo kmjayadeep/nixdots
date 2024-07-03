@@ -46,6 +46,9 @@
     postgresql
     rclone
     hugo
+    imagemagick
+    # video transcoding
+    handbrake
 
     # programming
     go
