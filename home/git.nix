@@ -2,6 +2,7 @@
   config,
   lib,
   inputs,
+  pkgs,
   ...
 }: {
 
@@ -27,4 +28,8 @@
       };
     };
   };
+
+  home.packages = with pkgs; [
+    git-crypt
+  ];
 }
