@@ -3,6 +3,7 @@
   inputs,
   config,
   syncall,
+  scripts,
   ...
 }: {
   systemd.user.timers = {
@@ -64,8 +65,7 @@
       };
 
       Service = {
-        Environment = "PATH=/etc/profiles/per-user/jayadeep/bin:/run/current-system/sw/bin";
-        ExecStart = "${config.home.homeDirectory}/workspace/scripts/backup";
+        ExecStart = "${scripts.backup_nuc_restic}/bin/backup_nuc_restic";
         Type = "oneshot";
       };
     };
@@ -78,8 +78,7 @@
       };
 
       Service = {
-        Environment = "PATH=/etc/profiles/per-user/jayadeep/bin:/run/current-system/sw/bin";
-        ExecStart = "${config.home.homeDirectory}/workspace/scripts/backup_private";
+        ExecStart = "${scripts.backup_private}/bin/backup_private";
         Type = "oneshot";
       };
     };
@@ -92,7 +91,6 @@
       };
 
       Service = {
-        Environment = "PATH=/etc/profiles/per-user/jayadeep/bin:/run/current-system/sw/bin";
         ExecStart = "${syncall.syncall}/bin/tw_gtasks_sync -t remindme -l 'TW Reminders'";
         Type = "oneshot";
       };
