@@ -58,5 +58,6 @@
     jq
     ansible
     kubeseal
+    httpie
   ];
 }

@@ -54,4 +54,9 @@
 
   # Set neovim as editor
   programs.neovim.defaultEditor = true;
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
 }
