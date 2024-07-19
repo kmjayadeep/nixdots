@@ -64,7 +64,6 @@
   };
 
   # Disable alsa and pulseaudio
-  sound = {enable = false;};
   hardware.pulseaudio.enable = false;
 
   # brightness control
@@ -96,9 +95,8 @@
         };
       };
     };
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport = true;
       extraPackages = with pkgs; [
         intel-media-driver # LIBVA_DRIVER_NAME=iHD
         intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
@@ -126,5 +124,10 @@
 
   # install tailscale vpn; run the following to setup initially
   # sudo tailscale up --accept-routes --accept-dns=false
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    extraSetFlags = [
+      "--accept-dns=false"
+    ];
+  };
 }

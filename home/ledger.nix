@@ -20,6 +20,6 @@
   home.packages = with pkgs; [
     beancount
     ledger2beancount
-    fava
+    # fava
   ];
 }
