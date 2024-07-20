@@ -59,5 +59,6 @@
     ansible
     kubeseal
     httpie
+    vagrant
   ];
 }
