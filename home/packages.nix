@@ -60,5 +60,6 @@
     kubeseal
     httpie
     vagrant
+    terraform
   ];
 }

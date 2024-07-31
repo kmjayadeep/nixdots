@@ -5,7 +5,7 @@
   ...
 }: {
   # Set up locales (timezone and keyboard layout)
-  time.timeZone = "Europe/Berlin";
+  time.timeZone = "Europe/Zurich";
   i18n.defaultLocale = "en_US.UTF-8";
 
   # Enable networking
