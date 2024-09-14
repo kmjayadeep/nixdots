@@ -10,7 +10,7 @@
     # ./gnome.nix # testing
     # ./hyprland.nix # not used now
     # ./sway.nix
-    # ./printing.nix # for printing with hp wifi
+    ./printing.nix # for printing with hp wifi
     # ./tether.nix # for wifi tethering
     ./i3.nix
     ./nfs.nix

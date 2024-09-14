@@ -194,6 +194,7 @@ for_window [title="tty-clock"] floating enable
 assign [class="^steam.*"] → $ws7
 assign [class="^dota2"] → $ws8
 assign [class="^discord"] → $ws6
+assign [class="^valheim.*"] → $ws8
 
 # Volume bindings
 bindsym Mod4+comma exec pactl set-sink-volume @DEFAULT_SINK@ -5%
