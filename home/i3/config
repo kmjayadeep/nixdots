@@ -95,7 +95,7 @@ set $ws4 "4: Term"
 set $ws5 "5: Todo"
 set $ws6 "6: Misc"
 set $ws7 "7: Steam"
-set $ws8 "8: Dota2"
+set $ws8 "8: Game"
 set $ws9 "9: Background"
 set $ws0 "10: Media"
 
