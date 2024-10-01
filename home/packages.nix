@@ -32,6 +32,7 @@
     libsForQt5.okular
     moonlight-qt # play games over network
     jellyfin-media-player
+    vscode-fhs
 
     # work
     zoom-us # video calls
