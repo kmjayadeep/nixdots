@@ -2,7 +2,6 @@
   pkgs,
   inputs,
   config,
-  syncall,
   scripts,
   ...
 }: {
@@ -79,19 +78,6 @@
 
       Service = {
         ExecStart = "${scripts.backup_private}/bin/backup_private";
-        Type = "oneshot";
-      };
-    };
-
-    tw-gtasks-sync = {
-      Unit = {
-        Wants = ["network-online.target"];
-        After = ["network-online.target"];
-        Description = "Sync taskwarrior to google tasks";
-      };
-
-      Service = {
-        ExecStart = "${syncall.syncall}/bin/tw_gtasks_sync -t remindme -l 'TW Reminders'";
         Type = "oneshot";
       };
     };

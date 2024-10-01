@@ -1,7 +1,6 @@
 {
   pkgs,
   inputs,
-  syncall,
   ...
 }: {
   imports = [
@@ -14,7 +13,6 @@
     # Open task annoted items externally, eg: open urls in browser
     taskopen
     tasksh # for review
-    syncall.syncall
   ];
 
   home.file.".vit/config.ini".source = ./vit-config.ini;
@@ -23,6 +21,7 @@
   programs.taskwarrior = {
     dataLocation = "~/private/psuite/todo";
     enable = true;
+    package = pkgs.taskwarrior2; #TODO: migrate to taskwarrior3
     config = {
       context.work.read = "project:work";
       context.work.write = "project:work";

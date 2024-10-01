@@ -5,8 +5,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    hyprland.url = "github:hyprwm/Hyprland";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -22,12 +20,6 @@
       url = "github:kmjayadeep/scripts";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # My fork of Syncall, with flake.nix
-    syncall = {
-      url = "github:kmjayadeep/syncall";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   # All outputs for the system (configs)
@@ -41,7 +33,6 @@
     lib = nixpkgs.lib;
     go-todo-exporter = inputs.go-todo-exporter.packages.${system};
     scripts = inputs.scripts.packages.${system};
-    syncall = inputs.syncall.packages.${system};
 
     # This lets us reuse the code to "create" a system
     # Credits go to sioodmy on this one!
@@ -63,7 +54,6 @@
                 inherit inputs;
                 go-todo-exporter = go-todo-exporter;
                 scripts = scripts;
-                syncall = syncall;
               };
               # Home manager config (configures user specific stuff like shell, aliases etc)
               users.jayadeep = ./home;
