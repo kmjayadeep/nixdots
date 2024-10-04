@@ -9,7 +9,7 @@
     ];
 
   boot.initrd.availableKernelModules = [ "nvme" "ahci" "xhci_pci" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
@@ -40,4 +40,16 @@
     enable = true; # support razor mouse
     users = ["jayadeep"];
   };
+
+  services.xserver.videoDrivers = [ "amdgpu" ];
+
+  hardware.opengl.extraPackages = with pkgs; [
+    amdvlk
+  ];
+
+  # https://wiki.nixos.org/wiki/AMD_GPU
+  # AMD GPU Controller
+  environment.systemPackages = with pkgs; [ lact ];
+  systemd.packages = with pkgs; [ lact ];
+  systemd.services.lactd.wantedBy = ["multi-user.target"];
 }
