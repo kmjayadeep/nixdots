@@ -69,6 +69,7 @@
       jd-nuc = mkSystem inputs.nixpkgs "x86_64-linux" "jd-nuc";
       jd-vm = mkSystem inputs.nixpkgs "x86_64-linux" "jd-vm";
       jd-thinkpad = mkSystem inputs.nixpkgs "x86_64-linux" "jd-thinkpad";
+      jd-pc = mkSystem inputs.nixpkgs "x86_64-linux" "jd-pc";
 
       # On proxmox
       jd-pve = mkSystem inputs.nixpkgs "x86_64-linux" "jd-pve";
