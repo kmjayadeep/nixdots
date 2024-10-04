@@ -21,7 +21,7 @@
   programs.taskwarrior = {
     dataLocation = "~/private/psuite/todo";
     enable = true;
-    package = pkgs.taskwarrior2; #TODO: migrate to taskwarrior3
+    package = pkgs.taskwarrior3;
     config = {
       context.work.read = "project:work";
       context.work.write = "project:work";
