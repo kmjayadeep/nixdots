@@ -15,6 +15,7 @@
     "Xft.hinting" = 1;
     "Xft.antialias" = 1;
     "Xft.rgba" = "rgb";
+    "Xcursor.size"  = 12;
   };
 
   xsession.profileExtra = ''
