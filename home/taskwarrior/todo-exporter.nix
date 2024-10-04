@@ -2,6 +2,7 @@
   config,
   lib,
   inputs,
+  pkgs,
   go-todo-exporter,
   ...
 }: {
@@ -12,6 +13,7 @@
       };
 
       Service = {
+        Environment="PATH=${pkgs.taskwarrior3}/bin/";
         ExecStart = "${go-todo-exporter.default}/bin/go-todo-exporter";
       };
 
