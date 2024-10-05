@@ -29,11 +29,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1702415186,
-        "narHash": "sha256-cFMcTGvAZGBG485LmxrxSPbunLaXq5CJSsGekpJuOso=",
+        "lastModified": 1728098921,
+        "narHash": "sha256-B8Gcfw0S9dT8IoEdaZDCUeZ5BSzmzlDSukkdxE4UCAk=",
         "owner": "kmjayadeep",
         "repo": "go-todo-exporter",
-        "rev": "7b21c917c257f8b2148b3796b03273c9924ed38b",
+        "rev": "ad63a53848dcab13d4baa5cfba8dc05078e88f47",
         "type": "github"
       },
       "original": {

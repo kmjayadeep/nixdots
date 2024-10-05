@@ -5,6 +5,7 @@ alias aliasconf="$EDITOR ~/.bash_aliases;source ~/.bash_aliases"
 alias please=sudo
 alias c="wl-copy"
 alias sctl="sudo systemctl"
+alias sutl="systemctl --user"
 alias o="xdg-open"
 alias weather='curl "wttr.in?0Fq"'
 alias moon="curl wttr.in/moon"
