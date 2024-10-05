@@ -58,6 +58,7 @@
       "wheel"
       "docker"
       "video" # For screen brightness control
+      "render" # For video editing
     ];
     shell = pkgs.zsh;
     initialPassword = "password"; # Don't forget to change this

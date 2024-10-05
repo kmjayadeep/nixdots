@@ -45,11 +45,15 @@
 
   hardware.graphics.extraPackages = with pkgs; [
     amdvlk
+    rocmPackages.clr.icd # opencl for davinci resolve
   ];
 
   # https://wiki.nixos.org/wiki/AMD_GPU
   # AMD GPU Controller
-  environment.systemPackages = with pkgs; [ lact ];
+  environment.systemPackages = with pkgs; [
+    clinfo # to verify opencl
+    lact
+  ];
   systemd.packages = with pkgs; [ lact ];
   systemd.services.lactd.wantedBy = ["multi-user.target"];
 }

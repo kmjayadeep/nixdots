@@ -33,6 +33,7 @@
     moonlight-qt # play games over network
     jellyfin-media-player
     vscode-fhs
+    davinci-resolve
 
     # work
     zoom-us # video calls
