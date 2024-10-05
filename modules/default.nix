@@ -14,6 +14,7 @@
     ./nfs.nix
     ./nixos.nix
     ./packages.nix
+    ./samba.nix
     ./ssh.nix
     ./steam.nix
     ./system.nix

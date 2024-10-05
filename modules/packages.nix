@@ -38,10 +38,6 @@
     # others
     iperf
     pciutils
-
-    # Nas Access
-    cifs-utils
-    samba
   ];
 
   # Remove unecessary preinstalled packages
