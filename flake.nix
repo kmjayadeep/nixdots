@@ -50,6 +50,7 @@
             home-manager = {
               useUserPackages = true;
               useGlobalPkgs = true;
+              backupFileExtension = "back";
               extraSpecialArgs = {
                 inherit inputs;
                 go-todo-exporter = go-todo-exporter;

@@ -28,6 +28,7 @@
     xdg-utils # for xdg-open
     razergenie # manage razor mouse
     isoimagewriter
+    vscode.fhs
 
     # browser
     brave
