@@ -47,7 +47,7 @@
       {
         label = "hibernate";
         text = "Hibernate [h]";
-        action = "~/.config/wlogout/i3exit --hibernate";
+        action = "~/.config/wlogout/i3exit hibernate";
         keybind = "h";
       }
       {
