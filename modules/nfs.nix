@@ -30,6 +30,14 @@
       what = "truenas.cosmos.cboxlab.com:/mnt/main/documents";
       where = "/nfs/documents";
     }
+    {
+      type = "nfs";
+      mountConfig = {
+        Options = "noatime";
+      };
+      what = "truenas.cosmos.cboxlab.com:/mnt/main/downloads";
+      where = "/nfs/downloads";
+    }
   ];
 
   systemd.automounts = [
@@ -53,6 +61,13 @@
         TimeoutIdleSec = "600";
       };
       where = "/nfs/documents";
+    }
+    {
+      wantedBy = ["multi-user.target"];
+      automountConfig = {
+        TimeoutIdleSec = "600";
+      };
+      where = "/nfs/downloads";
     }
   ];
 }

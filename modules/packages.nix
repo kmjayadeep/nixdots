@@ -39,6 +39,10 @@
     # others
     iperf
     pciutils
+    rar
+
+    wineWowPackages.stable
+    winetricks
   ];
 
   # Remove unecessary preinstalled packages
