@@ -12,5 +12,8 @@ require("neo-tree").setup({
       --              -- the current file is changed while the tree is open.
       leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
     },
-  }
+  },
+  window = {
+    width = 30,
+  },
 })
