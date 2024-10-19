@@ -51,6 +51,7 @@
     imagemagick
     # video transcoding
     handbrake
+    jellyfin-media-player
 
     # programming
     go
