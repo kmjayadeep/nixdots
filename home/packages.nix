@@ -61,7 +61,6 @@
     ansible
     kubeseal
     httpie
-    vagrant
     terraform
   ];
 }
