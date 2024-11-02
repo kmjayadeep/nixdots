@@ -50,7 +50,7 @@
       # -- All completed tasks for today, irrespective of schedule
       # -- Everything scheduled for today, which are not completed yet
       # -- All tasks in progress, irrespective of start date and other fields
-      report.today.filter = "(end.after:today status:completed) or (scheduled.before:tomorrow status:pending) or (start.any: status.not:completed)";
+      report.today.filter = "(end.after:today status:completed) or (scheduled.before:tomorrow status:pending) or (start.any: status.not:completed status.not:deleted)";
       report.today.sort = "status-/,due+,project+,scheduled+";
 
       report.backlog.description = "Tasks in backlog by project";
