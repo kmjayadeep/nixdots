@@ -14,6 +14,7 @@
         "application/pdf" = "org.gnome.Evince.desktop";
         "image/*" = "org.gnome.Loupe.desktop";
         "video/*" = "smplayer.desktop";
+        "video/mp4" = "smplayer.desktop";
         "audio/*" = "smplayer.desktop";
         "text/html" = "brave-browser.desktop";
         "x-scheme-handler/http" = "brave-browser.desktop";

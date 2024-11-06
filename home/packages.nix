@@ -33,6 +33,7 @@
     moonlight-qt # play games over network
     jellyfin-media-player
     davinci-resolve
+    gimp
 
     # work
     zoom-us # video calls
@@ -50,7 +51,6 @@
     hugo
     imagemagick
     # video transcoding
-    handbrake
     jellyfin-media-player
 
     # programming
