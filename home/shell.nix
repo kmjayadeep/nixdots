@@ -36,6 +36,7 @@
       gameoff = "killall -9 .Discord-wrapped steam dota2 valheim.x86_64";
       t = "task";
       review = "while true; do sleep  3;clear;task in; task today; task backlog; done;";
+      ssh = "kitty +kitten ssh";
     };
 
     # Source additional shell aliases
