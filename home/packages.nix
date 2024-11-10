@@ -62,5 +62,6 @@
     kubeseal
     httpie
     terraform
+    coder
   ];
 }
