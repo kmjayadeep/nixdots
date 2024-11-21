@@ -63,5 +63,6 @@
     httpie
     terraform
     coder
+    just
   ];
 }
