@@ -64,5 +64,13 @@
     terraform
     coder
     just
+    rustup
+    nodejs_22
+    yarn
+    gcc
+
+    # crypto
+    solana-cli
+    anchor
   ];
 }

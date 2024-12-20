@@ -22,6 +22,7 @@
         "sudo"
         "docker"
         "kubectl"
+        "terraform"
       ];
     };
 
