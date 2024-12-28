@@ -72,5 +72,6 @@
     # crypto
     solana-cli
     anchor
+    near-cli
   ];
 }
