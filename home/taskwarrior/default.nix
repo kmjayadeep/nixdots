@@ -8,14 +8,7 @@
   ];
 
   home.packages = with pkgs; [
-    # terminal ui for taskwarrior
-    vit
-    # Open task annoted items externally, eg: open urls in browser
-    taskopen
-    tasksh # for review
   ];
-
-  home.file.".vit/config.ini".source = ./vit-config.ini;
 
   # Enable taskwarrior
   programs.taskwarrior = {

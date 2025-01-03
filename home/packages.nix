@@ -32,7 +32,6 @@
     libsForQt5.okular
     moonlight-qt # play games over network
     jellyfin-media-player
-    davinci-resolve
     gimp
 
     # work
@@ -67,11 +66,6 @@
     rustup
     nodejs_22
     yarn
-    gcc
-
-    # crypto
-    solana-cli
-    anchor
-    near-cli
+    vault
   ];
 }

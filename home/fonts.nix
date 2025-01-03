@@ -5,8 +5,8 @@
   home.packages = with pkgs;
   [
     font-awesome
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
     noto-fonts-color-emoji
+    nerd-fonts.jetbrains-mono
   ];
 
   fonts.fontconfig.enable = true;
