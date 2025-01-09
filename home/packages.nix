@@ -67,5 +67,6 @@
     nodejs_22
     yarn
     vault
+    nodePackages_latest.vercel
   ];
 }
