@@ -12,6 +12,7 @@
   networking = {
     networkmanager.enable = true;
     nameservers = [
+      "192.168.1.250"
       "127.0.0.1" # Point to dnscrypt server running locally
       # "1.1.1.1"
       # "1.0.0.1"

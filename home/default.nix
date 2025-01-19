@@ -16,7 +16,7 @@
     ./taskwarrior
     ./wlogout
 
-    ./barrier.nix
+    # ./barrier.nix
     ./dunst.nix
     ./env.nix
     ./fonts.nix
