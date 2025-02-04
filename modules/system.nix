@@ -66,7 +66,7 @@
   };
 
   # Disable alsa and pulseaudio
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
 
   # brightness control
   programs.light.enable = true;

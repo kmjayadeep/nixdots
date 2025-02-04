@@ -64,6 +64,7 @@
     coder
     just
     rustup
+    gccgo
     nodejs_22
     yarn
     vault
