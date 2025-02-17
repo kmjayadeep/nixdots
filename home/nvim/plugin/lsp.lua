@@ -40,3 +40,16 @@ require('lspconfig').beancount.setup{
         journal_file = "/home/jayadeep/private/psuite/beancount/journal.beancount",
     };
 }
+
+--- Rust LS
+require'lspconfig'.rust_analyzer.setup{
+  on_attach = on_attach,
+  capabilities = capabilities,
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false;
+      }
+    }
+  }
+}

@@ -21,6 +21,7 @@
       gopls
       wl-clipboard
       beancount-language-server
+      rust-analyzer
     ];
 
     plugins = with pkgs.vimPlugins; [
@@ -98,6 +99,7 @@
           p.tree-sitter-go
           p.tree-sitter-beancount
           p.tree-sitter-terraform
+          p.tree-sitter-rust
         ]);
         config = toLuaFile ./plugin/treesitter.lua;
       }
