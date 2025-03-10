@@ -16,6 +16,7 @@
     publiclocation
     pull
     push
+    pushf
     resticman
     tchat
     todo
