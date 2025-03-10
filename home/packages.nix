@@ -51,6 +51,7 @@
     imagemagick
     # video transcoding
     jellyfin-media-player
+    protonmail-desktop
 
     # programming
     go

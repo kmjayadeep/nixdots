@@ -7,7 +7,7 @@
   home.stateVersion = "23.05";
 
   imports = [
-    ./email
+    # ./email
     ./i3
     ./kitty
     ./nvim
