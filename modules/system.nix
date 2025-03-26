@@ -30,6 +30,14 @@
       ipv6_servers = true;
       require_dnssec = true;
 
+
+      # TODO: not working atm
+      static.adguard = {
+        # from https://dnscrypt.info/stamps/
+        # 192.168.1.250:53
+        stamp="sdns://AAUAAAAAAAAAEDE5Mi4xNjguMS4yNTA6NTM";
+      };
+
       sources.public-resolvers = {
         urls = [
           "https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md"
@@ -38,8 +46,6 @@
         cache_file = "/var/lib/dnscrypt-proxy2/public-resolvers.md";
         minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3";
       };
-
-      server_names = ["cloudflare" "cloudflare-ipv6"];
     };
   };
 
