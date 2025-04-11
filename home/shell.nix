@@ -53,6 +53,11 @@
   # zsh prompt
   programs.starship = {
     enable = true;
+    settings = {
+      gcloud = {
+        disabled = true;
+      };
+    };
   };
 
   # Set neovim as editor

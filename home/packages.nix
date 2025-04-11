@@ -70,5 +70,6 @@
     yarn
     vault
     nodePackages_latest.vercel
+    google-cloud-sdk
   ];
 }
