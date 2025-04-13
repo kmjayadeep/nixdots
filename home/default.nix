@@ -20,6 +20,7 @@
     ./dunst.nix
     ./env.nix
     ./fonts.nix
+    ./gcloud.nix
     ./git.nix
     ./gpg.nix
     ./hidpi.nix
