@@ -39,6 +39,14 @@
       what = "truenas.cosmos.cboxlab.com:/mnt/main/downloads";
       where = "/nfs/downloads";
     }
+    {
+      type = "nfs";
+      mountConfig = {
+        Options = "noatime";
+      };
+      what = "truenas.cosmos.cboxlab.com:/mnt/main/k8s/psuite";
+      where = "/nfs/psuite";
+    }
   ];
 
   systemd.automounts = [
