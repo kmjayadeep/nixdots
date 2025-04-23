@@ -78,5 +78,12 @@
       };
       where = "/nfs/downloads";
     }
+    {
+      wantedBy = ["multi-user.target"];
+      automountConfig = {
+        TimeoutIdleSec = "600";
+      };
+      where = "/nfs/psuite";
+    }
   ];
 }
