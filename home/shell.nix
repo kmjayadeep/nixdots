@@ -42,7 +42,7 @@
 
     # Source additional shell aliases
     # It contains a loop for aliasing k8s commands, thats why it needs to be sourced
-    initExtra = ''
+    initContent = ''
       source $HOME/.bash_aliases
       export PATH=$PATH:~/.local/bin
     '';
