@@ -36,7 +36,7 @@
       rebuild = "sudo nixos-rebuild switch --flake $NIXOS_CONFIG_DIR --fast; notify-send 'Rebuild complete\!'";
       gameoff = "killall -9 .Discord-wrapped steam dota2 valheim.x86_64";
       t = "task";
-      review = "while true; do sleep  3;clear;task in; task today; task backlog; done;";
+      review = "while true; do clear;task in; task today; task backlog; sleep 3; done;";
       sshk = "kitty +kitten ssh";
     };
 
