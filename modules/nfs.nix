@@ -7,9 +7,6 @@
   # https://nixos.wiki/wiki/NFS
   services.rpcbind.enable = true; # needed for NFS
 
-  # TODO: configure culling if disk space is getting full
-  services.cachefilesd.enable = true; # for nfs caching
-
   systemd.mounts = [
     {
       type = "nfs";
@@ -46,7 +43,7 @@
     {
       type = "nfs";
       mountConfig = {
-        Options = "noatime,fsc"; # With caching enabled
+        Options = "noatime"; # With caching enabled
       };
       what = "truenas.cosmos.cboxlab.com:/mnt/main/k8s/psuite";
       where = "/nfs/psuite";
