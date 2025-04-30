@@ -12,7 +12,7 @@
 
   # Enable taskwarrior
   programs.taskwarrior = {
-    dataLocation = "/nfs/psuite/psuite-todo";
+    dataLocation = "/samba/psuite/psuite-todo";
     enable = true;
     package = pkgs.taskwarrior3;
     config = {

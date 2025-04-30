@@ -40,14 +40,6 @@
       what = "truenas.cosmos.cboxlab.com:/mnt/main/downloads";
       where = "/nfs/downloads";
     }
-    {
-      type = "nfs";
-      mountConfig = {
-        Options = "noatime"; # With caching enabled
-      };
-      what = "truenas.cosmos.cboxlab.com:/mnt/main/k8s/psuite";
-      where = "/nfs/psuite";
-    }
   ];
 
   systemd.automounts = [
@@ -78,13 +70,6 @@
         TimeoutIdleSec = "600";
       };
       where = "/nfs/downloads";
-    }
-    {
-      wantedBy = ["multi-user.target"];
-      automountConfig = {
-        TimeoutIdleSec = "600";
-      };
-      where = "/nfs/psuite";
     }
   ];
 }
