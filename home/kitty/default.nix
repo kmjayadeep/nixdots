@@ -12,7 +12,7 @@
     enable = true;
     font = {
       name = "JetBrains Mono";
-      size = 14;
+      size = 12;
     };
     shellIntegration.enableZshIntegration = true;
     extraConfig = ''

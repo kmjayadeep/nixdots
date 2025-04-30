@@ -15,5 +15,6 @@
     fluxcd
     kind
     ko
+    cloud-provider-kind
   ];
 }
