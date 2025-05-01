@@ -6,7 +6,7 @@
   ...
 }: {
   home.sessionVariables = {
-    PSUITE_NOTES_DIR = "$HOME/private/psuite/notes";
-    PSUITE_MINDMAP_DIR = "$HOME/private/psuite/mindmap";
+    PSUITE_NOTES_DIR = "/samba/psuite/psuite-notes";
+    PSUITE_MINDMAP_DIR = "/samba/psuite/psuite-mindmap";
   };
 }
