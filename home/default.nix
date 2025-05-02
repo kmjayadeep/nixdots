@@ -17,6 +17,7 @@
     ./wlogout
 
     # ./barrier.nix
+    ./backrest.nix
     ./dunst.nix
     ./env.nix
     ./fonts.nix
