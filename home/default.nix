@@ -35,7 +35,6 @@
     ./shell.nix
     ./syncthing.nix
     ./theme.nix
-    ./timers.nix
     ./xdg.nix
   ];
 }
