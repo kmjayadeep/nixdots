@@ -33,6 +33,7 @@
     moonlight-qt # play games over network
     jellyfin-media-player
     gimp
+    code-cursor # Ai editor
 
     # work
     zoom-us # video calls

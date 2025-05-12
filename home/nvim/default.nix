@@ -100,7 +100,7 @@
           p.tree-sitter-beancount
           p.tree-sitter-terraform
           p.tree-sitter-rust
-          p.tree-sitter-python
+          p.tree-sitter-javascript
         ]);
         config = toLuaFile ./plugin/treesitter.lua;
       }
