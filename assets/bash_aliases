@@ -12,7 +12,6 @@ alias moon="curl wttr.in/moon"
 
 
 # taskwarrior
-alias tt="taskwarrior-tui"
 alias in="task +INBOX"
 alias today="task today"
 
