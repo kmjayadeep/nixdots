@@ -34,6 +34,7 @@
     jellyfin-media-player
     gimp
     code-cursor # Ai editor
+    hoppscotch # postman alternative
 
     # work
     zoom-us # video calls
