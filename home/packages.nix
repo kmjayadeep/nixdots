@@ -72,5 +72,6 @@
     yarn
     vault
     nodePackages_latest.vercel
+    devenv
   ];
 }
