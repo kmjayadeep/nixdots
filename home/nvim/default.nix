@@ -113,6 +113,9 @@
 
       # Nix language support in nvim
       vim-nix
+
+      # Github copilot
+      copilot-vim
     ];
 
     extraLuaConfig = ''
