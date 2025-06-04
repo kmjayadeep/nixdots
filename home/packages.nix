@@ -73,5 +73,6 @@
     vault
     nodePackages_latest.vercel
     devenv
+    mongosh
   ];
 }
