@@ -52,10 +52,11 @@
       report.backlog.filter = "project.any: status:pending";
       report.backlog.sort = "project+/,scheduled+";
 
-      # report.someday.columns = "id,description.count";
-      # report.someday.description = "Someday/Maybe";
-      # report.someday.filter = "limit: folder:someday status:pending";
-      # report.someday.labels = "ID,Description";
+      report.someday.description = "Tasks deferred for someday (waiting)";
+      report.someday.columns = "id,project,wait,due,description";
+      report.someday.labels = "ID,Project,Wait,Due,Description";
+      report.someday.filter = "status:waiting";
+      report.someday.sort = "project+/";
     };
   };
 }
