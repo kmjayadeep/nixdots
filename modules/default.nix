@@ -5,6 +5,7 @@
   ...
 }: {
   imports = [
+    ./android.nix
     ./container.nix
     ./fonts.nix
     # ./gnome.nix # testing
