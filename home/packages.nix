@@ -74,5 +74,6 @@
     nodePackages_latest.vercel
     devenv
     mongosh
+    mongodb-compass
   ];
 }
