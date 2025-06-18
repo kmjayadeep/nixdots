@@ -12,7 +12,7 @@
   };
 
   programs.ssh = {
-    startAgent = true;
+    # startAgent = true; # Disabled to avoid conflict with GNOME Keyring SSH agent
     extraConfig = ''
       Include /home/jayadeep/private/ssh/config
     '';
