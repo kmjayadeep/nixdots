@@ -12,7 +12,7 @@
   };
 
   programs.ssh = {
-    # startAgent = true; # Disabled to avoid conflict with GNOME Keyring SSH agent
+    startAgent = true; # Re-enabled since GNOME Keyring isn't running in i3
     extraConfig = ''
       Include /home/jayadeep/private/ssh/config
     '';

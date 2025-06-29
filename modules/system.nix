@@ -119,7 +119,7 @@
 
   # for ssh and gpg auto unlock at login
   # Not using ssh agent at the moment
-  services.gnome.gnome-keyring.enable = true;
+  # services.gnome.gnome-keyring.enable = true; # Disabled since using i3, not GNOME
   programs.seahorse.enable = true;
 
   # Prometheus Node-exporter for exposing node metrics to prometheus
