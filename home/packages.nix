@@ -25,20 +25,11 @@
     obs-studio # For screen recording
     smplayer
     mpv # dependency for smplayer
-    libsForQt5.kdenlive # For video editing
     loupe # Image viewer
     evince # PDF viewer
-    thunderbird-bin # email client
-    libsForQt5.okular
-    moonlight-qt # play games over network
     jellyfin-media-player
     gimp
     code-cursor # Ai editor
-    hoppscotch # postman alternative
-
-    # work
-    zoom-us # video calls
-    slack
 
     # Other apps
     neofetch
@@ -70,10 +61,9 @@
     gccgo
     nodejs_22
     yarn
-    vault
     nodePackages_latest.vercel
     devenv
     mongosh
-    mongodb-compass
+    gemini-cli
   ];
 }
