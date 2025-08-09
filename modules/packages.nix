@@ -10,7 +10,7 @@
     psmisc
     htop
     xdg-desktop-portal-gtk
-    greetd.tuigreet
+    tuigreet
     mesa # 3d graphics
     exfat # sd card
     gphoto2
