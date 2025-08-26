@@ -33,7 +33,7 @@
       la = "eza -la --icons";
       ip = "ip --color=auto";
       v = "\${EDITOR:-nvim}";
-      rebuild = "sudo nixos-rebuild switch --flake $NIXOS_CONFIG_DIR --fast; notify-send 'Rebuild complete\!'";
+      rebuild = "sudo nixos-rebuild switch --flake $NIXOS_CONFIG_DIR --no-reexec; notify-send 'Rebuild complete\!'";
       gameoff = "killall -9 .Discord-wrapped steam dota2 valheim.x86_64";
       t = "task";
       review = "while true; do clear;task in; task today; task backlog; sleep 3; done;";
