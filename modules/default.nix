@@ -23,8 +23,4 @@
 
   # Do not touch
   system.stateVersion = "24.11";
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "qtwebengine-5.15.19"
-  ];
 }

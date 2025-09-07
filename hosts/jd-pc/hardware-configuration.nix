@@ -60,6 +60,6 @@
   systemd.packages = with pkgs; [ lact ];
   systemd.services.lactd.wantedBy = ["multi-user.target"];
 
-  services.logind.settings.Login.HandlePowerKeyLongPress = "poweroff";
-  services.logind.settings.Login.HandlePowerKey = "suspend";
+  services.logind.powerKeyLongPress = "poweroff";
+  services.logind.powerKey = "suspend";
 }
