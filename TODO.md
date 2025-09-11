@@ -59,9 +59,10 @@
 ## 🧹 Cleanup & Maintenance
 
 ### Fix TODOs
-- [ ] **Fix or remove broken dnscrypt-proxy** in `system.nix` lines 34-39
-  - Either fix the AdGuard configuration
-  - Or remove the broken static.adguard section
+- [x] **Fix or remove broken dnscrypt-proxy** in `system.nix` lines 34-39 ✅ COMPLETED
+  - ✅ Removed broken static.adguard section (incorrect DNSCrypt stamp format)
+  - ✅ Cleaned up dnscrypt-proxy configuration to use only public resolvers
+  - Note: Local AdGuard DNS (192.168.1.250) still configured in nameservers section
 - [ ] **Review all inline TODO comments**
   - Address or remove TODO comments throughout codebase
 

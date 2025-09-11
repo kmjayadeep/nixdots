@@ -30,14 +30,6 @@
       ipv6_servers = true;
       require_dnssec = true;
 
-
-      # TODO: not working atm
-      static.adguard = {
-        # from https://dnscrypt.info/stamps/
-        # 192.168.1.250:53
-        stamp="sdns://AAUAAAAAAAAAEDE5Mi4xNjguMS4yNTA6NTM";
-      };
-
       sources.public-resolvers = {
         urls = [
           "https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md"
