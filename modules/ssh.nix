@@ -9,6 +9,27 @@
     ports = [
       2022
     ];
+    settings = {
+      # Essential security hardening
+      PasswordAuthentication = false;  # Disabled globally
+      PermitRootLogin = "no";
+      KbdInteractiveAuthentication = false;
+      
+      # Connection management
+      ClientAliveInterval = 300;
+      MaxAuthTries = 3;
+      
+      # Disable unnecessary features
+      X11Forwarding = false;
+      GatewayPorts = "no";
+    };
+    
+    # Enable password auth for specific user
+    extraConfig = ''
+      Match User jayadeep
+        PasswordAuthentication yes
+        KbdInteractiveAuthentication yes
+    '';
   };
 
   programs.ssh = {

@@ -134,6 +134,13 @@
     ];
   };
 
+  # fail2ban for SSH protection. Comes with ssh jail by default
+  services.fail2ban = {
+    enable = true;
+    maxretry = 5;
+    bantime = "1h";
+  };
+
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "jayadeep" ];
 }
