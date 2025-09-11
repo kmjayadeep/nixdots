@@ -92,7 +92,7 @@
     intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
   };
 
-  # Enable bluetooth, enable opengl (for Wayland)
+  # Enhanced hardware configuration
   hardware = {
     bluetooth = {
       enable = true;
