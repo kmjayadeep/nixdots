@@ -20,19 +20,20 @@
 ## 🏗️ Code Organization & Modularity
 
 ### Reduce Duplication
-- [ ] **Create wayland-common.nix module**
-  - Extract common Wayland configuration from `sway.nix` and `hyprland.nix`
-  - Include: NIXOS_OZONE_WL, xdg.portal, security.polkit
-- [ ] **Extract NFS server configuration**
-  - Create variables for `truenas.cosmos.cboxlab.com` server name
-  - Use variables in all NFS mount definitions in `nfs.nix`
+- [x] **Extract NFS server configuration** ✅ COMPLETED
+  - ✅ Created variables for server, base path, options, and timeout
+  - ✅ Converted to functional approach using `map` and helper functions
+  - ✅ Eliminated all duplication - now easy to add/remove NFS shares
 
 ### Module Management
-- [ ] **Clean up commented modules** in `default.nix`
-  - Remove unused commented imports
-  - Or create conditional imports using `lib.optionals`
-- [ ] **Organize package categories** in `packages.nix`
-  - Group packages by: System, Desktop, Development, Media, Network, Gaming
+- [x] **Clean up commented modules** in `default.nix` ✅ COMPLETED
+  - ✅ Organized imports into logical categories (Core, Desktop, Services)
+  - ✅ Added clear comments explaining purpose of each section
+  - ✅ Kept unused DE modules commented with usage notes
+- [x] **Organize package categories** in `packages.nix` ✅ COMPLETED
+  - ✅ Grouped packages into 8 clear categories with descriptive headers
+  - ✅ Added inline comments explaining each package's purpose
+  - ✅ Organized by: System, Development, Desktop, Network, Browsers, Media, Gaming, Hardware
 
 ## ⚡ Performance Optimizations
 

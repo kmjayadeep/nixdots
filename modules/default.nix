@@ -5,20 +5,26 @@
   ...
 }: {
   imports = [
+    # Core system modules
+    ./nixos.nix
+    ./system.nix
+    ./packages.nix
+    ./fonts.nix
+
+    # Desktop environment
+    ./i3.nix
+    # NOTE: Uncomment below for alternative DEs when needed
+    # ./gnome.nix
+    # ./hyprland.nix
+    # ./sway.nix
+
+    # Services and features
     ./android.nix
     ./container.nix
-    ./fonts.nix
-    # ./gnome.nix # testing
-    # ./hyprland.nix # not used now
-    # ./sway.nix
-    ./i3.nix
     ./nfs.nix
-    ./nixos.nix
-    ./packages.nix
     ./samba.nix
     ./ssh.nix
     ./steam.nix
-    ./system.nix
   ];
 
   # Do not touch
