@@ -56,6 +56,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "podman"
       "video" # For screen brightness control
       "render" # For video editing
     ];
