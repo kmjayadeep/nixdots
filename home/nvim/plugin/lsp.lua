@@ -27,29 +27,32 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Golang LS
-require('lspconfig').gopls.setup{
+vim.lsp.config.gopls = {
+    cmd = { 'gopls' },
     on_attach = on_attach,
     capabilities = capabilities,
 }
 
--- Beancount LS
-require('lspconfig').beancount.setup{
+-- Beancount LS  
+vim.lsp.config.beancount = {
+    cmd = { 'beancount-language-server' },
     on_attach = on_attach,
     capabilities = capabilities,
     init_options = {
         journal_file = "/home/jayadeep/private/psuite/beancount/journal.beancount",
-    };
+    },
 }
 
---- Rust LS
-require'lspconfig'.rust_analyzer.setup{
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    ['rust-analyzer'] = {
-      diagnostics = {
-        enable = false;
-      }
+-- Rust LS
+vim.lsp.config.rust_analyzer = {
+    cmd = { 'rust-analyzer' },
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = {
+        ['rust-analyzer'] = {
+            diagnostics = {
+                enable = false,
+            }
+        }
     }
-  }
 }
