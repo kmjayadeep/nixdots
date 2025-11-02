@@ -47,7 +47,6 @@
   services.xserver.videoDrivers = [ "amdgpu" ];
 
   hardware.graphics.extraPackages = with pkgs; [
-    amdvlk
     rocmPackages.clr.icd # opencl for davinci resolve
   ];
 
