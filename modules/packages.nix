@@ -40,7 +40,7 @@
     # === MEDIA & PHOTOGRAPHY ===
     gphoto2                   # Camera control library
     gphoto2fs                 # Camera filesystem
-    isoimagewriter            # ISO image writer
+    kdePackages.isoimagewriter            # ISO image writer
 
     # === GAMING & WINDOWS COMPATIBILITY ===
     wineWowPackages.stable    # Windows compatibility layer
