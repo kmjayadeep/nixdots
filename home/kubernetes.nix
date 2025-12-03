@@ -16,5 +16,6 @@
     kind
     ko
     cloud-provider-kind
+    k9s
   ];
 }
