@@ -65,5 +65,6 @@
     devenv
     mongosh
     gemini-cli
+    monero-gui
   ];
 }

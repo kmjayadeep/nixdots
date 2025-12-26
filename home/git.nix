@@ -14,15 +14,17 @@
 
   programs.git = {
     enable = true;
-    userName = "Jayadeep KM";
-    userEmail = "kmjayadeep@gmail.com";
 
     signing = {
       key = "E144EC9E6313D549";
       signByDefault = true;
     };
 
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Jayadeep KM";
+        email = "kmjayadeep@gmail.com";
+      };
       pull = {
         ff = "only";
       };
