@@ -12,9 +12,9 @@
   networking = {
     networkmanager.enable = true;
     nameservers = [
-      "127.0.0.53" # DNSCrypt proxy
-      "192.168.1.250" # AdGuard as fallback
-      "1.1.1.1" # Use cloudlfare when everything else fails
+      # DNSMasq will add localhost here. The options below will be used as fallback
+      "192.168.1.250" # AdGuard home
+      "1.1.1.1"
     ];
     networkmanager.dns = "none";
 
@@ -25,30 +25,35 @@
   };
   programs.nm-applet.enable = true;
 
-  # Encrypted DNS
-  services.dnscrypt-proxy = {
+  # DNS caching with dnsmasq
+  services.dnsmasq = {
     enable = true;
     settings = {
-      listen_addresses = ["127.0.0.53:53"];
+      # Listen on localhost only
+      listen-address = "127.0.0.1";
 
-      # Server selection preferences
-      ipv6_servers = true;
-      require_dnssec = true;
-      require_nolog = false;
-      require_nofilter = false;  # Allow filtering since using AdGuard
+      # Don't read /etc/resolv.conf for upstream servers
+      no-resolv = true;
 
-      sources.public-resolvers = {
-        urls = [
-          "https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md"
-          "https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md"
-        ];
-        cache_file = "/var/lib/dnscrypt-proxy/public-resolvers.md";
-        minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3";
-      };
+      # Bind to interfaces to prevent port conflicts
+      bind-interfaces = true;
+
+      # Upstream DNS servers (AdGuard primary, Cloudflare secondary)
+      server = [
+        "192.168.1.250"  # AdGuard
+        "1.1.1.1"        # Cloudflare fallback
+      ];
+
+      # Cache settings
+      cache-size = 1000;
+
+      # Don't forward plain names
+      domain-needed = true;
+
+      # Don't forward addresses in non-routed address spaces
+      bogus-priv = true;
     };
   };
-
-  systemd.services.dnscrypt-proxy.serviceConfig.StateDirectory = "dnscrypt-proxy";
 
   # Set default shell for all users
   # also important to set global env vars correctly
