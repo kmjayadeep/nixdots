@@ -12,38 +12,43 @@
   networking = {
     networkmanager.enable = true;
     nameservers = [
-      "192.168.1.250"
-      "127.0.0.1" # Point to dnscrypt server running locally
-      # "1.1.1.1"
-      # "1.0.0.1"
-      # "2606:4700:4700::1111"
-      # "2606:4700:4700::1001"
+      "127.0.0.53" # DNSCrypt proxy
+      "192.168.1.250" # AdGuard as fallback
+      "1.1.1.1" # Use cloudlfare when everything else fails
     ];
     networkmanager.dns = "none";
+
+    # Configure resolvconf to include all nameservers, not just local ones
+    resolvconf.extraConfig = ''
+      resolv_conf_local_only=NO
+    '';
   };
   programs.nm-applet.enable = true;
 
   # Encrypted DNS
-  services.dnscrypt-proxy2 = {
+  services.dnscrypt-proxy = {
     enable = true;
     settings = {
+      listen_addresses = ["127.0.0.53:53"];
+
+      # Server selection preferences
       ipv6_servers = true;
       require_dnssec = true;
+      require_nolog = false;
+      require_nofilter = false;  # Allow filtering since using AdGuard
 
       sources.public-resolvers = {
         urls = [
           "https://raw.githubusercontent.com/DNSCrypt/dnscrypt-resolvers/master/v3/public-resolvers.md"
           "https://download.dnscrypt.info/resolvers-list/v3/public-resolvers.md"
         ];
-        cache_file = "/var/lib/dnscrypt-proxy2/public-resolvers.md";
+        cache_file = "/var/lib/dnscrypt-proxy/public-resolvers.md";
         minisign_key = "RWQf6LRCGA9i53mlYecO4IzT51TGPpvWucNSCh1CBM0QTaLn73Y7GFO3";
       };
     };
   };
 
-  systemd.services.dnscrypt-proxy2.serviceConfig = {
-    StateDirectory = "dnscrypt-proxy";
-  };
+  systemd.services.dnscrypt-proxy.serviceConfig.StateDirectory = "dnscrypt-proxy";
 
   # Set default shell for all users
   # also important to set global env vars correctly
