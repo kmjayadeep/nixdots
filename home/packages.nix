@@ -30,6 +30,7 @@
     jellyfin-media-player
     gimp
     code-cursor # Ai editor
+    cursor-cli # Cli for cursor.com
 
     # Other apps
     neofetch
