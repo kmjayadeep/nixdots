@@ -21,6 +21,7 @@
     # Services and features
     ./android.nix
     ./container.nix
+    ./home-assistant-sleep.nix
     ./nfs.nix
     ./samba.nix
     ./ssh.nix
