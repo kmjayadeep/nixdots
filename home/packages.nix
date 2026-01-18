@@ -31,6 +31,7 @@
     gimp
     code-cursor # Ai editor
     cursor-cli # Cli for cursor.com
+    opencode
 
     # Other apps
     neofetch
