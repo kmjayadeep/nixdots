@@ -32,6 +32,7 @@
     code-cursor # Ai editor
     cursor-cli # Cli for cursor.com
     opencode
+    mullvad-vpn
 
     # Other apps
     neofetch

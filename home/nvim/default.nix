@@ -22,6 +22,7 @@
       wl-clipboard
       beancount-language-server
       rust-analyzer
+      tree-sitter
     ];
 
     plugins = with pkgs.vimPlugins; [
