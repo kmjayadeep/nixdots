@@ -29,6 +29,7 @@ capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 -- Golang LS
 vim.lsp.config.gopls = {
     cmd = { 'gopls' },
+    filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
     on_attach = on_attach,
     capabilities = capabilities,
 }
@@ -36,6 +37,7 @@ vim.lsp.config.gopls = {
 -- Beancount LS  
 vim.lsp.config.beancount = {
     cmd = { 'beancount-language-server' },
+    filetypes = { 'beancount' },
     on_attach = on_attach,
     capabilities = capabilities,
     init_options = {
@@ -46,6 +48,7 @@ vim.lsp.config.beancount = {
 -- Rust LS
 vim.lsp.config.rust_analyzer = {
     cmd = { 'rust-analyzer' },
+    filetypes = { 'rust' },
     on_attach = on_attach,
     capabilities = capabilities,
     settings = {
@@ -56,3 +59,6 @@ vim.lsp.config.rust_analyzer = {
         }
     }
 }
+
+-- Enable all configured LSP servers
+vim.lsp.enable({'gopls', 'beancount', 'rust_analyzer'})
