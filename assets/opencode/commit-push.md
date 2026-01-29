@@ -7,7 +7,7 @@ description: Check changes, craft a commit, then push to origin
 
 ## Intent
 
-Create a meaningful commit based on current changes and push it to `origin`.
+Create a meaningful git commit based on recent changes and push it to `origin`.
 
 ## Steps
 
@@ -15,10 +15,11 @@ Create a meaningful commit based on current changes and push it to `origin`.
    - `git status`
    - `git diff`
 2. If there are no changes, stop and explain.
-3. Draft a commit message
+3. If there are changes that are not relevent to the current discussion, explain that to the user
+4. Draft a commit message
    - Title: short, lowercase, imperative
    - Body: 1-2 sentences describing why the change was made
-4. Commit and push
-   - `git add -A`
+5. Commit and push
+   - `git add` relevant files
    - `git commit -m "<title>" -m "<body>"`
    - `git push origin $(git rev-parse --abbrev-ref HEAD)`
