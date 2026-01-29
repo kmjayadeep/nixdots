@@ -22,6 +22,7 @@
     xarchiver # extract archives in pcmanfm
     discord
     spotify
+    obsidian
     obs-studio # For screen recording
     smplayer
     mpv # dependency for smplayer
@@ -31,7 +32,6 @@
     gimp
     code-cursor # Ai editor
     cursor-cli # Cli for cursor.com
-    opencode
     mullvad-vpn
 
     # Other apps

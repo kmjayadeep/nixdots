@@ -28,6 +28,7 @@
     ./kubernetes.nix
     ./ledger.nix
     ./misc.nix
+    ./opencode.nix
     ./packages.nix
     ./pass.nix
     ./rbw.nix
