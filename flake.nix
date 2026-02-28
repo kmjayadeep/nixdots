@@ -20,6 +20,8 @@
       url = "github:kmjayadeep/scripts";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
   # All outputs for the system (configs)
@@ -33,6 +35,7 @@
     lib = nixpkgs.lib;
     go-todo-exporter = inputs.go-todo-exporter.packages.${system};
     scripts = inputs.scripts.packages.${system};
+    llm-agents = inputs.llm-agents.packages.${system};
 
     # This lets us reuse the code to "create" a system
     # Credits go to sioodmy on this one!
@@ -55,6 +58,7 @@
                 inherit inputs;
                 go-todo-exporter = go-todo-exporter;
                 scripts = scripts;
+                llm-agents = llm-agents;
               };
               # Home manager config (configures user specific stuff like shell, aliases etc)
               users.jayadeep = ./home;

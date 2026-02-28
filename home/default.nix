@@ -27,8 +27,8 @@
     ./hidpi.nix
     ./kubernetes.nix
     ./ledger.nix
+    ./llm.nix
     ./misc.nix
-    ./opencode.nix
     ./packages.nix
     ./pass.nix
     ./rbw.nix
