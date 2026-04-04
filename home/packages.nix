@@ -35,11 +35,9 @@
     mullvad-vpn
 
     # Other apps
-    neofetch
     restic # for backup
     dig
     btop # Better htop
-    nodePackages_latest.http-server
     vlc
     postgresql
     rclone
@@ -61,10 +59,8 @@
     coder
     just
     rustup
-    gccgo
     nodejs_22
     yarn
-    nodePackages_latest.vercel
     devenv
     mongosh
     gemini-cli

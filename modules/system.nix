@@ -77,9 +77,6 @@
   # Disable alsa and pulseaudio
   services.pulseaudio.enable = false;
 
-  # brightness control
-  programs.light.enable = true;
-
   # Sound with pipewire
   services.pipewire = {
     enable = true;

@@ -18,6 +18,7 @@
     signing = {
       key = "E144EC9E6313D549";
       signByDefault = true;
+      format = "openpgp":
     };
 
     settings = {

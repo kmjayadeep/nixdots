@@ -14,7 +14,7 @@
   
   environment.systemPackages = with pkgs; [
     arandr
-    xorg.xrandr # manage monitor
+    xrandr # manage monitor
     lxappearance
   ];
 
