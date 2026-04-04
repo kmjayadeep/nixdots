@@ -59,6 +59,8 @@
   systemd.packages = with pkgs; [ lact ];
   systemd.services.lactd.wantedBy = ["multi-user.target"];
 
+  services.ddccontrol.enable = true;
+
   services.logind.settings = {
     Login = {
       HandlePowerKeyLongPress = "poweroff";

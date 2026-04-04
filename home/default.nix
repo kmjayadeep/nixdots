@@ -31,6 +31,7 @@
     ./misc.nix
     ./packages.nix
     ./pass.nix
+    ./python.nix
     ./rbw.nix
     ./scripts.nix
     ./shell.nix

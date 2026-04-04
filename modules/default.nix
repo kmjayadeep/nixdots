@@ -36,4 +36,7 @@
   nixpkgs.config.permittedInsecurePackages = [
     "qtwebengine-5.15.19"
   ];
+
+  # Required for uv
+  programs.nix-ld.enable = true;
 }
