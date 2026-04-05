@@ -43,7 +43,7 @@
     kdePackages.isoimagewriter            # ISO image writer
 
     # === GAMING & WINDOWS COMPATIBILITY ===
-    wineWowPackages64.stable    # Windows compatibility layer
+    #wineWowPackages64.stable    # Windows compatibility layer
     winetricks                # Wine configuration tool
 
     # === HARDWARE SPECIFIC ===

@@ -119,7 +119,7 @@
       copilot-vim
     ];
 
-    extraLuaConfig = ''
+    initLua = ''
       ${builtins.readFile ./options.lua}
       ${builtins.readFile ./binds.lua}
     '';
