@@ -34,6 +34,7 @@
     userDirs = {
       enable = true;
       createDirectories = true;
+      setSessionVariables = false;
 
       # Ephemeral stuff
       documents = "${config.home.homeDirectory}/Documents";
