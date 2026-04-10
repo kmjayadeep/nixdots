@@ -9,6 +9,7 @@ alias sutl="systemctl --user"
 alias o="xdg-open"
 alias weather='curl "wttr.in?0Fq"'
 alias moon="curl wttr.in/moon"
+alias kssh="kitty +kitten ssh"
 
 
 # taskwarrior
