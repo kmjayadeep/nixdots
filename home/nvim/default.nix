@@ -8,8 +8,8 @@
   # TODO: Move to https://github.com/nix-community/nixvim
 
   programs.neovim = let
-    toLua = str: "lua << EOF\n${str}\nEOF\n";
-    toLuaFile = file: "lua << EOF\n${builtins.readFile file}\nEOF\n";
+    toLua = str: str;
+    toLuaFile = file: builtins.readFile file;
   in {
     enable = true;
     defaultEditor = true;
@@ -57,7 +57,7 @@
       }
       {
         plugin = gruvbox-nvim;
-        config = "colorscheme gruvbox";
+        config = toLua ''vim.cmd.colorscheme("gruvbox")'';
       }
 
       # File opener, git files, fuzzy search etc
