@@ -12,6 +12,7 @@
     exfat                     # SD card filesystem support
     pciutils                  # PCI utilities (lspci)
     iperf                     # Network performance testing
+    gcc
 
     # === DEVELOPMENT TOOLS ===
     git                       # Version control
