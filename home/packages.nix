@@ -65,5 +65,6 @@
     mongosh
     gemini-cli
     monero-gui
+    firebase-tools
   ];
 }
