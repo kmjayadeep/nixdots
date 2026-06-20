@@ -60,5 +60,35 @@ vim.lsp.config.rust_analyzer = {
     }
 }
 
+-- Python LS
+vim.lsp.config.pyright = {
+    cmd = { 'pyright-langserver', '--stdio' },
+    filetypes = { 'python' },
+    root_markers = { 'pyproject.toml', 'uv.lock', 'setup.py', 'setup.cfg', 'requirements.txt', '.git' },
+    on_attach = on_attach,
+    capabilities = capabilities,
+    settings = {
+        python = {
+            analysis = {
+                autoSearchPaths = true,
+                diagnosticMode = 'workspace',
+                useLibraryCodeForTypes = true,
+            },
+        },
+    },
+}
+
+-- Python linting and formatting
+vim.lsp.config.ruff = {
+    cmd = { 'ruff', 'server' },
+    filetypes = { 'python' },
+    root_markers = { 'pyproject.toml', 'ruff.toml', '.ruff.toml', 'uv.lock', '.git' },
+    on_attach = function(client, bufnr)
+        client.server_capabilities.hoverProvider = false
+        on_attach(client, bufnr)
+    end,
+    capabilities = capabilities,
+}
+
 -- Enable all configured LSP servers
-vim.lsp.enable({'gopls', 'beancount', 'rust_analyzer'})
+vim.lsp.enable({'gopls', 'beancount', 'rust_analyzer', 'pyright', 'ruff'})

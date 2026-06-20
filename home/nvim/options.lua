@@ -38,6 +38,16 @@ vim.bo.swapfile = false
 vim.o.undofile = true
 vim.bo.undofile = true
 
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'python',
+  callback = function()
+    vim.bo.tabstop = 4
+    vim.bo.softtabstop = 4
+    vim.bo.shiftwidth = 4
+    vim.bo.expandtab = true
+  end,
+})
+
 
 vim.g.mapleader = ' '
 vim.b.mapleader = ' '

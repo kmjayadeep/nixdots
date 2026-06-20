@@ -2,7 +2,7 @@ require('nvim-treesitter').setup {}
 
 -- Enable treesitter features for installed parsers
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { 'nix', 'just', 'vim', 'bash', 'sh', 'lua', 'json', 'go', 'beancount', 'terraform', 'rust', 'javascript' },
+  pattern = { 'nix', 'just', 'vim', 'bash', 'sh', 'lua', 'json', 'go', 'beancount', 'terraform', 'rust', 'javascript', 'python' },
   callback = function()
     -- Highlighting
     vim.treesitter.start()

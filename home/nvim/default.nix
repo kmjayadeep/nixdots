@@ -22,6 +22,8 @@
       wl-clipboard
       beancount-language-server
       rust-analyzer
+      pyright
+      ruff
       tree-sitter
     ];
 
@@ -102,6 +104,7 @@
           p.tree-sitter-terraform
           p.tree-sitter-rust
           p.tree-sitter-javascript
+          p.tree-sitter-python
         ]);
         config = toLuaFile ./plugin/treesitter.lua;
       }
