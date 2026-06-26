@@ -26,6 +26,41 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
+local function executable(path)
+  return path and vim.fn.executable(path) == 1
+end
+
+local function python_path(root_dir)
+  root_dir = root_dir or vim.fn.getcwd()
+
+  -- Prefer the active shell virtualenv, if Neovim was launched from one.
+  if executable(vim.env.VIRTUAL_ENV and (vim.env.VIRTUAL_ENV .. '/bin/python')) then
+    return vim.env.VIRTUAL_ENV .. '/bin/python'
+  end
+
+  -- uv creates a project-local .venv by default. Point pyright at it so
+  -- packages added with `uv add` are available for import resolution and
+  -- auto-import completions.
+  for _, venv in ipairs({ '.venv', 'venv', 'env' }) do
+    local path = root_dir .. '/' .. venv .. '/bin/python'
+    if executable(path) then
+      return path
+    end
+  end
+
+  local python3 = vim.fn.exepath('python3')
+  if python3 ~= '' then
+    return python3
+  end
+
+  local python = vim.fn.exepath('python')
+  if python ~= '' then
+    return python
+  end
+
+  return 'python'
+end
+
 -- Golang LS
 vim.lsp.config.gopls = {
     cmd = { 'gopls' },
@@ -67,9 +102,17 @@ vim.lsp.config.pyright = {
     root_markers = { 'pyproject.toml', 'uv.lock', 'setup.py', 'setup.cfg', 'requirements.txt', '.git' },
     on_attach = on_attach,
     capabilities = capabilities,
+    before_init = function(_, config)
+        config.settings.python.pythonPath = python_path(config.root_dir)
+    end,
     settings = {
         python = {
+            -- Default to uv's project-local virtualenv. before_init fills in
+            -- the absolute interpreter path per workspace.
+            venvPath = '.',
+            venv = '.venv',
             analysis = {
+                autoImportCompletions = true,
                 autoSearchPaths = true,
                 diagnosticMode = 'workspace',
                 useLibraryCodeForTypes = true,
