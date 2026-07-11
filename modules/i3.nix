@@ -20,4 +20,11 @@
 
   programs.dconf.enable = true;
 
+  # Required by apps such as Flameshot that talk to the
+  # org.freedesktop.portal.Desktop D-Bus service.
+  xdg.portal = {
+    enable = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    config.common.default = ["gtk"];
+  };
 }

@@ -5,7 +5,6 @@
   inputs,
   ...
 }: {
-
   imports = [
     ./picom.nix
   ];
@@ -14,10 +13,20 @@
 
   home.file.".config/i3/wall.jpg".source = ./wall2.jpg;
 
+  services.flameshot = {
+    enable = true;
+    settings.General = {
+      # Flameshot 14 defaults to the screenshot portal, but X11 window managers
+      # such as i3 do not have a portal backend that implements Screenshot.
+      useX11LegacyScreenshot = true;
+      captureActiveMonitor = true;
+      showStartupLaunchMessage = false;
+    };
+  };
+
   home.packages = with pkgs; [
     rofi # app launcher
     nitrogen # for wallpaper
-    flameshot # screenshot
     pasystray # pulseaudio volume tray
     acpilight # backlight and keyboard light
     playerctl # media controls
@@ -29,5 +38,4 @@
     xscreensaver # for screensaver with xsecurelock
     pulseaudio # for pactl cmds
   ];
-
 }
