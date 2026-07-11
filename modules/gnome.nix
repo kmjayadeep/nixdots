@@ -8,7 +8,7 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   environment.systemPackages = with pkgs; [
-    arandr
+    lxrandr # arandr is currently broken on unstable/python 3.14
     read-edid
   ];
 }

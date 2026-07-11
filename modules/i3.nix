@@ -11,10 +11,10 @@
   services.xserver.windowManager.i3.enable = true;
 
   services.displayManager.defaultSession = "none+i3";
-  
+
   environment.systemPackages = with pkgs; [
-    arandr
     xrandr # manage monitor
+    lxrandr # GUI for monitor layout; arandr is currently broken on unstable/python 3.14
     lxappearance
   ];
 
