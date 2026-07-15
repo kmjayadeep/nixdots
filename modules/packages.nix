@@ -13,6 +13,7 @@
     pciutils                  # PCI utilities (lspci)
     iperf                     # Network performance testing
     gcc
+    nh                        # Nix helper CLI
 
     # === DEVELOPMENT TOOLS ===
     git                       # Version control
