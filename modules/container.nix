@@ -7,14 +7,13 @@
   virtualisation.containers.enable = true;
   virtualisation.podman = {
     enable = true;
-    dockerCompat = true;
+    dockerCompat = false;
     defaultNetwork.settings.dns_enabled = true;
     autoPrune.enable = true;
   };
 
-  # Disable docker if podman is enabled to avoid conflicts
   virtualisation.docker = {
-    enable = false;
+    enable = true;
     enableOnBoot = false;
     autoPrune.enable = true;
     daemon.settings = {
