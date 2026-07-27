@@ -56,6 +56,7 @@
     kubeseal
     httpie
     terraform
+    vault
     coder
     just
     rustup
