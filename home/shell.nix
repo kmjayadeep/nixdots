@@ -38,6 +38,7 @@
       t = "task";
       review = "while true; do clear;task in; task today; task backlog; sleep 3; done;";
       sshk = "kitty +kitten ssh";
+      vault-login = "pass show homelab/vault/token | vault login -";
     };
 
     # Source additional shell aliases
