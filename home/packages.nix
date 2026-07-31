@@ -29,6 +29,7 @@
     loupe # Image viewer
     evince # PDF viewer
     jellyfin-media-player
+    calibre
     gimp
     code-cursor # Ai editor
     cursor-cli # Cli for cursor.com
