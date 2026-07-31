@@ -30,6 +30,7 @@
     evince # PDF viewer
     jellyfin-media-player
     calibre
+    picard
     gimp
     code-cursor # Ai editor
     cursor-cli # Cli for cursor.com
