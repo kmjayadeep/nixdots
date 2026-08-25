@@ -35,6 +35,7 @@
     code-cursor # Ai editor
     cursor-cli # Cli for cursor.com
     mullvad-vpn
+    feishin # jellyfin client
 
     # Other apps
     restic # for backup
