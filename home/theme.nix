@@ -6,8 +6,8 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Flat-Remix-GTK-Blue-Dark";
-      package = pkgs.flat-remix-gtk;
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
     };
 
     cursorTheme = {

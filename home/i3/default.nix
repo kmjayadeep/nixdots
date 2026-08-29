@@ -26,7 +26,7 @@
 
   home.packages = with pkgs; [
     rofi # app launcher
-    nitrogen # for wallpaper
+    feh # for wallpaper
     pasystray # pulseaudio volume tray
     acpilight # backlight and keyboard light
     playerctl # media controls

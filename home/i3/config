@@ -209,7 +209,7 @@ bindsym Control+Shift+space exec dunstctl close-all
 
 
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id feh --bg-fill $HOME/.config/i3/wall.jpg
 exec --no-startup-id dunst
 
 exec --no-startup-id nm-applet
