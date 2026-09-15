@@ -41,6 +41,7 @@
     restic # for backup
     dig
     btop # Better htop
+    nvtopPackages.amd
     vlc
     postgresql
     rclone
