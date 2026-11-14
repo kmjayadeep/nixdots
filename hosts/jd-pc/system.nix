@@ -4,6 +4,9 @@
   pkgs,
   ...
 }: {
+  # Living room light follows this PC's sleep/wake/boot/shutdown (modules/home-assistant-sleep.nix).
+  services.haLightHooks.enable = true;
+
   networking.firewall = {
     allowedTCPPorts = [
       8080 # Calibre content server
