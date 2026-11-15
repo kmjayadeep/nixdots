@@ -4,6 +4,13 @@ lock() {
   loginctl lock-session
 }
 
+# Living room light off before sleeping (only where services.haLightHooks is enabled). It must run before
+# systemctl suspend: NetworkManager takes the network down as soon as sleep starts.
+light_off() {
+  command -v ha-light-sleep >/dev/null && ha-light-sleep
+  return 0
+}
+
 case "$1" in
   lock)
     lock
@@ -12,10 +19,10 @@ case "$1" in
     i3-msg exit
     ;;
   suspend)
-    lock && systemctl suspend
+    lock && light_off && systemctl suspend
     ;;
   hibernate)
-    lock && systemctl hibernate
+    lock && light_off && systemctl hibernate
     ;;
   reboot)
     systemctl reboot

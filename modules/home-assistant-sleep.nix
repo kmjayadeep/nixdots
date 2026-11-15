@@ -8,15 +8,23 @@
   webhook = "https://home-assistant.cosmos.cboxlab.com/api/webhook";
   curl = "${pkgs.curl}/bin/curl";
 
-  # Sleep/shutdown: the network is still up, so one quick try. Never block suspend on it.
+  # The hooks run while the network is coming up or going down. dnsmasq kept failing for ~20 s after
+  # resume even with IPv4 back, so skip DNS: pin the name to Home Assistant's LAN address (TLS still checks
+  # the name).
+  hookCurl = "${curl} -fsS --max-time 5 --resolve home-assistant.cosmos.cboxlab.com:443:192.168.1.90";
+
+  # Sleep/shutdown: one quick try. Never block suspend or shutdown on it.
   lightOff = pkgs.writeShellScript "ha-light-off" ''
-    ${curl} -fsS --max-time 5 -X POST ${webhook}/pc-sleep || true
+    ${hookCurl} -X POST ${webhook}/pc-sleep || true
   '';
-  # Boot/resume: Wi-Fi/DHCP may still be coming up, so keep retrying for about a minute.
+  # Boot/resume: the link may still be coming up, so retry for about two minutes.
   # {"auto": true} tells HA to turn the light on only when it is dark (the manual lights-on always turns it on).
   lightOnIfDark = pkgs.writeShellScript "ha-light-on-if-dark" ''
-    ${curl} -fsS --max-time 5 --retry 12 --retry-delay 5 --retry-all-errors \
-      -X POST -H 'Content-Type: application/json' -d '{"auto": true}' ${webhook}/pc-wake
+    for _ in $(seq 24); do
+      ${hookCurl} -X POST -H 'Content-Type: application/json' -d '{"auto": true}' ${webhook}/pc-wake && exit 0
+      sleep 5
+    done
+    exit 1
   '';
 in {
   options.services.haLightHooks.enable =
@@ -50,20 +58,10 @@ in {
         };
       };
 
-      # Suspend → off. NetworkManager takes the link down the moment logind announces sleep, before any
-      # sleep.target unit runs, so a systemd unit is too late. NM waits for pre-down dispatcher scripts
-      # before deactivating the connection, so the network is still up here. Also fires on shutdown and on a
-      # manual disconnect of the wired/Wi-Fi connection (both fine: light off).
-      networking.networkmanager.dispatcherScripts = [
-        {
-          type = "pre-down";
-          source = pkgs.writeShellScript "ha-light-pre-down" ''
-            case "$1" in
-              en* | wl*) ${lightOff} ;;
-            esac
-          '';
-        }
-      ];
+      # Suspend → off. NetworkManager drops the link the moment logind announces sleep (its pre-down
+      # dispatcher scripts are not waited for), so no sleep hook can reach Home Assistant reliably. The
+      # suspend paths (wlogout's i3exit, the polybar menu) call this before `systemctl suspend` instead.
+      environment.systemPackages = [(pkgs.writeShellScriptBin "ha-light-sleep" "exec ${lightOff}")];
 
       # Resume → on if dark. suspend.target (and friends) is reached again when the system wakes up;
       # post-resume.target does not exist here. The script retries until NetworkManager has the link back.
