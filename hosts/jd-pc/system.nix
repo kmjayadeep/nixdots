@@ -7,6 +7,15 @@
   # Living room light follows this PC's sleep/wake/boot/shutdown (modules/home-assistant-sleep.nix).
   services.haLightHooks.enable = true;
 
+  # Game stream host; pair with Moonlight on the TV via https://localhost:47990
+  # Start on demand: systemctl --user start sunshine
+  services.sunshine = {
+    enable = true;
+    autoStart = false;
+    capSysAdmin = true; # KMS capture
+    openFirewall = true;
+  };
+
   networking.firewall = {
     allowedTCPPorts = [
       8080 # Calibre content server
