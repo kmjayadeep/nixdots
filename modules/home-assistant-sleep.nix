@@ -50,22 +50,29 @@ in {
         };
       };
 
-      # Suspend → off.
-      systemd.services.ha-light-sleep = {
-        description = "Turn the living room light off before suspend";
-        wantedBy = ["sleep.target"];
-        before = ["sleep.target"];
-        serviceConfig = {
-          Type = "oneshot";
-          ExecStart = lightOff;
-        };
-      };
+      # Suspend → off. NetworkManager takes the link down the moment logind announces sleep, before any
+      # sleep.target unit runs, so a systemd unit is too late. NM waits for pre-down dispatcher scripts
+      # before deactivating the connection, so the network is still up here. Also fires on shutdown and on a
+      # manual disconnect of the wired/Wi-Fi connection (both fine: light off).
+      networking.networkmanager.dispatcherScripts = [
+        {
+          type = "pre-down";
+          source = pkgs.writeShellScript "ha-light-pre-down" ''
+            case "$1" in
+              en* | wl*) ${lightOff} ;;
+            esac
+          '';
+        }
+      ];
 
-      # Resume → on if dark.
-      systemd.services.ha-light-resume = {
+      # Resume → on if dark. suspend.target (and friends) is reached again when the system wakes up;
+      # post-resume.target does not exist here. The script retries until NetworkManager has the link back.
+      systemd.services.ha-light-resume = let
+        targets = ["suspend.target" "hibernate.target" "hybrid-sleep.target" "suspend-then-hibernate.target"];
+      in {
         description = "Turn the living room light on after resume if it is dark";
-        wantedBy = ["post-resume.target"];
-        after = ["post-resume.target"];
+        wantedBy = targets;
+        after = targets;
         serviceConfig = {
           Type = "oneshot";
           ExecStart = lightOnIfDark;
